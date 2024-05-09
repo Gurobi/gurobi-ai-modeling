@@ -1,13 +1,13 @@
-Welcome to Lumache's documentation!
+Welcome to Gurobi AI Modeling!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+``gurobi-ai-modeling`` aims to guide users to get familiar with using generative AI for mathematical modeling.
+This repository contains documentation that features the following:
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+- Help users understand the capabilities and limitations of the state-of-the-art generative AI tools in the context of optimization.
+- Propose best practices and common pitfalls when using generative AI.
+- Share examples of prompts and expected outcomes.
+- Tools that can help when creating models.
 
 .. note::
 
@@ -17,6 +17,30 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Introduction
 
-   usage
-   api
+   introduction
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Use cases
+
+   usecase-swe
+   usecase-devops
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Basics
+
+   basics-prompting
+   basics-tips-pitfalls
+   basics-custom-gpt
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Example prompts
+
+   examples-simple
+   examples-intermediate
+
