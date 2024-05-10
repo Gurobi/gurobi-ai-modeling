@@ -31,11 +31,11 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Basics
+   :caption: Prompting
 
-   basics-prompting
-   basics-tips-pitfalls
-   basics-custom-gpt
+   prompting-basics
+   prompting-tips-pitfalls
+   prompting-custom-gpt
 
 .. toctree::
    :maxdepth: 2

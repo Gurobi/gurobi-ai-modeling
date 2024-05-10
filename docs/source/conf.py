@@ -6,6 +6,10 @@ project = "Gurobi AI Modeling"
 copyright = "2024, Gurobi Optimization"
 author = "Gurobi Optimization"
 
+html_title = "AI Modeling - Gurobi Optimization"
+html_theme = "gurobi_sphinxtheme"
+html_favicon = "https://www.gurobi.com/favicon.ico"
+
 release = "0.1"
 version = "0.1.0"
 
@@ -24,12 +28,6 @@ intersphinx_mapping = {
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 intersphinx_disabled_domains = ['std']
-
-templates_path = ['_templates']
-
-# -- Options for HTML output
-
-html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

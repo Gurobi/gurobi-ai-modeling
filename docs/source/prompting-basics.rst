@@ -1,5 +1,5 @@
-Prompting
-=========
+Basics
+======
 
 .. _persona:
 
