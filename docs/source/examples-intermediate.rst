@@ -1,4 +1,4 @@
-Example prompts - intermediate
+General - Intermediate
 ==============================
 
 .. _portfolio:

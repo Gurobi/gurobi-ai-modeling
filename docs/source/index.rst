@@ -35,7 +35,8 @@ Contents
 
    prompting-basics
    prompting-tips-pitfalls
-   prompting-custom-gpt
+   prompting-llm-comparison
+   prompting-custom-tools
 
 .. toctree::
    :maxdepth: 2
@@ -43,4 +44,11 @@ Contents
 
    examples-simple
    examples-intermediate
+   examples-devops
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Educational resources
+
+   education-mooc
 

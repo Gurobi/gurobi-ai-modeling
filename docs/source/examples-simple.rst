@@ -1,4 +1,4 @@
-Example prompts - simple
+General - Simple
 =========================
 
 .. _diet:

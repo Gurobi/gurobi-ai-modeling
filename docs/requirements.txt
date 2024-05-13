@@ -1,2 +1,2 @@
-sphinx==7.1.2
-gurobi-sphinxtheme @ git+https://github.com/Gurobi/gurobi-sphinxtheme.git@dev
+sphinx==7.3.7
+gurobi-sphinxtheme @ git+https://github.com/Gurobi/gurobi-sphinxtheme.git@main

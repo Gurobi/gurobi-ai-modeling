@@ -1,5 +1,7 @@
-Custom GPT
-==========
+Custom tools
+============
+
+Talk about Custom GPT and related here
 
 Since the steps necessary for translating a problem description into an optimization model is well defined in :ref:`funnel` and
 not necessarily changing we can utilize a Custom GPT that has these steps baked. Moreover, some common issues with the
