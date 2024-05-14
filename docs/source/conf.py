@@ -21,6 +21,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    "sphinx_design",
 ]
 
 intersphinx_mapping = {
@@ -31,6 +32,7 @@ intersphinx_mapping = {
 html_theme_options = {
     "version_warning": "false",
     "feedback_banner": "false",
+    "construction_warning": "false",
 }
 
 intersphinx_disabled_domains = ['std']

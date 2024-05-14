@@ -62,4 +62,6 @@ More training is done on the earlier ``gurobipy`` API's. This is not a problem s
 However, it does mean that the AI model is less prone to using the newest advanced API's which allow for building models with more complex constraints.
 For simple models however, these advanced API's should not be needed.
 
-
+Avoid abstract concepts
+^^^^^^^^^^^^^^^^^^^^^^^
+TODO: It cannot think in 3D.
