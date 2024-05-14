@@ -27,6 +27,12 @@ intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
+
+html_theme_options = {
+    "version_warning": "false",
+    "feedback_banner": "false",
+}
+
 intersphinx_disabled_domains = ['std']
 
 # -- Options for EPUB output
