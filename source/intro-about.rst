@@ -22,3 +22,7 @@ This repository is divided into the following parts:
 - **Prompting**: How to use Generative AI to guide you with writing and solving your first problem.
 - **Modeling Basics**: Create a basic understanding of the components of an optimization model
 - **Evaluation and troubleshooting**: A practical approach to testing and troubleshooting the models
+
+What to take away from this
+---------------------------
+todo: after getting your feet wet, observe the current processes and look for opportunities where optimization can be applied.

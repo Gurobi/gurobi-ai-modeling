@@ -20,16 +20,8 @@ Contents
    :maxdepth: 2
    :caption: Introduction
 
-   introduction
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Use cases
-
-   usecase-backend
-   usecase-devops
-   usecase-data
-   usecase-swe
+   intro-about
+   intro-usecases
 
 .. toctree::
    :maxdepth: 2

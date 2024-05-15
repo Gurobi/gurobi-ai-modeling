@@ -1,4 +1,4 @@
-Devops Engineer
+DevOps Engineer
 ===============
 
 .. _server_selection:
