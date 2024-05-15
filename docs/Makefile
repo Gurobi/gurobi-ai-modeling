@@ -12,6 +12,18 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+livehtml:
+	sphinx-autobuild --open-browser "$(SOURCEDIR)" "$(BUILDDIR)/livehtml" $(SPHINXOPTS) $(O)
+
+# Install build requirements in the current environment
+
+develop:
+	python -m pip uninstall -y -qq gurobi-sphinxtheme
+	python -m pip install -r requirements.txt
+	python -m pip install sphinx-autobuild==2024.02.04
+	python -m pip install pre-commit
+	pre-commit install
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new

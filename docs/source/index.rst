@@ -26,7 +26,6 @@ Contents
    :maxdepth: 2
    :caption: Use cases
 
-
    usecase-backend
    usecase-devops
    usecase-data
@@ -44,7 +43,14 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Modelling basics
+
+   modeling-variables
+   modeling-constraints
+   modeling-objective-function
+
+.. toctree::
+   :maxdepth: 2
    :caption: Educational resources
 
-   education-mooc
-
+   education
