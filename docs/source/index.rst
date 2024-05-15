@@ -26,8 +26,11 @@ Contents
    :maxdepth: 2
    :caption: Use cases
 
-   usecase-swe
+
+   usecase-backend
    usecase-devops
+   usecase-data
+   usecase-swe
 
 .. toctree::
    :maxdepth: 2
