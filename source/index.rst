@@ -43,11 +43,18 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Modelling basics
+   :caption: Modeling basics
 
    modeling-variables
    modeling-constraints
    modeling-objective-function
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Evaluating and troubleshooting
+
+   eval-testing
+   eval-troubleshooting
 
 .. toctree::
    :maxdepth: 2
