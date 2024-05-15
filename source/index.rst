@@ -43,7 +43,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Evaluating and troubleshooting
+   :caption: Evaluating and troubleshooting models
 
    eval-testing
    eval-troubleshooting
