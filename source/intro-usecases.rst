@@ -10,4 +10,3 @@
    usecases/devops
    usecases/backend
    usecases/data
-   usecases/swe

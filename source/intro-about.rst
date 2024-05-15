@@ -17,8 +17,8 @@ Structure
 ---------
 This repository is divided into the following parts:
 
-- **Use Cases**: Inspiration on how optimization can help solve problems in the daily work of Engineers.
-  It should be enough to read the one page that closest reflects your daily role.
+- **Use Cases**: Inspiration on how optimization can help solve problems in the daily work of a Software Engineer.
+  It should be enough to read the page that closest reflects your daily role.
 - **Prompting**: How to use Generative AI to guide you with writing and solving your first problem.
 - **Modeling Basics**: Create a basic understanding of the components of an optimization model
 - **Evaluation and troubleshooting**: A practical approach to testing and troubleshooting the models
