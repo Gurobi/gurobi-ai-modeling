@@ -40,14 +40,7 @@ Contents
    prompting-tips-pitfalls
    prompting-llm-comparison
    prompting-custom-tools
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Example prompts
-
-   examples-simple
-   examples-intermediate
-   examples-devops
+   prompting-examples
 
 .. toctree::
    :maxdepth: 2
