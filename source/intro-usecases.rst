@@ -2,7 +2,7 @@
 
 .. only:: html
 
-   .. rubric:: Use Cases
+   .. rubric:: Specialties
 
 .. toctree::
    :maxdepth: 1

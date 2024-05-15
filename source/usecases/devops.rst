@@ -9,5 +9,5 @@ efficient CI/CD pipelines and cost-effective cloud resource management.
 Below are a few ideas where optimization can be applied in a typical DevOps Engineer's daily responsibilities:
 
 - **Infrastructure Cost Optimization**: Managing and optimizing cloud infrastructure costs by selecting the most cost-effective configurations and pricing plans for various workloads.
-- **Testing strategy optimization**: Smartly decide which machines to run tests on and what kind of testing environment to simulate (*note: this is how we test at Gurobi!*)
+- **Testing strategy optimization**: Smartly decide which machines to run tests on and what kind of testing environment to simulate.
 - **Backup and Disaster Recovery Planning**: Optimizing the backup schedules and disaster recovery plans to minimize downtime and data loss while balancing the costs of backup storage and recovery infrastructure.

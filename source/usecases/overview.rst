@@ -1,18 +1,11 @@
 Use cases
 =========
 
-This section documents the Gurobi C interface. This manual begins with a
-quick overview of the functions in the interface, and continues with
+In this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
 
-If you are new to the Gurobi Optimizer, we suggest that you start with
-These documents provide concrete examples of how to use the routines described here.
+We think it is important to give some specific examples so users new to optimization know what to look for.
 
-.. rubric:: Environments
-
-The first step in using the Gurobi C optimizer is to create an
-environment, using The environment acts
-as a container for all data associated with a set of optimization runs.
-You will generally only need one environment in your program, even if
-you wish to work with multiple optimization models. Once you are done
-with an environment, you should c
-associated resources.
+.. note::
+   Not only **can** these scenarios be applied in the real-world, they **are** applied in the real world... by us! For
+   example, in our CI/CD process we utilize optimization to smartly select which machines to run tests on and what kind
+   of testing environment to setup. So we are using Gurobi to optimize the development process at Gurobi!

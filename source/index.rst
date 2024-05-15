@@ -31,7 +31,6 @@ Contents
    prompting-tips-pitfalls
    prompting-custom-tools
    prompting-examples
-   prompting-llm-comparison
 
 .. toctree::
    :maxdepth: 2
