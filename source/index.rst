@@ -21,6 +21,7 @@ Contents
    :caption: Introduction
 
    intro-about
+   intro-vs-ml
    intro-usecases
 
 .. toctree::

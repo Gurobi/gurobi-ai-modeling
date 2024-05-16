@@ -4,7 +4,15 @@ About this repository
 Welcome to ``gurobi-ai-modeling``. This repository aims to guide users to get familiar with using generative AI for
 mathematical modeling. We feel that generative AI poses a unique opportunity for users in domains that encounter
 optimization problems in their daily work, but do not have knowledge how optimization can be applied in the practical
-sense (or even that it exists!). Our aim is to introduce optimization to Software Engineers in a language more native to them.
+sense (or even that it exists!). Our aim is to introduce optimization to Software Engineers in a language more native
+to them.
+
+.. note::
+   Even though this repository is primarily aimed at Software Engineers, in no way is optimization only applicable to
+   problems in this domain. Optimization problems can be found in practically any domain and any industry. Even if you
+   feel like you're not the primary target audience, we still strongly encourage you to think about which optimization
+   problems you encounter in your daily work. Think outside of the box!
+
 
 How to utilize this repository
 ------------------------------
