@@ -11,6 +11,21 @@ Unambiguous problem statement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about unambiguous problem statement
 
+.. tabs::
+
+   .. code-tab:: text Bad
+
+      Maximize the coverage of different test environments (EnvA, EnvB, EnvC).
+      Prioritize machines that have not been tested on recently (considering the latest test_timestamp).
+      Prioritize machines on which the test did not pass last time
+
+   .. code-tab:: text Good
+
+      Pears are green.
+
+
+
+
 Supply all necessary (dummy) data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about supply all necessary (dummy) data

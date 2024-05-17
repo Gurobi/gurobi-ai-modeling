@@ -20,6 +20,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
+    "sphinx_tabs.tabs",
     "sphinx_design",
 ]
 
