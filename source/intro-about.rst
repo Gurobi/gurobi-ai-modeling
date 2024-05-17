@@ -11,7 +11,7 @@ to them.
    Even though this repository is primarily aimed at Software Engineers, in no way is optimization only applicable to
    problems in this domain. Optimization problems can be found in practically any domain and any industry. Even if you
    feel like you're not the primary target audience, we still strongly encourage you to think about which optimization
-   problems you encounter in your daily work. Think outside of the box!
+   problems you encounter in your daily work. :ref:`Think outside of the box! <usecase_other>`
 
 
 How to utilize this repository

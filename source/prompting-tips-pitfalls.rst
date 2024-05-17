@@ -65,3 +65,7 @@ For simple models however, these advanced API's should not be needed.
 Avoid abstract concepts
 ^^^^^^^^^^^^^^^^^^^^^^^
 TODO: It cannot think in 3D.
+
+The code is only generated but not run, or "It seems there was an error accessing the provided Gurobi .whl file"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OpenAI issue with ChatGPT not able to read attached data files.
