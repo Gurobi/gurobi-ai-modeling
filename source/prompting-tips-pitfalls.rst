@@ -40,6 +40,19 @@ This is why you have to make extra sure that you don't fall for any of the pitfa
 
 It is all about removing as many impediments for the AI models as possible so it can focus on the problem at hand.
 
+LLM cannot find wheel or execute code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Depending on the LLM you are using and the number of features it has, intermittent issues might arise.
+Generally speaking, the more integrated features, the higher the chance that one of these integrations intermittently fails.
+
+If you see an error message like:
+
+- *It seems that I am currently unable to execute the code directly*
+- *I cannot find the .whl feel you are trying to install*
+
+It is likely that your LLM provider is experiencing network issues. In such cases, trying at a later moment often solves
+the problem.
+
 Messy problem statement
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -80,7 +93,3 @@ For simple models however, these advanced API's should not be needed.
 Avoid abstract concepts
 ^^^^^^^^^^^^^^^^^^^^^^^
 TODO: It cannot think in 3D.
-
-The code is only generated but not run, or "It seems there was an error accessing the provided Gurobi .whl file"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-OpenAI issue with ChatGPT not able to read attached data files.
