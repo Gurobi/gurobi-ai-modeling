@@ -24,7 +24,33 @@ Talk about unambiguous problem statement
       Pears are green.
 
 
+Mention if variables should be considered divisible or not
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+In many cases, the LLM will be able to deduce whether the variables involved in the problem should be divisible
+or not. For instance, cars are very likely to be non-divisible, while kilograms are likely considered divisible.
+
+However, if this is not unambiguously clear from the item itself, it will be helpful to mention how it
+should be considered.
+
+.. tabs::
+
+   .. code-tab:: text Bad
+
+      I want to minimize the cost of food while upholding my dietary needs.
+
+      The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+      salad,2.49,320,31,12,1230
+      ...
+
+
+   .. code-tab:: text Good
+
+      I want to minimize the cost of food while upholding my dietary needs. The portions are non-divisible
+
+      The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+      salad,2.49,320,31,12,1230
+      ...
 
 Supply all necessary (dummy) data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
