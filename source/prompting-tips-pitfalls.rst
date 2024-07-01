@@ -13,19 +13,23 @@ Talk about unambiguous problem statement
 
 .. tabs::
 
-   .. code-tab:: text Bad
+   .. tab:: Bad
 
-      Maximize the coverage of different test environments (EnvA, EnvB, EnvC).
-      Prioritize machines that have not been tested on recently (considering the latest test_timestamp).
-      Prioritize machines on which the test did not pass last time
+      .. code-block:: text
 
-   .. code-tab:: text Good
+         Maximize the coverage of different test environments (EnvA, EnvB, EnvC).
+         Prioritize machines that have not been tested on recently (considering the latest test_timestamp).
+         Prioritize machines on which the test did not pass last time
 
-      Pears are green.
+   .. tab:: Good
+
+      .. code-block:: text
+
+         Pears are green.
 
 
-Mention if variables should be considered divisible or not
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Should variables be considered divisible or not?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In many cases, the LLM will be able to deduce whether the variables involved in the problem should be divisible
 or not. For instance, cars are very likely to be non-divisible, while kilograms are likely considered divisible.
@@ -35,25 +39,29 @@ should be considered.
 
 .. tabs::
 
-   .. code-tab:: text Bad
+   .. tab:: Bad
 
-      I want to minimize the cost of food while upholding my dietary needs.
+      .. code-block:: text
 
-      The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
-      salad,2.49,320,31,12,1230
+         I want to minimize the cost of food while upholding my dietary needs.
 
-      ...
+         The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+         salad,2.49,320,31,12,1230
+
+         ...
 
 
-   .. code-tab:: text Good
+   .. tab:: Good
 
-      I want to minimize the cost of food while upholding my dietary needs.
-      The portions are non-divisible.
+      .. code-block:: text
 
-      The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
-      salad,2.49,320,31,12,1230
+         I want to minimize the cost of food while upholding my dietary needs.
+         Portions are non-divisible.
 
-      ...
+         The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+         salad,2.49,320,31,12,1230
+
+         ...
 
 Avoid unnecessary words or statements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,20 +73,24 @@ data can be sent via any route through the nodes :math:`\{0,1,2,3,4,5\}`:
 
 .. tabs::
 
-   .. code-tab:: text Bad
+   .. tab:: Bad
 
-      ...
+      .. code-block:: text
 
-      The objective is to find out the maximum amount of data that can be transferred
-      from Point 0 (Data Center) to Point 5 (User Hub) per second.
+         ...
+
+         The objective is to find out the maximum amount of data that can be
+         transferred from Point 0 (Data Center) to Point 5 (User Hub) per second.
 
 
-   .. code-tab:: text Good
+   .. tab:: Good
 
-      ...
+      .. code-block:: text
 
-      The objective is to find out the maximum amount of data that can be transferred
-      to Point 5 (User Hub) per second.
+         ...
+
+         The objective is to find out the maximum amount of data that can be
+         transferred to Point 5 (User Hub) per second.
 
 For a human, the objective should be clear for either version: maximize the flow into Point 5. A machine might have more
 difficulty with it and consider multiple options:
@@ -195,21 +207,24 @@ fixed by making the following change:
 
 .. tabs::
 
-   .. code-tab:: text Bad
+   .. tab:: Bad
 
-      Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
-      What would be the minimum cost to achieve this?
+      .. code-block:: text
 
-      ...
+         Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
+         What would be the minimum cost to achieve this?
+
+         ...
 
 
-   .. code-tab:: text Good
+   .. tab:: Good
 
-      Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
-      What would be the minimum cost to achieve this?
-      Note that supply and demand are not equal
+      .. code-block:: text
 
-      ...
+         Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
+         What would be the minimum cost to achieve this? Note that supply and demand are not equal.
+
+         ...
 
 Avoid abstract concepts
 ^^^^^^^^^^^^^^^^^^^^^^^
