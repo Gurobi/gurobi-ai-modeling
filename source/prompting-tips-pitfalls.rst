@@ -55,6 +55,44 @@ should be considered.
 
       ...
 
+Avoid unnecessary words or statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you think about how an LLM works, it's all about predicting the next token based on what was given before. The
+implication of this is that one should avoid adding unnecessary words lest not to confuse the LLM. Let's take an
+example of a bad and good pattern. The following shows a description of the objective of a data flow problem where
+data can be sent via any route through the nodes :math:`\{0,1,2,3,4,5\}`:
+
+.. tabs::
+
+   .. code-tab:: text Bad
+
+      ...
+
+      The objective is to find out the maximum amount of data that can be transferred
+      from Point 0 (Data Center) to Point 5 (User Hub) per second.
+
+
+   .. code-tab:: text Good
+
+      ...
+
+      The objective is to find out the maximum amount of data that can be transferred
+      to Point 5 (User Hub) per second.
+
+For a human, the objective should be clear for either version: maximize the flow into Point 5. A machine might have more
+difficulty with it and consider multiple options:
+
+- Maximize for Point 5 inflow?
+- Maximize for Point 0 outflow?
+- Maximize the flow from 0 to 5 and disregard the indirect flows into 5?
+
+Even though the latter examples are clearly wrong and an LLM should be able to account for it, it is exactly these kind
+of small nuggets of confusion that compound together to an output that is overall less precise. Unfortunately, the
+current generation of LLM's will not tell you the degree of confusion under which they are generating a response.
+
+A very simple solution for this is proposed in the Good example: **keep things simple**.
+
 Supply all necessary (dummy) data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about supply all necessary (dummy) data
