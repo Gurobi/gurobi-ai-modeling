@@ -153,7 +153,12 @@ Too many constraints
 
 Too much inline data
 """"""""""""""""""""
-Too much inline data
+Our experimentation found that LLM's can work with a surprisingly wide variety of formatted data, csv, markdown, LaTeX,
+and others it can often read with no problem. Where it does start to become problematic is too much inline data as they
+represent tokens that it will need to be taken into account into the full context.
+
+Our recommendation is that if you have more than 10 lines of data, it should be stored into a data file that is uploaded
+with the prompt.
 
 Too many different data collections
 """""""""""""""""""""""""""""""""""
@@ -229,3 +234,23 @@ fixed by making the following change:
 Avoid abstract concepts
 ^^^^^^^^^^^^^^^^^^^^^^^
 TODO: It cannot think in 3D.
+
+Temporal complexity
+"""""""""""""""""""
+Similar to the previous point, our experiments have found that the current generation LLM's find it
+challenging to deal with specific problems that include multiple periods of time, where one period
+accumulates something that rolls over to the next month.
+
+Take for instance the following problem description:
+
+.. code-block:: console
+
+   A person has a capital of $300,000 and has 4 investment projects to choose from for the next
+   three years.
+   At the beginning of each year, money can be allocated to any of the 4 available projects.
+   Investment returns that are released at the end of a year should be reinvested in the next year.
+
+   ...
+
+This description will generate all kinds of faulty models. We have not yet found a way of
+making the LLM understand how it should be modelled.
