@@ -70,7 +70,32 @@ The prompt to generate a working model could look as follows:
 
 .. code-block:: console
 
-   test
+   Problem description:
+   A DevOps engineer is tasked with optimizing the cloud infrastructure for a company that runs a variety of Docker
+   applications across multiple servers.
+
+   Objective: Minimize the monthly cost of running the applications.
+
+   Constraints:
+   - CPU Constraint: The total CPU requirement of applications assigned to each server must not exceed the server's CPU capacity.
+   - RAM Constraint: The total RAM requirement of applications assigned to each server must not exceed the server's RAM capacity.
+   - Application Allocation: All apps need to be scheduled and a server can host multiple apps.
+
+   Data:
+   Applications:
+   Application,CPU Requirement (cores),RAM Requirement (GB)
+   App1,2,4
+   App2,1,2
+   App3,4,8
+   App4,3,6
+   App5,2,3
+
+   Server Types:
+   Server Type,Monthly Cost ($),CPU Capacity (cores),RAM Capacity (GB)
+   Small,100,4,8
+   Medium,200,8,16
+   Large,400,16,32
+
 
 Backup and Disaster Recovery Planning
 -------------------------------------
