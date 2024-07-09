@@ -30,7 +30,6 @@ Talk about unambiguous problem statement
 
 Should variables be considered divisible or not?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 In many cases, the LLM will be able to deduce whether the variables involved in the problem should be divisible
 or not. For instance, cars are very likely to be non-divisible, while kilograms are likely considered divisible.
 
@@ -65,7 +64,6 @@ should be considered.
 
 Avoid unnecessary words or statements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 If you think about how an LLM works, it's all about predicting the next token based on what was given before. The
 implication of this is that one should avoid adding unnecessary words lest not to confuse the LLM. Let's take an
 example of a bad and good pattern. The following shows a description of the objective of a data flow problem where
@@ -109,15 +107,28 @@ Supply all necessary (dummy) data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about supply all necessary (dummy) data
 
+Instruct the LLM to suppress logging output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
+varying the value of a constant (in a strategy called an "efficient frontier"). We show this in the
+:ref:`portfolio <portfolio>` example.
+
+This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
+which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to
+adverse effects. For such cases we recommend instructing the LLM to suppress logging output (which should add
+``model.setParam("OutputFlag", 0)`` to the resulting code).
+
+
+
 .. _pitfalls:
 
 Pitfalls
 ----------------------
 
-The one thing to always keep in mind is that almost never will the AI model express any doubts about interpreting your question. It will make assumptions and when generating an answer will try to sound authoritative.
+The one thing to always keep in mind is that almost never will the LLM express any doubts about interpreting your question. It will make assumptions and when generating an answer will try to sound authoritative.
 This is why you have to make extra sure that you don't fall for any of the pitfalls that lead to bad results, since it might not be obvious where the error lies that tripped up the model.
 
-It is all about removing as many impediments for the AI models as possible so it can focus on the problem at hand.
+It is all about removing as many impediments for the LLM as possible, so it can focus on the problem at hand.
 
 LLM cannot find wheel or execute code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,7 +182,7 @@ Too much preprocessing on the data
 Advanced Gurobipy API's
 ^^^^^^^^^^^^^^^^^^^^^^^
 More training is done on the earlier ``gurobipy`` API's. This is not a problem since the ``gurobipy`` API is quite stable.
-However, it does mean that the AI model is less prone to using the newest advanced API's which allow for building models with more complex constraints.
+However, it does mean that the LLM is less prone to using the newest advanced API's which allow for building models with more complex constraints.
 For simple models however, these advanced API's should not be needed.
 
 Supply/demand assumptions

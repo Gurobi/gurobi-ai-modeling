@@ -6,8 +6,7 @@ General - Simple
 Diet
 ------------
 
-Builds and solves the classic diet problem. Demonstrates model construction and simple model modification – after the initial model is solved, a constraint is added to limit the number of dairy servings.
-A Python version of this example can be found `here <https://docs.gurobi.com/projects/examples/en/stable/examples/python/diet.html>`__.
+Builds and solves the classic diet problem. A full-fledged Python version of this problem can be found `here <https://docs.gurobi.com/projects/examples/en/current/examples/python/diet.html>`__.
 
 The prompt to generate a working model could look as follows:
 
@@ -15,12 +14,15 @@ The prompt to generate a working model could look as follows:
 
    I want to minimize the cost of food while upholding my dietary needs:
 
-   I want to eat between 1800 and 2200 calories per day
-   At least 91 gram of protein
-   At most 65 gram of fat
-   At most 1779 mg of sodium
+   I want to eat between 1800 and 2200 calories per day.
+   At least 91 gram of protein.
+   At most 65 gram of fat.
+   At most 1779 mg of sodium.
+   The portions are non-divisible.
 
-   The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+   I want to choose between the following foods:
+
+   food,price,calories,protein,fat,sodium
    hamburger,2.49,410,24,26,730
    chicken,2.89,420,32,10,1190
    hot dog,1.50,560,20,32,1800
@@ -31,19 +33,24 @@ The prompt to generate a working model could look as follows:
    milk,0.89,100,8,2.5,125
    ice cream,1.59,330,8,10,180
 
+
 .. _facility:
 
 Facility
 ----------------
 
-Simple facility location model: given a set of plants and a set of warehouses, with transportation costs between them, this example finds the least expensive set of plants to open in order to satisfy product demand. This example demonstrates the use of MIP starts — the example computes an initial, heuristic solution and passes that solution to the MIP solver.
-A Python version of this example can be found `here <https://docs.gurobi.com/projects/examples/en/stable/examples/python/facility.html>`__.
+Simple facility location model: given a set of plants and a set of warehouses, with transportation costs between them,
+this example finds the least expensive set of plants to open in order to satisfy product demand.
+A full-fledged Python version of this problem can be found `here <https://docs.gurobi.com/projects/examples/en/current/examples/python/facility.html>`__.
 
 .. code-block:: console
 
-   A company currently ships its product from 5 plants to 4 warehouses. It is considering closing one or more plants to reduce cost. What plant(s) should the company close, in order to minimize transportation and fixed costs?
+   A company currently ships its product from 5 plants to 4 warehouses.
+   It is considering closing one or more plants to reduce cost.
+   What plant(s) should the company close, in order to minimize transportation and fixed costs?
 
-   Transportation Costs (per 1000 products)
+   Transportation Costs (per 1000 products):
+
       Plant 1 	Plant 2 	Plant 3 	Plant 4 	Plant 5
    Warehouse 1 	$4,000 	$2,000 	$3,000 	$2,500 	$4,500
    Warehouse 2 	$2,500 	$2,600 	$3,400 	$3,000 	$4,000
