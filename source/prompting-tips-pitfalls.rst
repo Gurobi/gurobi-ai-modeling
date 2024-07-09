@@ -99,7 +99,7 @@ difficulty with it and consider multiple options:
 
 Even though the latter examples are clearly wrong and an LLM should be able to account for it, it is exactly these kind
 of small nuggets of confusion that compound together to an output that is overall less precise. Unfortunately, the
-current generation of LLM's will not tell you the degree of confusion under which they are generating a response.
+current generation of LLMs will not tell you the degree of confusion under which they are generating a response.
 
 A very simple solution for this is proposed in the Good example: **keep things simple**.
 
@@ -164,7 +164,7 @@ Too many constraints
 
 Too much inline data
 """"""""""""""""""""
-Our experimentation found that LLM's can work with a surprisingly wide variety of formatted data, csv, markdown, LaTeX,
+Our experimentation found that LLMs can work with a surprisingly wide variety of formatted data, csv, markdown, LaTeX,
 and others it can often read with no problem. Where it does start to become problematic is too much inline data as they
 represent tokens that it will need to be taken into account into the full context.
 
@@ -248,7 +248,7 @@ TODO: It cannot think in 3D.
 
 Temporal complexity
 """""""""""""""""""
-Similar to the previous point, our experiments have found that the current generation LLM's find it
+Similar to the previous point, our experiments have found that the current generation LLMs find it
 challenging to deal with specific problems that include multiple periods of time, where one period
 accumulates something that rolls over to the next month.
 

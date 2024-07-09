@@ -33,4 +33,10 @@ This repository is divided into the following parts:
 
 What to take away from this
 ---------------------------
-todo: after getting your feet wet, observe the current processes and look for opportunities where optimization can be applied.
+There are certainly limits to the current generation of LLMs when it comes to their ability to interpret
+problem descriptions and generating well defined mathematical models. However, we hope that exercises in this
+repository give you an idea of how optimization can be applied to your professional domain and daily problems you might
+encounter.
+
+Once you feel you have reached the limits of the capabilities of the current-gen LLMs, you might feel confident enough
+to go out and start building models by your own hands.

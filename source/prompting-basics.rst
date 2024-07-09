@@ -11,7 +11,7 @@ Instruct the LLM to act as a persona
 
 Multi-step reasoning
 ----------------------
-If one were to write a prompt that describes an optimization problem, the LLM can try to tackle it in a number of ways. The nature of LLM's is
+If one were to write a prompt that describes an optimization problem, the LLM can try to tackle it in a number of ways. The nature of LLMs is
 such that the approach it takes will be different every time, with one being more successful than the other. Our goal should be
 to achieve a prompt that is as effective and consistent as possible. To achieve this, we can nudge the LLM by including instructions for a successfully approach.
 

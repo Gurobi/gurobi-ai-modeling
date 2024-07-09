@@ -12,7 +12,7 @@ We have published a `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-optimization-
 Prompt Template
 """""""""""""""
 
-We have seen a wide range of different problem description prompts that LLM's have successfully translated into
+We have seen a wide range of different problem description prompts that LLMs have successfully translated into
 mathematical programs, even prompts that violate multiple of the  :ref:`tips and pitfalls <tips>` we mentioned earlier.
 
 However, we want to stress the importance of taking a structured approach as this leads to a more reliable output as
