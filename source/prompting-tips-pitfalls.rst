@@ -92,9 +92,9 @@ data can be sent via any route through the nodes :math:`\{0,1,2,3,4,5\}`:
 For a human, the objective should be clear for either version: maximize the flow into Point 5. A machine might have more
 difficulty with it and consider multiple options:
 
-- Maximize for Point 5 inflow?
-- Maximize for Point 0 outflow?
-- Maximize the flow from 0 to 5 and disregard the indirect flows into 5?
+#. Maximize for Point 5 inflow?
+#. Maximize for Point 0 outflow?
+#. Maximize the flow from 0 to 5 and disregard the indirect flows into 5?
 
 Even though the latter examples are clearly wrong and an LLM should be able to account for it, it is exactly these kind
 of small nuggets of confusion that compound together to an output that is overall less precise. Unfortunately, the
@@ -122,16 +122,12 @@ that can execute it. However, it can happen that code is generated without it be
 
 This can mean two things:
 
-1. The LLM thinks it can get away with just generating code and not executing it, letting you execute the code by
-yourself on your own machine. The solution to this, often is to just prompt the LLM to: "execute the code", and it might
-just be prodded into taking the code it just generated and running it. However, this does not always happen and:
+1. The LLM thinks it can get away with just generating code and not executing it, assuming you will execute the code on your own machine. In many cases, the solution to this is to nudge the LLM to: ``execute the code``.
+2. The LLM is experiencing technical difficulties and cannot access its code execution environment. In this case telling it to ``execute the code`` might result in a response like ``It seems that I am currently unable to execute the code directly``. It can also happen that it is not able to do this introspection and it will ignore your request and blindly regenerating the code again with, again, skipping the execution. It could even emit an error message like:
 
-2. The LLM is experiencing technical difficulties and cannot access its code execution environment. In this case telling
-it to "execute the code" might result in a response that it is not able to execute the code at this moment. It can
-also happen that it is not able to do this introspection and it will ignore your request and blindly regenerating the
-code again with, again, skipping the execution. It could even emit an error message like:
+.. code-block:: console
 
-- *It seems that I am currently unable to execute the code directly*
+   It seems that I am currently unable to execute the code directly
 
 Both behaviors listed in 2. are often solved by either starting a new conversation and trying again, or waiting for a
 while until the issues are resolved.
@@ -141,7 +137,10 @@ The LLM cannot install the wheel or cannot read attached data files
 If the LLM prompts you to install a wheel or attach a data file which you have already attached, it is likely
 an intermittent system issue. The LLM could also tell you that it is not able find the required file:
 
-- *I cannot find the .whl feel you are trying to install*
+.. code-block:: console
+
+   I cannot find the .whl feel you are trying to install
+
 
 In many cases can be solved by starting a new chat window, or, as stated previously, wait for the system issue to be
 resolved.
