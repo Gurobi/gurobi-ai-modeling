@@ -107,41 +107,54 @@ Supply all necessary (dummy) data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about supply all necessary (dummy) data
 
-Instruct the LLM to suppress logging output
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
-varying the value of a constant (in a strategy called an "efficient frontier"). We show this in the
-:ref:`portfolio <portfolio>` example.
-
-This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
-which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to
-adverse effects. For such cases we recommend instructing the LLM to suppress logging output (which should add
-``model.setParam("OutputFlag", 0)`` to the resulting code).
-
-
 
 .. _pitfalls:
 
-Pitfalls
-----------------------
+Technical Issues
+----------------
+Working with LLM is currently fraught with inconsistent technical behavior. For instance, ChatGPT
+has a number of very cool integrations that we can make use of, however, very often they intermittently
+don't work. Often the best remedy is to try again, or in some cases, just come back later.
 
+LLM is generating code but not executing it
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When you instruct the LLM to execute code, it should be able to comply and generate code into an environment
+that can execute it. However, it can happen that code is generated without it being executed.
+
+This can mean two things:
+
+1. The LLM thinks it can get away with just generating code and not executing it, letting you execute the code by
+yourself on your own machine. The solution to this, often is to just prompt the LLM to: "execute the code", and it might
+just be prodded into taking the code it just generated and running it. However, this does not always happen and:
+
+2. The LLM is experiencing technical difficulties and cannot access its code execution environment. In this case telling
+it to "execute the code" might result in a response that it is not able to execute the code at this moment. It can
+also happen that it is not able to do this introspection and it will ignore your request and blindly regenerating the
+code again with, again, skipping the execution. It could even emit an error message like:
+
+- *It seems that I am currently unable to execute the code directly*
+
+Both behaviors listed in 2. are often solved by either starting a new conversation and trying again, or waiting for a
+while until the issues are resolved.
+
+The LLM cannot install the wheel or cannot read attached data files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If the LLM prompts you to install a wheel or attach a data file which you have already attached, it is likely
+an intermittent system issue. The LLM could also tell you that it is not able find the required file:
+
+- *I cannot find the .whl feel you are trying to install*
+
+In many cases can be solved by starting a new chat window, or, as stated previously, wait for the system issue to be
+resolved.
+
+Modelling Pitfalls
+------------------
 The one thing to always keep in mind is that almost never will the LLM express any doubts about interpreting your question. It will make assumptions and when generating an answer will try to sound authoritative.
 This is why you have to make extra sure that you don't fall for any of the pitfalls that lead to bad results, since it might not be obvious where the error lies that tripped up the model.
 
 It is all about removing as many impediments for the LLM as possible, so it can focus on the problem at hand.
 
-LLM cannot find wheel or execute code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Depending on the LLM you are using and the number of features it has, intermittent issues might arise.
-Generally speaking, the more integrated features, the higher the chance that one of these integrations intermittently fails.
 
-If you see an error message like:
-
-- *It seems that I am currently unable to execute the code directly*
-- *I cannot find the .whl feel you are trying to install*
-
-It is likely that your LLM provider is experiencing network issues. In such cases, trying at a later moment often solves
-the problem.
 
 Messy problem statement
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -184,6 +197,17 @@ Advanced Gurobipy API's
 More training is done on the earlier ``gurobipy`` API's. This is not a problem since the ``gurobipy`` API is quite stable.
 However, it does mean that the LLM is less prone to using the newest advanced API's which allow for building models with more complex constraints.
 For simple models however, these advanced API's should not be needed.
+
+Too much gurobipy output
+^^^^^^^^^^^^^^^^^^^^^^^^
+In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
+varying the value of a constant (in a strategy called an "efficient frontier"). We show this in the
+:ref:`portfolio <portfolio>` example.
+
+This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
+which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to
+adverse effects. For such cases we recommend instructing the LLM to suppress logging output (which should add
+``model.setParam("OutputFlag", 0)`` to the resulting code).
 
 Supply/demand assumptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^

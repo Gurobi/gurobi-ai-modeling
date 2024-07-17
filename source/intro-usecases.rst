@@ -1,7 +1,7 @@
 Use cases
 =========
 
-In this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
+For this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
 
 We think it is important to give some specific examples so users new to optimization know what to look for.
 
@@ -17,9 +17,13 @@ Specialties
 DevOps Engineer
 ^^^^^^^^^^^^^^^
 As a DevOps Engineer you are likely encountering optimization problems on a frequent basis. Resources, be it cloud or
-on-prem are never infinite, even though we would like it to be. Mixed-Integer Programming (MIP) and Linear Programming
-(LP) models can help enhance resource allocation, task scheduling, and overall system performance, leading to more
-efficient CI/CD pipelines and cost-effective cloud resource management.
+on-prem are never infinite as they can be constrained by, for instance, cost or availability.
+
+Mixed-Integer Programming (MIP) and Linear Programming (LP) models can help enhance resource allocation,
+task scheduling, and overall system performance, leading to more efficient CI/CD pipelines and cost-effective cloud
+resource management. For instance, think about the following questions:
+
+-
 
 Backend Engineer
 ^^^^^^^^^^^^^^^^
