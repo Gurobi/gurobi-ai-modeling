@@ -30,6 +30,7 @@ Contents
 
    prompting-basics
    prompting-tips-pitfalls
+   prompting-case-studies
    prompting-custom-tools
    prompting-examples
 

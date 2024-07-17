@@ -6,7 +6,6 @@ Tips and pitfalls
 Tips
 -------
 
-
 Unambiguous problem statement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Talk about unambiguous problem statement
@@ -155,7 +154,6 @@ This is why you have to make extra sure that you don't fall for any of the pitfa
 It is all about removing as many impediments for the LLM as possible, so it can focus on the problem at hand.
 
 
-
 Messy problem statement
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -209,83 +207,6 @@ which can run the code within Code Analysis blocks, this will consume a large nu
 adverse effects. For such cases we recommend instructing the LLM to suppress logging output (which should add
 ``model.setParam("OutputFlag", 0)`` to the resulting code).
 
-Supply/demand assumptions
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Some problems are dealing with supply/demand in one form or another. From the information the LLM has been trained on,
-it might be prone to assume that supply and demand should be equal. Since this is often not the case, this can be a
-too strict of an assumption and could cause the model to become infeasible.
-
-For instance, the following problem (partially shown):
-
-.. code-block:: console
-
-   Imagine you are coordinating a logistics effort to redistribute essential supplies among seven regional distribution centers. Each center starts with a specific quantity of supplies but has different needs to ensure smooth operations across the regions.
-
-   Here's the initial setup:
-
-   - Distribution Center 1 has 97 units but needs 119 units.
-   - Distribution Center 2 has 458 units but needs 275 units.
-   - Distribution Center 3 has 473 units but needs only 36 units.
-
-   ...
-
-The LLM might propose the following constraint:
-
-.. epigraph::
-
-    **Constraints:**
-
-    1. Balance constraints: The amount of supplies in each region after transfers should be equal to the demand.
-
-    .. math::
-
-        \sum_{j=1}^{7} x_{ij} - \sum_{j=1}^{7} x_{ji} = s_i - d_i \quad \forall i \in \{1, \ldots, 7\}
-
-Even if you cannot read the equation, the description describes what it does: it assumes that supply and demand are
-perfectly balanced. This means that if there is more supply than demand, the model will be infeasible. The above can be
-fixed by making the following change:
-
-.. tabs::
-
-   .. tab:: Bad
-
-      .. code-block:: text
-
-         Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
-         What would be the minimum cost to achieve this?
-
-         ...
-
-
-   .. tab:: Good
-
-      .. code-block:: text
-
-         Your task is to ensure each distribution center has the supplies it needs while minimizing the total cost of redistribution.
-         What would be the minimum cost to achieve this? Note that supply and demand are not equal.
-
-         ...
-
 Avoid abstract concepts
 ^^^^^^^^^^^^^^^^^^^^^^^
 TODO: It cannot think in 3D.
-
-Temporal complexity
-"""""""""""""""""""
-Similar to the previous point, our experiments have found that the current generation LLMs find it
-challenging to deal with specific problems that include multiple periods of time, where one period
-accumulates something that rolls over to the next month.
-
-Take for instance the following problem description:
-
-.. code-block:: console
-
-   A person has a capital of $300,000 and has 4 investment projects to choose from for the next
-   three years.
-   At the beginning of each year, money can be allocated to any of the 4 available projects.
-   Investment returns that are released at the end of a year should be reinvested in the next year.
-
-   ...
-
-This description will generate all kinds of faulty models. We have not yet found a way of
-making the LLM understand how it should be modelled.
