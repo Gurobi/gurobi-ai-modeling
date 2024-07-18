@@ -1,0 +1,11 @@
+You are a DevOps Engineer responsible for developing an optimized incident response plan to prioritize critical systems and allocate resources efficiently during outages.
+You need to plan the recovery of all 60 interconnected systems as far as possible.
+Each system has dependencies on other systems, and only systems with higher numbers (customer-facing systems) have priority scores.
+
+The goal is to get systems with a priority score up and running as quickly as possible. We start at t=0, and the time required for every recovery is indicated by "Recovery Time (minutes)".
+As time goes by, value of each system goes down. The value of a system at time t can be calculated via the following function:
+V(t)=V0⋅e^−0.0398t with t being the time the system has finished recovering and V0 being the initial priority score.
+
+Maximize the total of priority scores given the above function.
+
+The data is provided in the enclosed json file.
