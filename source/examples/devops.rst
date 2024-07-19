@@ -1,25 +1,6 @@
 DevOps Engineer
 ===============
 
-Assigning workloads
--------------------
-
-Having a limited number of machines to schedule workloads on, assign the jobs so as to
-minimize the number of machines impacted.
-
-.. tabs::
-
-   .. tab:: Prompt
-
-      .. literalinclude:: content/devops_assigning_workloads.txt
-         :language: text
-
-   .. tab:: Example generated model
-
-      .. literalinclude:: content/devops_assigning_workloads.py
-         :language: python
-
-
 
 Scheduling deployments
 ----------------------
@@ -42,6 +23,31 @@ that customers are least likely to be impacted.
 
       .. literalinclude:: content/devops_scheduling_deployments.py
          :language: python
+
+
+Assigning workloads
+-------------------
+
+.. image:: images/devops_assigning_workloads.png
+   :alt: Assigning workloads
+   :align: center
+
+Having a limited number of machines to schedule workloads on, assign the jobs so as to
+minimize the number of machines impacted.
+
+.. tabs::
+
+   .. tab:: Prompt
+
+      .. literalinclude:: content/devops_assigning_workloads.txt
+         :language: text
+
+   .. tab:: Example generated model
+
+      .. literalinclude:: content/devops_assigning_workloads.py
+         :language: python
+
+
 
 
 Incident Response Planning
