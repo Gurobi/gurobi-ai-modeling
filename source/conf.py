@@ -16,13 +16,14 @@ version = "0.1.0"
 # -- General configuration
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax',
+    "sphinx.ext.duration",
+    "sphinx.ext.doctest",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
     "sphinx_tabs.tabs",
     "sphinx_design",
+    "sphinx_copybutton",
 ]
 
 intersphinx_mapping = {
