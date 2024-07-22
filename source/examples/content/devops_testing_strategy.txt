@@ -1,0 +1,14 @@
+A DevOps Engineer wants to optimize the testing strategy for a software application. The application needs to be tested on four operating systems: Linux64, Armlinux64, MacOS, and Windows. Each operating system must be tested once. There are 10 testing environments available, numbered from 1 to 10, and each OS must be assigned a unique testing environment. Additionally, there are 40 testing machines, with 10 machines dedicated to each OS. Each machine can only handle a subset of the testing environments.
+
+The goal is to find the optimal combination of {machine, testing environment} for each operating system to maximize the total score. The score for each {machine, testing environment} combination is calculated by taking the number of days since the Testing Date and then multiplying that number by its modifier.
+
+Objective: Maximize the total score.
+
+Constraints:
+
+- Each operating system (Linux64, Armlinux64, MacOS, Windows) must be tested exactly once on one of their OS-specific machines.
+- Each testing environment can be chosen at most once.
+- Each {machine, testing environment} combination can only be chosen if the machine supports the given environment.
+
+Use the data from the enclosed .csv file with the following columns: OS,Testing Environment,Machine,Testing Date,Modifier
+The data also show which combination of {machine, testing environment} are available.
