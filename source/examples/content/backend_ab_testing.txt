@@ -1,0 +1,17 @@
+You are a backend engineer at a software company preparing to conduct A/B tests on a new feature. The goal is to determine the optimal selection of three out of ten possible test variants (V1 to V10) and allocate different user segments to these chosen variants.
+
+Objective:
+Minimize the total user disruption
+
+    Selection constraint: Choose three out of ten possible variants.
+    Minimum users for statistical significance: Each chosen variant must have at least 100 users in each user segment.
+    Total users: Make all users from each segment are allocated to the variants that end up being chosen.
+    Balance constraint: Within each user segment, the difference of allocation between any two variants cannot be more than 300
+
+Data:
+
+| User Segment | Total Users | Disruption in V1 | Disruption in V2 | Disruption in V3 | Disruption in V4 | Disruption in V5 | Disruption in V6 | Disruption in V7 | Disruption in V8 | Disruption in V9 | Disruption in V10 |
+|--------------|-------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+| New Users | 1000 | 3 | 4 | 2 | 5 | 3 | 4 | 2 | 3 | 5 | 4 |
+| Regular Users| 1500 | 2 | 1 | 3 | 2 | 1 | 2 | 3 | 1 | 2 | 3 |
+| Power Users | 500 | 1 | 2 | 1 | 3 | 2 | 1 | 1 | 2 | 3 | 2 |
