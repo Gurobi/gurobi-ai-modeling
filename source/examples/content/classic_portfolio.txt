@@ -1,0 +1,12 @@
+I have data on some stocks that I enclosed in a csv.
+
+The columns are the stocks and rows are their value at different time points.
+
+Step 1: I want to calculate the minimum risk portfolio
+Step 2: Solve for efficient frontier by varying the expected return.
+Step 3: Create a plot with the following
+  - Volatility versus expected return for individual stocks (in blue dots) and include an annotation with the stock name
+  - Volatility versus expected return for minimum risk portfolio (in green dots)
+  - Efficient frontier showing the volatility (green line)
+
+Make sure you set: `model.setParam("OutputFlag", 0)`, to suppress Gurobi output.
