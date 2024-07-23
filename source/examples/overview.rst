@@ -1,18 +1,10 @@
 Example prompts
 ===============
 
-This section documents the Gurobi C interface. This manual begins with a
-quick overview of the functions in the interface, and continues with
+In the following pages we demonstrate some example applications from a small number of personas. The example prompts
+have been proven to work and can thus be used as a template for defining your own problems.
 
-If you are new to the Gurobi Optimizer, we suggest that you start with
-These documents provide concrete examples of how to use the routines described here.
-
-.. rubric:: Environments
-
-The first step in using the Gurobi C optimizer is to create an
-environment, using The environment acts
-as a container for all data associated with a set of optimization runs.
-You will generally only need one environment in your program, even if
-you wish to work with multiple optimization models. Once you are done
-with an environment, you should c
-associated resources.
+Note that the "Example generated model" outputs do not necessarily reflect Gurobi's best modelling practices. It is
+merely an example of what the LLM generated for us. This example should get you on your way to solving your first
+optimizing problem. As you get more comfortable with the ``gurobipy`` API, in time, you will learn how to construct
+better models.

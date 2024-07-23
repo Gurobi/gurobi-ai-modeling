@@ -1,6 +1,32 @@
 Backend Engineer
 ================
 
+Ad Selection
+------------
+
+.. image:: images/backend_ad_selection.png
+   :alt: Ad Selection
+   :align: center
+
+Select which ads should be run on your website to maximize revenue, taking into account the associated cost and user experience.
+
+.. tabs::
+
+   .. tab:: Prompt
+
+      .. literalinclude:: content/backend_ad_selection.txt
+         :language: text
+
+   .. tab:: Data
+
+      .. literalinclude:: content/backend_ad_selection.csv
+         :language: text
+
+   .. tab:: Example generated model
+
+      .. literalinclude:: content/backend_ad_selection.py
+         :language: python
+
 A/B Testing
 ----------------------
 
@@ -23,11 +49,11 @@ upholding statistical significance.
       .. literalinclude:: content/backend_ab_testing.py
          :language: python
 
-Network Routing
-----------------------
+Backend API Routing
+-------------------
 
 .. image:: images/backend_network_routing.png
-   :alt: Network Routing
+   :alt: Backend API Routing
    :align: center
 
 Route the network from end-users to first and second-degree internal servers, minimizing latency while maintaining low cost and a reliability SLA.
@@ -36,12 +62,12 @@ Route the network from end-users to first and second-degree internal servers, mi
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/backend_ab_testing.txt
+      .. literalinclude:: content/backend_network_routing.txt
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/backend_ab_testing.py
+      .. literalinclude:: content/backend_network_routing.py
          :language: python
 
 **API Rate Limiting and Throttling**: Optimizing the allocation of API request quotas to ensure fair usage across different users or services while maintaining performance and avoiding server overloads.

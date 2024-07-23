@@ -1,0 +1,14 @@
+You are a Backend Engineer tasked with optimizing the placement and selection of advertisements on a popular web platform. Your goal is to maximize the click-through rate (CTR) and revenue generated from ads while ensuring a good user experience. This includes not overwhelming users with too many ads and ensuring that the ads shown are relevant to the users. You have access to historical data on ad performance and user engagement. Additionally, you must decide whether to display high-revenue but low-CTR ads or low-revenue but high-CTR ads on specific pages, adding complexity to your optimization.
+
+Objective: Maximize revenue
+
+Constraints:
+
+    Overall CTR Constraint: Ensure the average CTR remains above 2.5%.
+    Page CTR Constraint: If an ad with a CTR below 2.0% is selected, it must be accompanied by at least one ad with a CTR above 3.0% on the same page.
+    Page Ad Constraint: A page can only show an Ad if there exists a Page ID -> Ad ID mapping in the data.
+    User Experience Constraint: No more than 3 ads per page.
+    Relevance Constraint: At least 70% of the ads shown must match user interests.
+    Budget Constraint: The total cost of ads displayed should not exceed $500 per day.
+
+ You can find the data in the enclosed table, the columns are: Page ID,Ad ID,CTR (%),Revenue per click ($),User Interest Match (Yes/No),Cost per ad ($)
