@@ -1,3 +1,5 @@
+.. _example_prompts:
+
 .. include:: examples/overview.rst
 
 .. only:: html

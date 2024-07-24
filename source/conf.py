@@ -24,11 +24,19 @@ extensions = [
     "sphinx_tabs.tabs",
     "sphinx_design",
     "sphinx_copybutton",
+    "sphinxcontrib.images",
 ]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+}
+
+images_config = {
+    'default_image_width': '40%',
+    'show_caption': True,
+    'figure_classes': ['align-center'],
+    'lightbox': 'lightbox2',  # or 'fancybox' or other supported lightbox libraries
 }
 
 html_theme_options = {

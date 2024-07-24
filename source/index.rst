@@ -29,10 +29,10 @@ Contents
    :caption: Prompting
 
    prompting-basics
+   prompting-custom-gpt
+   prompting-examples
    prompting-tips-pitfalls
    prompting-case-studies
-   prompting-custom-tools
-   prompting-examples
 
 .. toctree::
    :maxdepth: 2
