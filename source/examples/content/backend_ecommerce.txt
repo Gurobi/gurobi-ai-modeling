@@ -1,0 +1,15 @@
+You are a backend engineer at an e-commerce company tasked with optimizing pricing strategies for a range of electronic products. Your goal is to maximize the total revenue while considering the supply, demand, customer behavior and shipping costs.
+
+Objective: Maximize total revenue
+Constraints:
+
+    Stock Availability: The total quantity of each product sold cannot exceed the available stock.
+    Demand Elasticity: The demand for each product decreases as the price increases. Use the demand elasticity equation for this.
+    Shipping Costs: Shipping costs are deducted from the revenue and vary based on the product size and weight. Use the shipping costs equation for this.
+    Minimum Price Constraint: Prices must be at least 80% of the base price to ensure profitability.
+
+Equations:
+   Demand elasticity: Q = Q0 * (1 - E * ((P-P0)/P0)) with Q being the demand, Q0 base demand, P0 base price, P new price and E the price elasticity
+   Shipping costs: SC = Base Shipping Cost+(2×Size (kg))+(1.5×Weight (kg))
+
+The data is enclosed. The headers are: Product ID,Product Name,Stock Quantity,Base Demand,Base Price,Size (kg),Weight (kg),Base Shipping Cost,Price Elasticity

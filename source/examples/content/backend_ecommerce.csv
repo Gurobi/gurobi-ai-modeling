@@ -1,0 +1,11 @@
+Product ID,Product Name,Stock Quantity,Base Demand,Base Price,Size (kg),Weight (kg),Base Shipping Cost,Price Elasticity
+P001,Smartphone A,500,300,700,0.2,0.5,5,1.5
+P002,Laptop B,200,150,1200,1.5,2.5,10,1.2
+P003,Tablet C,300,250,400,0.5,1.0,6,1.8
+P004,Smartwatch D,100,100,150,0.1,0.2,3,2.0
+P005,Camera E,100,80,500,0.7,1.2,7,1.6
+P006,Headphones F,400,200,100,0.3,0.4,4,2.5
+P007,Speaker G,250,120,250,1.0,1.5,8,1.4
+P008,Monitor H,180,110,300,3.0,4.0,12,1.3
+P009,Keyboard I,300,270,50,0.6,0.7,5,2.2
+P010,Mouse J,450,320,30,0.4,0.5,3,2.0

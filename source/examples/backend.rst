@@ -70,10 +70,28 @@ Route the network from end-users to first and second-degree internal servers, mi
       .. literalinclude:: content/backend_network_routing.py
          :language: python
 
-**API Rate Limiting and Throttling**: Optimizing the allocation of API request quotas to ensure fair usage across different users or services while maintaining performance and avoiding server overloads.
+E-Commerce Pricing
+-------------------
 
-**Microservices Deployment Optimization**: Strategically deploying microservices across different nodes or containers to balance the load, reduce latency, and improve fault tolerance.
+.. image:: images/backend_ecommerce.png
+   :alt: Backend API Routing
+   :align: center
 
-**Resource Allocation in Cloud Environments**: Optimizing the allocation of computing resources (CPU, memory, storage) in cloud environments to minimize costs while meeting the performance requirements of various applications.
+Determine the optimal sales price for the items on an E-commerce platform.
 
-**Data Compression Algorithms**: Choosing and tuning data compression algorithms to balance compression ratios and decompression times, optimizing storage space and data transfer rates.
+.. tabs::
+
+   .. tab:: Prompt
+
+      .. literalinclude:: content/backend_ecommerce.txt
+         :language: text
+
+   .. tab:: Data
+
+      .. literalinclude:: content/backend_ecommerce.csv
+         :language: text
+
+   .. tab:: Example generated model
+
+      .. literalinclude:: content/backend_ecommerce.py
+         :language: python
