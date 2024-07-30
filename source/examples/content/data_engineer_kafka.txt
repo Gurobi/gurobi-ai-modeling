@@ -1,0 +1,44 @@
+As a Data Engineer at a software company, you are tasked with optimizing the performance of your Apache Kafka cluster. Kafka topics are used to manage data streams, and each topic is divided into partitions. Efficient partitioning of these topics can significantly reduce latency and improve throughput. Your goal is to determine the optimal number of partitions for each topic and assign these partitions to brokers in a way that balances the load and minimizes data transfer between brokers.
+
+Given the following data about your Kafka cluster and topics, use integer linear programming to find the optimal solution.
+
+Objective:
+Maximize throughput by minimizing data transfer between brokers.
+You calculate this by for every topic, calculating the average of transfer between all brokers based on the number of partitions they have assigned for that topic.
+
+Constraints:
+- Partition Capacity Constraint: The number of partitions assigned to each broker must not exceed the broker's maximum capacity.
+- Topic Partition Constraint: The number of partitions assigned to each topic must lie within the specified range.
+- Broker Load Balance Constraint: The total number of partitions assigned to each broker should be as balanced as possible, with no broker having more than 20% of the broker average.
+- Partition Distribution Constraint: For each topic, no broker can hold more than 40% of the partitions.
+
+Data:
+
+Brokers:
+Broker_ID,Max_Partitions
+B1,50
+B2,60
+B3,55
+B4,65
+
+Topics:
+Topic_ID,Min_Partitions,Max_Partitions
+T1,10,20
+T2,15,25
+T3,8,18
+T4,12,22
+
+Data Transfer rates:
+From_Broker,To_Broker,Transfer_Rate
+B1,B2,5
+B1,B3,3
+B1,B4,4
+B2,B1,5
+B2,B3,4
+B2,B4,7
+B3,B1,3
+B3,B2,4
+B3,B4,2
+B4,B1,4
+B4,B2,7
+B4,B3,2
