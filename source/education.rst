@@ -1,16 +1,31 @@
-Learn Optimization
-==================
+Learn Mathematical Optimization
+===================================================
 
-If optimization has peaked your interest and wish to learn more about the fundamentals so you can take better control
-of the models, you can refer to the following resources. All resources listed are free.
+Hands-on Optimization Modeling
+------------------------------
+- `Jupyter Notebook Modeling Examples <https://www.gurobi.com/resource/jupyter-notebook-modeling-examples/>`_
+    A collection of Jupyter notebooks with examples of how to build optimization models using Python and Gurobi, providing a hands-on approach to learning.
+- `Gurobi OptiMods <https://www.gurobi.com/resource/gurobi-optimods/>`_
+    A set of open-source Python modules that demonstrate common optimization tasks with Gurobi, complete with documentation and examples that are especially useful for data scientists.
 
-MOOC: Intro to Optimization Through the Lens of Data Science
-------------------------------------------------------------
+Blogs and Podcasts
+------------------
+- `Getting Started with Mathematical Optimization in Python <https://www.gurobi.com/resources/discover-how-you-can-boost-your-mathematical-optimization-modeling-skills-with-python/>`_
+    A comprehensive guide on how to start using Gurobi for mathematical optimization in Python, focusing on practical implementation for data-driven projects.
+- `Resources for Data Scientists <https://www.gurobi.com/personas/optimization-for-data-scientists/>`_
+    Tailored resources for data scientists that explore the intersection of machine learning and optimization, including use cases, the use of Gurobi’s APIs and tools for embedding machine learning models into optimization problems.
+- `Unpacking Optimization Basics for Data Scientists <https://www.gurobi.com/resources/super-data-science-podcast-mathematical-optimization-with-jerry-yurchisin/>`_
+    Check out Gurobi's appearance on the `Super Data Science Podcast <https://www.superdatascience.com/podcast>`_ get the basics on why optimization should be in every engineer's and data scientist's tool box.
 
-A MOOC series that gives a comprehensive introduction to mathematical optimization and Gurobi for the non-mathematically inclined: https://www.gurobi.com/resources/intro-to-optimization-through-the-lens-of-data-science/
-Contains about 7-hours of on-demand video.
+Online Courses and Guided Training
+----------------------------------
+- `Introduction to Optimization Through the Lens of Data Science <https://www.gurobi.com/resource/introduction-to-optimization-through-the-lens-of-data-science/>`_
+    In four in-depth modules this course provides a thorough introduction to optimization and shows how it connects with data science, offering practical examples and use cases to help practitioners integrate optimization into their workflows.
+-  Optimization for Data Scientists
+    - `Opti 101 <https://www.youtube.com/playlist?list=PLHiHZENG6W8B_65-Unq-G59PtQtEc1Xj4>`_: Introductory videos and hands-on learning material that dives into why math optimization is important and how to get started.
+    - `Opti 201 <https://www.gurobi.com/events/optimization-201-for-data-scientists/>`_: Tackles intermediate level topics that build upon Opti 101
 
-Youtube playlist: Optimization 101 for Data Scientists
-------------------------------------------------------------
-
-Optimization 101 for Data Scientists 12-part Youtube series: https://www.youtube.com/playlist?list=PLHiHZENG6W8B_65-Unq-G59PtQtEc1Xj4
+Gamify Optimization!
+--------------------
+- `Burrito Optimization Game <https://www.gurobi.com/resource/burrito-optimization-game/>`_
+    An educational game designed to introduce the power of mathematical optimization in a fun and engaging way. Invite your friends and coworkers to a friendly competition!
