@@ -19,6 +19,8 @@ Select which ads should be run on your website to maximize revenue, taking into 
 
    .. tab:: Data
 
+      :download:`backend_ad_selection.csv: <content/backend_ad_selection.csv>`
+
       .. literalinclude:: content/backend_ad_selection.csv
          :language: text
 
@@ -44,6 +46,13 @@ upholding statistical significance.
       .. literalinclude:: content/backend_ab_testing.txt
          :language: text
 
+   .. tab:: Data
+
+      :download:`backend_ab_testing.csv: <content/backend_ab_testing.csv>`
+
+      .. literalinclude:: content/backend_ab_testing.csv
+         :language: text
+
    .. tab:: Example generated model
 
       .. literalinclude:: content/backend_ab_testing.py
@@ -63,6 +72,18 @@ Route the network from end-users to first and second-degree internal servers, mi
    .. tab:: Prompt
 
       .. literalinclude:: content/backend_network_routing.txt
+         :language: text
+
+   .. tab:: Data
+
+      :download:`backend_network_routing_backend.csv: <content/backend_network_routing_backend.csv>`
+
+      .. literalinclude:: content/backend_network_routing_backend.csv
+         :language: text
+
+      :download:`backend_network_routing_internal.csv: <content/backend_network_routing_internal.csv>`
+
+      .. literalinclude:: content/backend_network_routing_internal.csv
          :language: text
 
    .. tab:: Example generated model
@@ -87,6 +108,8 @@ Determine the optimal sales price for the items on an E-commerce platform.
          :language: text
 
    .. tab:: Data
+
+      :download:`backend_ecommerce.csv: <content/backend_ecommerce.csv>`
 
       .. literalinclude:: content/backend_ecommerce.csv
          :language: text

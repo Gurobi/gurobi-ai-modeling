@@ -13,32 +13,6 @@ Constraints:
 - Partition Distribution Constraint: For each topic, no broker can hold more than 40% of the partitions.
 
 Data:
-
-Brokers:
-Broker_ID,Max_Partitions
-B1,50
-B2,60
-B3,55
-B4,65
-
-Topics:
-Topic_ID,Min_Partitions,Max_Partitions
-T1,10,20
-T2,15,25
-T3,8,18
-T4,12,22
-
-Data Transfer rates:
-From_Broker,To_Broker,Transfer_Rate
-B1,B2,5
-B1,B3,3
-B1,B4,4
-B2,B1,5
-B2,B3,4
-B2,B4,7
-B3,B1,3
-B3,B2,4
-B3,B4,2
-B4,B1,4
-B4,B2,7
-B4,B3,2
+The Brokers can be found in data_engineer_kafka_brokers.csv and has the following columns: Broker_ID,Max_Partitions
+The Topics can be found in data_engineer_kafka_topics.csv and has the following columns: Topic_ID,Min_Partitions,Max_Partitions
+The Data Transfer rates can be found in data_engineer_kafka_rates.csv and has the following columns: From_Broker,To_Broker,Transfer_Rate

@@ -5,46 +5,10 @@ The challenge is to schedule these deployments such that the load deviation on t
 Objective: Minimize the total deviation from the average load on the servers.
 
 Constraints:
-- All deployments have to be executed and each deployment must be scheduled during its specified time window.
+- All deployments have to be executed and each deployment's start time must be in the range given in `Deployment Start Window Start` and `Deployment Start Window End`
 - The total load at any given time (customer load + deployment load) should not exceed the server capacity.
 - Deployments must be non-preemptive (i.e., once started, a deployment must run to completion).
 
-| Time | Customer Load |
-|------|---------------|
-| 0    | 20            |
-| 1    | 25            |
-| 2    | 30            |
-| 3    | 22            |
-| 4    | 18            |
-| 5    | 15            |
-| 6    | 20            |
-| 7    | 35            |
-| 8    | 50            |
-| 9    | 60            |
-| 10   | 55            |
-| 11   | 45            |
-| 12   | 40            |
-| 13   | 38            |
-| 14   | 35            |
-| 15   | 33            |
-| 16   | 30            |
-| 17   | 40            |
-| 18   | 50            |
-| 19   | 55            |
-| 20   | 60            |
-| 21   | 45            |
-| 22   | 35            |
-| 23   | 25            |
-
-| Deployment ID | Deployment Load | Deployment Duration | Deployment Start Window |
-|---------------|-----------------|---------------------|-------------------------|
-| D1            | 10              | 2                   | (0, 8)                  |
-| D2            | 15              | 1                   | (8, 16)                 |
-| D3            | 20              | 3                   | (15, 22)                |
-| D4            | 25              | 2                   | (6, 12)                 |
-| D5            | 30              | 1                   | (0, 23)                 |
-| D6            | 10              | 1                   | (0, 8)                  |
-| D7            | 20              | 2                   | (5, 13)                 |
-| D8            | 15              | 3                   | (9, 15)                 |
-| D9            | 25              | 2                   | (14, 21)                |
-| D10           | 30              | 1                   | (0, 23)                 |
+Data:
+The customer load can be found in devops_scheduling_deployments_base_load.csv and has the following columns: Time,Customer Load
+The deployments can be found in devops_scheduling_deployments_deployments.csv and has the following columns: Deployment ID,Deployment Load,Deployment Duration,Deployment Start Window Start,Deployment Start Window End

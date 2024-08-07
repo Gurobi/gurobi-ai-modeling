@@ -4,11 +4,11 @@ Objective: Maximize revenue
 
 Constraints:
 
-    Overall CTR Constraint: Ensure the average CTR remains above 2.5%.
-    Page CTR Constraint: If an ad with a CTR below 2.0% is selected, it must be accompanied by at least one ad with a CTR above 3.0% on the same page.
-    Page Ad Constraint: A page can only show an Ad if there exists a Page ID -> Ad ID mapping in the data.
-    User Experience Constraint: No more than 3 ads per page.
-    Relevance Constraint: At least 70% of the ads shown must match user interests.
-    Budget Constraint: The total cost of ads displayed should not exceed $500 per day.
+- Overall CTR Constraint: Ensure the average CTR remains above 2.5%.
+- Page CTR Constraint: If an ad with a CTR below 2.0% is selected, it must be accompanied by at least one ad with a CTR above 3.0% on the same page.
+- Page Ad Constraint: A page can only show an Ad if there exists a Page ID -> Ad ID mapping in the data.
+- User Experience Constraint: No more than 3 ads per page.
+- Relevance Constraint: At least 70% of the ads shown must match user interests.
+- Budget Constraint: The total cost of ads displayed should not exceed $500 per day.
 
  You can find the data in the enclosed table, the columns are: Page ID,Ad ID,CTR (%),Revenue per click ($),User Interest Match (Yes/No),Cost per ad ($)

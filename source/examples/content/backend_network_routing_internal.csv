@@ -1,0 +1,13 @@
+Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (%)
+A,F,50,99.8
+A,G,60,99.7
+A,H,55,99.9
+B,H,40,99.6
+B,I,45,99.7
+C,J,50,99.8
+C,K,30,99.5
+C,L,35,99.6
+D,M,25,99.7
+D,N,20,99.8
+E,F,60,99.9
+E,G,55,99.8

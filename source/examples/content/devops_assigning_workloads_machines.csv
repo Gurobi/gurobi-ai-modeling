@@ -1,0 +1,9 @@
+Machines,vCPU Capacity,RAM Capacity (GB),GPU Capacity (GFLOPS)
+Machine 1,32,128,20
+Machine 2,16,64,15
+Machine 3,32,64,30
+Machine 4,8,32,10
+Machine 5,16,64,15
+Machine 6,32,128,20
+Machine 7,8,32,10
+Machine 8,8,32,10

@@ -19,6 +19,18 @@ that customers are least likely to be impacted.
       .. literalinclude:: content/devops_scheduling_deployments.txt
          :language: text
 
+   .. tab:: Data
+
+      :download:`devops_scheduling_deployments_base_load.csv: <content/devops_scheduling_deployments_base_load.csv>`
+
+      .. literalinclude:: content/devops_scheduling_deployments_base_load.csv
+         :language: text
+
+      :download:`devops_scheduling_deployments_deployments.csv: <content/devops_scheduling_deployments_deployments.csv>`
+
+      .. literalinclude:: content/devops_scheduling_deployments_deployments.csv
+         :language: text
+
    .. tab:: Example generated model
 
       .. literalinclude:: content/devops_scheduling_deployments.py
@@ -40,6 +52,18 @@ minimize the number of machines impacted.
    .. tab:: Prompt
 
       .. literalinclude:: content/devops_assigning_workloads.txt
+         :language: text
+
+   .. tab:: Data
+
+      :download:`devops_assigning_workloads_machines.csv: <content/devops_assigning_workloads_machines.csv>`
+
+      .. literalinclude:: content/devops_assigning_workloads_machines.csv
+         :language: text
+
+      :download:`devops_assigning_workloads_workloads.csv: <content/devops_assigning_workloads_workloads.csv>`
+
+      .. literalinclude:: content/devops_assigning_workloads_workloads.csv
          :language: text
 
    .. tab:: Example generated model
@@ -77,6 +101,8 @@ should be brought online as quickly as possible, with more important services ge
 
    .. tab:: Data
 
+      :download:`devops_incident_response.json: <content/devops_incident_response.json>`
+
       .. literalinclude:: content/devops_incident_response.json
          :language: json
 
@@ -105,6 +131,8 @@ Smartly decide which machines to run tests on and what kind of testing environme
          :language: text
 
    .. tab:: Data
+
+      :download:`devops_testing_strategy.csv: <content/devops_testing_strategy.csv>`
 
       .. literalinclude:: content/devops_testing_strategy.csv
          :language: text

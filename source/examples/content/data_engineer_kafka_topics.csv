@@ -1,0 +1,5 @@
+Topic_ID,Min_Partitions,Max_Partitions
+T1,10,20
+T2,15,25
+T3,8,18
+T4,12,22

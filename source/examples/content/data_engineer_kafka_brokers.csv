@@ -1,0 +1,5 @@
+Broker_ID,Max_Partitions
+B1,50
+B2,60
+B3,55
+B4,65

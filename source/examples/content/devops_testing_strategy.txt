@@ -5,10 +5,10 @@ The goal is to find the optimal combination of {machine, testing environment} fo
 Objective: Maximize the total score.
 
 Constraints:
-
 - Each operating system (Linux64, Armlinux64, MacOS, Windows) must be tested exactly once on one of their OS-specific machines.
 - Each testing environment can be chosen at most once.
 - Each {machine, testing environment} combination can only be chosen if the machine supports the given environment.
 
-Use the data from the enclosed .csv file with the following columns: OS,Testing Environment,Machine,Testing Date,Modifier
+Data:
+Use the data from devops_testing_strategy.csv with the following columns: OS,Testing Environment,Machine,Testing Date,Modifier
 The data also show which combination of {machine, testing environment} are available.

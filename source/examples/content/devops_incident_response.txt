@@ -6,6 +6,7 @@ The goal is to get systems with a priority score up and running as quickly as po
 As time goes by, value of each system goes down. The value of a system at time t can be calculated via the following function:
 V(t)=V0⋅e^−0.0398t with t being the time the system has finished recovering and V0 being the initial priority score.
 
-Maximize the total of priority scores given the above function.
+Objective: Maximize the total of priority scores given the above function.
 
-The data is provided in the enclosed json file.
+Data:
+The systems and their dependencies can be found in devops_incident_response.json and has the following fields: System, Priority, Dependencies, Recovery Time (minutes)

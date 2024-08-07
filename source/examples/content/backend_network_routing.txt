@@ -6,39 +6,14 @@ Objective: Minimize the total latency of the API gateway system.
 
 Constraints:
 
-    Backend Reliability constraint: The weighted reliability of the Backend Services must be at least 99.5%.
-    Internal Reliability constraint: The weighted reliability of the Internal Gateways must be at least 99.5%.
-    Backend Routing constraint: The sum of the routing percentages to the Backend Services must equal 100% and no route may take up more than 40%.
-    Internal Routing constraint: For each of the routes starting at the same Backend Service, the sum of the routing percentages must equal 100% and no route may take up more than 75%. This means we need to have separate constraints for routes starting at A,B,C,etc.
-    Cost constraint: The average cost across all requests must not exceed $0.40.
-    Non-negativity constraint: The routing percentages must be non-negative.
-    Routing constraints between layers: Specific backend services can only route to certain gateways as defined in the data.
-
+- Backend Reliability constraint: The weighted reliability of the Backend Services must be at least 99.5%.
+- Internal Reliability constraint: The weighted reliability of the Internal Gateways must be at least 99.5%.
+- Backend Routing constraint: The sum of the routing percentages to the Backend Services must equal 100% and no route may take up more than 40%.
+- Internal Routing constraint: For each of the routes starting at the same Backend Service, the sum of the routing percentages must equal 100% and no route may take up more than 75%. This means we need to have separate constraints for routes starting at A,B,C,etc.
+- Cost constraint: The average cost across all requests must not exceed $0.40.
+- Non-negativity constraint: The routing percentages must be non-negative.
+- Routing constraints between layers: Specific backend services can only route to certain gateways as defined in the data.
 
 Data:
-The data for the services and routing is given below:
-
-Backend Services
-Service	Average Processing Time (ms)	Reliability (%)	Cost per Request ($)
-A	200	99.9	0.30
-B	150	99.6	0.25
-C	100	99.0	0.10
-D	120	99.7	0.15
-E	180	99.8	0.20
-
-Routing from Backend Services to Internal Gateways
-Backend Service	Gateway	Additional Processing Time (ms)	Additional Reliability (%)
-A	F	50	99.8
-A	G	60	99.7
-A	H	55	99.9
-B	H	40	99.6
-B	I	45	99.7
-C	J	50	99.8
-C	K	30	99.5
-C	L	35	99.6
-D	M	25	99.7
-D	N	20	99.8
-E	F	60	99.9
-E	G	55	99.8
-
-Objective: Minimize the average processing time
+The Backend Services can be found in backend_network_routing_backend.csv and has the following columns: Service,Average Processing Time (ms),Reliability (%),Cost per Request ($)
+The Routing from Backend Services to Internal Gateways can be found in backend_network_routing_internal.csv and has the following columns: Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (%)

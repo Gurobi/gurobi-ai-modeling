@@ -1,0 +1,6 @@
+Service,Average Processing Time (ms),Reliability (%),Cost per Request ($)
+A,200,99.9,0.30
+B,150,99.6,0.25
+C,100,99.0,0.10
+D,120,99.7,0.15
+E,180,99.8,0.20

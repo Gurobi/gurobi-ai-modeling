@@ -34,6 +34,8 @@ The reference Python code showing Gurobi best practices can be found in our docu
 
    .. tab:: Data
 
+      :download:`classic_portfolio.csv: <content/classic_portfolio.csv>`
+
       .. literalinclude:: content/classic_portfolio.csv
          :language: text
 

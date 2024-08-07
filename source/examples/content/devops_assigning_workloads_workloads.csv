@@ -1,0 +1,9 @@
+Workloads,vCPU Requirement,RAM Requirement (GB),GPU Requirement (GFLOPS)
+Workload A,8,16,5
+Workload B,16,32,10
+Workload C,4,8,2
+Workload D,32,64,25
+Workload E,2,4,1
+Workload F,4,16,3
+Workload G,16,32,12
+Workload H,8,16,6

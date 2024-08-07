@@ -3,30 +3,11 @@ A DevOps Engineer is responsible for scheduling workloads on a limited number of
 Objective: For machines that have 1 or more workloads assigned, minimize the remainder of available resources (the sum of vCPU, RAM and GPU)
 
 Constraints:
-
-    vCPU constraint: The total vCPU requirement of the workloads assigned to a machine must not exceed the vCPU capacity of that machine.
-    RAM constraint: The total RAM requirement of the workloads assigned to a machine must not exceed the RAM capacity of that machine.
-    GPU FLOPS constraint: The total GPU FLOPS requirement of the workloads assigned to a machine must not exceed the GPU FLOPS capacity of that machine.
-    All workloads must be scheduled.
+- vCPU constraint: The total vCPU requirement of the workloads assigned to a machine must not exceed the vCPU capacity of that machine.
+- RAM constraint: The total RAM requirement of the workloads assigned to a machine must not exceed the RAM capacity of that machine.
+- GPU FLOPS constraint: The total GPU FLOPS requirement of the workloads assigned to a machine must not exceed the GPU FLOPS capacity of that machine.
+- All workloads must be scheduled.
 
 Data:
-
-Machines, vCPU Capacity, RAM Capacity (GB), GPU Capacity (GFLOPS)
-Machine 1, 32, 128, 20
-Machine 2, 16, 64, 15
-Machine 3, 32, 64, 30
-Machine 4, 8, 32, 10
-Machine 5, 16, 64, 15
-Machine 6, 32, 128, 20
-Machine 7, 8, 32, 10
-Machine 8, 8, 32, 10
-
-Workloads, vCPU Requirement, RAM Requirement (GB), GPU Requirement (GFLOPS)
-Workload A, 8, 16, 5
-Workload B, 16, 32, 10
-Workload C, 4, 8, 2
-Workload D, 32, 64, 25
-Workload E, 2, 4, 1
-Workload F, 4, 16, 3
-Workload G, 16, 32, 12
-Workload H, 8, 16, 6
+The machines can be found in devops_assigning_workloads_machines.csv and has the following columns: Machines,vCPU Capacity,RAM Capacity (GB),GPU Capacity (GFLOPS)
+The workloads can be found in devops_assigning_workloads_workloads.csv and has the following columns: Workloads,vCPU Requirement,RAM Requirement (GB),GPU Requirement (GFLOPS)

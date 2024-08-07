@@ -19,6 +19,23 @@ while dividing the partitions somewhat evenly over the different brokers.
       .. literalinclude:: content/data_engineer_kafka.txt
          :language: text
 
+   .. tab:: Data
+
+      :download:`data_engineer_kafka_brokers.csv: <content/data_engineer_kafka_brokers.csv>`
+
+      .. literalinclude:: content/data_engineer_kafka_brokers.csv
+         :language: text
+
+      :download:`data_engineer_kafka_topics.csv: <content/data_engineer_kafka_topics.csv>`
+
+      .. literalinclude:: content/data_engineer_kafka_topics.csv
+         :language: text
+
+      :download:`data_engineer_kafka_rates.csv: <content/data_engineer_kafka_rates.csv>`
+
+      .. literalinclude:: content/data_engineer_kafka_rates.csv
+         :language: text
+
    .. tab:: Example generated model
 
       .. literalinclude:: content/data_engineer_kafka.py
