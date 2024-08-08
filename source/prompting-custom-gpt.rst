@@ -5,22 +5,42 @@ Since the steps necessary for translating a problem description into an optimiza
 not necessarily changing we can utilize a Custom GPT that has these steps baked. Moreover, some common issues with the
 current LLM can herein be addressed.
 
+.. subfigure:: ABC
+   :layout-sm: A|B|C
+   :subcaptions: above
+   :name: myfigure
+   :gap: 0px
+   :class-grid: outline
+
+   .. thumbnail:: images/customgpt1.jpg
+      :width: 100%
+      :group: group1
+
+   .. thumbnail:: images/customgpt2.jpg
+      :width: 100%
+      :group: group1
+
+   .. thumbnail:: images/customgpt1.jpg
+      :width: 100%
+      :group: group1
+
+
 We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_.
 This Custom GPT incorporates some of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
 
 .. thumbnail:: images/customgpt1.jpg
-   :alt: Custom GPT prompt
    :align: center
-   :class: img-responsive
+
+   Custom GPT prompt
 
 Moreover, having ChatGPT build and run the model inside the platform, it is sometimes able to spot and recover from
 mistakes it might initially make.
 
 .. thumbnail:: images/customgpt2.jpg
-   :alt: Custom GPT correcting itself
    :align: center
-   :class: img-responsive
+
+   Custom GPT correcting itself
 
 Prompt Template
 """""""""""""""

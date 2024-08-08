@@ -25,6 +25,7 @@ extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "sphinxcontrib.images",
+    "sphinx_subfigure",
 ]
 
 intersphinx_mapping = {
