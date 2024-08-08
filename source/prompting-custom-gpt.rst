@@ -10,73 +10,43 @@ We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.co
 This Custom GPT incorporates some of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
 
-.. thumbnail:: images/customgpt1.png
-   :align: center
+See below for a walkthrough through the model building process using the Gurobi Model Builder GPT:
 
-   Gurobi Model Builder
+.. carousel::
+   :show_controls:
+   :show_indicators:
+   :show_dark:
+   :data-bs-interval: false
 
-For a walkthrough, see the following set of images:
+   .. image:: images/customgpt1.png
+      :alt: Gurobi Model Builder
 
-.. subfigure:: ABC|DEF|GHI
-   :layout-sm: A|B|C|D|E|F|G|H|I
-   :subcaptions: above
-   :name: walkthrough
-   :gap: 0px
-   :class-grid: outline
+   .. image:: images/walkthrough1.png
+      :alt: Input prompt
 
-   .. thumbnail:: images/walkthrough1.png
-      :width: 100%
-      :group: group1
+   .. image:: images/walkthrough2.png
+      :alt: First output showing the model's mathematical formulation
 
-      Input prompt
+   .. image:: images/walkthrough3.png
+      :alt: The rest of the mathematical formulation
 
-   .. thumbnail:: images/walkthrough2.png
-      :width: 100%
-      :group: group1
+   .. image:: images/walkthrough4.png
+      :alt: Gurobipy code representing the model
 
-      First output showing the model's mathematical formulation
+   .. image:: images/walkthrough5.png
+      :alt: The rest of the gurobipy code
 
-   .. thumbnail:: images/walkthrough3.png
-      :width: 100%
-      :group: group1
+   .. image:: images/walkthrough6.png
+      :alt: Currently, we need to manually trigger ChatGPT to run the code on their infrastructure
 
-      The rest of the mathematical formulation
+   .. image:: images/walkthrough7.png
+      :alt: Showing the code again, but now in a Code Analysis block that can run code (indicated by Analyzed in the top-left corner)
 
-   .. thumbnail:: images/walkthrough4.png
-      :width: 100%
-      :group: group1
+   .. image:: images/walkthrough8.png
+      :alt: Gurobipy logs showing the solve progress
 
-      Gurobipy code representing the model
-
-   .. thumbnail:: images/walkthrough5.png
-      :width: 100%
-      :group: group1
-
-      The rest of the gurobipy code
-
-   .. thumbnail:: images/walkthrough6.png
-      :width: 100%
-      :group: group1
-
-      Currently, we need to manually trigger ChatGPT to run the code on their infrastructure
-
-   .. thumbnail:: images/walkthrough7.png
-      :width: 100%
-      :group: group1
-
-      Showing the code again, but now in a Code Analysis block that can run code (indicated by Analyzed in the top-left corner)
-
-   .. thumbnail:: images/walkthrough8.png
-      :width: 100%
-      :group: group1
-
-      Gurobipy logs showing the solve progress
-
-   .. thumbnail:: images/walkthrough9.png
-      :width: 100%
-      :group: group1
-
-      Finally, ChatGPT helps interpret the results
+   .. image:: images/walkthrough9.png
+      :alt: Finally, ChatGPT helps interpret the results
 
 Advantages
 """"""""""
