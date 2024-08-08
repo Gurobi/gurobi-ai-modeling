@@ -5,39 +5,86 @@ Since the steps necessary for translating a problem description into an optimiza
 not necessarily changing we can utilize a Custom GPT that has these steps baked. Moreover, some common issues with the
 current LLM can herein be addressed.
 
-.. subfigure:: ABC
-   :layout-sm: A|B|C
-   :subcaptions: above
-   :name: myfigure
-   :gap: 0px
-   :class-grid: outline
-
-   .. thumbnail:: images/customgpt1.jpg
-      :width: 100%
-      :group: group1
-
-   .. thumbnail:: images/customgpt2.jpg
-      :width: 100%
-      :group: group1
-
-   .. thumbnail:: images/customgpt1.jpg
-      :width: 100%
-      :group: group1
-
 
 We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_.
 This Custom GPT incorporates some of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
 
-.. thumbnail:: images/customgpt1.jpg
+.. thumbnail:: images/customgpt1.png
    :align: center
 
-   Custom GPT prompt
+   Gurobi Model Builder
+
+For a walkthrough, see the following set of images:
+
+.. subfigure:: ABC|DEF|GHI
+   :layout-sm: A|B|C|D|E|F|G|H|I
+   :subcaptions: above
+   :name: walkthrough
+   :gap: 0px
+   :class-grid: outline
+
+   .. thumbnail:: images/walkthrough1.png
+      :width: 100%
+      :group: group1
+
+      Input prompt
+
+   .. thumbnail:: images/walkthrough2.png
+      :width: 100%
+      :group: group1
+
+      First output showing the model's mathematical formulation
+
+   .. thumbnail:: images/walkthrough3.png
+      :width: 100%
+      :group: group1
+
+      The rest of the mathematical formulation
+
+   .. thumbnail:: images/walkthrough4.png
+      :width: 100%
+      :group: group1
+
+      Gurobipy code representing the model
+
+   .. thumbnail:: images/walkthrough5.png
+      :width: 100%
+      :group: group1
+
+      The rest of the gurobipy code
+
+   .. thumbnail:: images/walkthrough6.png
+      :width: 100%
+      :group: group1
+
+      Currently, we need to manually trigger ChatGPT to run the code on their infrastructure
+
+   .. thumbnail:: images/walkthrough7.png
+      :width: 100%
+      :group: group1
+
+      Showing the code again, but now in a Code Analysis block that can run code (indicated by Analyzed in the top-left corner)
+
+   .. thumbnail:: images/walkthrough8.png
+      :width: 100%
+      :group: group1
+
+      Gurobipy logs showing the solve progress
+
+   .. thumbnail:: images/walkthrough9.png
+      :width: 100%
+      :group: group1
+
+      Finally, ChatGPT helps interpret the results
+
+Advantages
+""""""""""
 
 Moreover, having ChatGPT build and run the model inside the platform, it is sometimes able to spot and recover from
 mistakes it might initially make.
 
-.. thumbnail:: images/customgpt2.jpg
+.. thumbnail:: images/customgpt2.png
    :align: center
 
    Custom GPT correcting itself
