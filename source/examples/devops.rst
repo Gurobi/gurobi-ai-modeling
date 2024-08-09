@@ -31,7 +31,11 @@ that customers are least likely to be impacted.
       .. literalinclude:: content/devops/scheduling_deployments_deployments.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/devops/scheduling_deployments.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/devops/scheduling_deployments.py
          :language: python
