@@ -4,7 +4,7 @@ Data Engineer
 Apache Kafka Partition assignments
 ----------------------------------
 
-.. image:: images/data_engineer_kafka.png
+.. image:: images/data_kafka.png
    :alt: Apache Kafka Partition assignments
    :align: center
 
@@ -16,29 +16,29 @@ while dividing the partitions somewhat evenly over the different brokers.
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/data_engineer_kafka.txt
+      .. literalinclude:: content/data/kafka.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`data_engineer_kafka_brokers.csv: <content/data_engineer_kafka_brokers.csv>`
+      :download:`kafka_brokers.csv: <content/data/kafka_brokers.csv>`
 
-      .. literalinclude:: content/data_engineer_kafka_brokers.csv
+      .. literalinclude:: content/data/kafka_brokers.csv
          :language: text
 
-      :download:`data_engineer_kafka_topics.csv: <content/data_engineer_kafka_topics.csv>`
+      :download:`kafka_topics.csv: <content/data/kafka_topics.csv>`
 
-      .. literalinclude:: content/data_engineer_kafka_topics.csv
+      .. literalinclude:: content/data/kafka_topics.csv
          :language: text
 
-      :download:`data_engineer_kafka_rates.csv: <content/data_engineer_kafka_rates.csv>`
+      :download:`kafka_rates.csv: <content/data/kafka_rates.csv>`
 
-      .. literalinclude:: content/data_engineer_kafka_rates.csv
+      .. literalinclude:: content/data/kafka_rates.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/data_engineer_kafka.py
+      .. literalinclude:: content/data/kafka.py
          :language: python
 
 A software engineer can leverage mathematical optimization to streamline complex decision-making and enhance system performance in various practical applications. By implementing optimization algorithms, engineers can efficiently solve problems like resource allocation, scheduling, and logistics. For instance, in cloud computing, optimization models can minimize operational costs by dynamically adjusting server loads based on demand. In supply chain management, these techniques can reduce transportation costs and improve delivery times by finding optimal routing paths. Optimization also plays a critical role in machine learning, where it aids in hyperparameter tuning, ensuring model accuracy and efficiency. By integrating mathematical optimization into their development workflow, software engineers can deliver solutions that are both cost-effective and high-performing across diverse domains.

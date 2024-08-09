@@ -6,7 +6,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load the data from the provided JSON file
-file_path = '/mnt/data/devops_incident_response.json'
+file_path = '/mnt/data/incident_response.json'
 with open(file_path, 'r') as file:
     data = json.load(file)
 

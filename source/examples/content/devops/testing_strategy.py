@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data
-data = pd.read_csv('/mnt/data/devops_testing_strategy.csv')
+data = pd.read_csv('/mnt/data/testing_strategy.csv')
 
 # Initialize the model
 model = Model('TestingOptimization')

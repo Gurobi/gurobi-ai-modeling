@@ -9,5 +9,5 @@ Constraints:
 - All workloads must be scheduled.
 
 Data:
-The machines can be found in devops_assigning_workloads_machines.csv and has the following columns: Machines,vCPU Capacity,RAM Capacity (GB),GPU Capacity (GFLOPS)
-The workloads can be found in devops_assigning_workloads_workloads.csv and has the following columns: Workloads,vCPU Requirement,RAM Requirement (GB),GPU Requirement (GFLOPS)
+The machines can be found in assigning_workloads_machines.csv and has the following columns: Machines,vCPU Capacity,RAM Capacity (GB),GPU Capacity (GFLOPS)
+The workloads can be found in assigning_workloads_workloads.csv and has the following columns: Workloads,vCPU Requirement,RAM Requirement (GB),GPU Requirement (GFLOPS)

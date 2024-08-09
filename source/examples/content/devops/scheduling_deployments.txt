@@ -10,5 +10,5 @@ Constraints:
 - Deployments must be non-preemptive (i.e., once started, a deployment must run to completion).
 
 Data:
-The customer load can be found in devops_scheduling_deployments_base_load.csv and has the following columns: Time,Customer Load
-The deployments can be found in devops_scheduling_deployments_deployments.csv and has the following columns: Deployment ID,Deployment Load,Deployment Duration,Deployment Start Window Start,Deployment Start Window End
+The customer load can be found in scheduling_deployments_base_load.csv and has the following columns: Time,Customer Load
+The deployments can be found in scheduling_deployments_deployments.csv and has the following columns: Deployment ID,Deployment Load,Deployment Duration,Deployment Start Window Start,Deployment Start Window End

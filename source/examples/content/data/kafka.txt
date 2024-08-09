@@ -13,6 +13,6 @@ Constraints:
 - Partition Distribution Constraint: For each topic, no broker can hold more than 40% of the partitions.
 
 Data:
-The Brokers can be found in data_engineer_kafka_brokers.csv and has the following columns: Broker_ID,Max_Partitions
-The Topics can be found in data_engineer_kafka_topics.csv and has the following columns: Topic_ID,Min_Partitions,Max_Partitions
-The Data Transfer rates can be found in data_engineer_kafka_rates.csv and has the following columns: From_Broker,To_Broker,Transfer_Rate
+The Brokers can be found in kafka_brokers.csv and has the following columns: Broker_ID,Max_Partitions
+The Topics can be found in kafka_topics.csv and has the following columns: Topic_ID,Min_Partitions,Max_Partitions
+The Data Transfer rates can be found in kafka_rates.csv and has the following columns: From_Broker,To_Broker,Transfer_Rate

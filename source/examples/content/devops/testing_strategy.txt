@@ -10,5 +10,5 @@ Constraints:
 - Each {machine, testing environment} combination can only be chosen if the machine supports the given environment.
 
 Data:
-Use the data from devops_testing_strategy.csv with the following columns: OS,Testing Environment,Machine,Testing Date,Modifier
+Use the data from testing_strategy.csv with the following columns: OS,Testing Environment,Machine,Testing Date,Modifier
 The data also show which combination of {machine, testing environment} are available.

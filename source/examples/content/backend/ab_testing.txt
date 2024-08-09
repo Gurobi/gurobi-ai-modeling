@@ -9,4 +9,4 @@ Minimize the total user disruption
 - Balance constraint: Within each user segment, the difference of allocation between any two variants cannot be more than 300
 
 Data:
-The user segments and disruptions can be found in backend_ab_testing.csv and has the following columns: User Segment,Total Users,Disruption in V1,Disruption in V2,Disruption in V3,Disruption in V4,Disruption in V5,Disruption in V6,Disruption in V7,Disruption in V8,Disruption in V9,Disruption in V10
+The user segments and disruptions can be found in ab_testing.csv and has the following columns: User Segment,Total Users,Disruption in V1,Disruption in V2,Disruption in V3,Disruption in V4,Disruption in V5,Disruption in V6,Disruption in V7,Disruption in V8,Disruption in V9,Disruption in V10

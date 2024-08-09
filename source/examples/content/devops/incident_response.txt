@@ -9,4 +9,4 @@ V(t)=V0⋅e^−0.0398t with t being the time the system has finished recovering 
 Objective: Maximize the total of priority scores given the above function.
 
 Data:
-The systems and their dependencies can be found in devops_incident_response.json and has the following fields: System, Priority, Dependencies, Recovery Time (minutes)
+The systems and their dependencies can be found in incident_response.json and has the following fields: System, Priority, Dependencies, Recovery Time (minutes)

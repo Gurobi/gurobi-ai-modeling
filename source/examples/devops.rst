@@ -21,12 +21,12 @@ that customers are least likely to be impacted.
 
    .. tab:: Data
 
-      :download:`devops_scheduling_deployments_base_load.csv: <content/devops/scheduling_deployments_base_load.csv>`
+      :download:`scheduling_deployments_base_load.csv: <content/devops/scheduling_deployments_base_load.csv>`
 
       .. literalinclude:: content/devops/scheduling_deployments_base_load.csv
          :language: text
 
-      :download:`devops_scheduling_deployments_deployments.csv: <content/devops/scheduling_deployments_deployments.csv>`
+      :download:`scheduling_deployments_deployments.csv: <content/devops/scheduling_deployments_deployments.csv>`
 
       .. literalinclude:: content/devops/scheduling_deployments_deployments.csv
          :language: text
@@ -56,12 +56,12 @@ minimize the number of machines impacted.
 
    .. tab:: Data
 
-      :download:`devops_assigning_workloads_machines.csv: <content/devops/assigning_workloads_machines.csv>`
+      :download:`assigning_workloads_machines.csv: <content/devops/assigning_workloads_machines.csv>`
 
       .. literalinclude:: content/devops/assigning_workloads_machines.csv
          :language: text
 
-      :download:`devops_assigning_workloads_workloads.csv: <content/devops/assigning_workloads_workloads.csv>`
+      :download:`assigning_workloads_workloads.csv: <content/devops/assigning_workloads_workloads.csv>`
 
       .. literalinclude:: content/devops/assigning_workloads_workloads.csv
          :language: text
@@ -101,7 +101,7 @@ should be brought online as quickly as possible, with more important services ge
 
    .. tab:: Data
 
-      :download:`devops_incident_response.json: <content/devops/incident_response.json>`
+      :download:`incident_response.json: <content/devops/incident_response.json>`
 
       .. literalinclude:: content/devops/incident_response.json
          :language: json
@@ -125,32 +125,24 @@ Smartly decide which machines to run tests on and what kind of testing environme
 
 .. tabs::
 
-   .. tab:: Input
+   .. tab:: Prompt
 
-      .. tabs::
+      .. literalinclude:: content/devops/testing_strategy.txt
+         :language: text
 
-         .. tab:: Prompt
+   .. tab:: Data
 
-            .. literalinclude:: content/devops/testing_strategy.txt
-               :language: text
+      :download:`testing_strategy.csv: <content/devops/testing_strategy.csv>`
 
-         .. tab:: Data
+      .. literalinclude:: content/devops/testing_strategy.csv
+         :language: text
 
-            :download:`devops_testing_strategy.csv: <content/devops/testing_strategy.csv>`
+   .. tab:: Generated Model formulation
 
-            .. literalinclude:: content/devops/testing_strategy.csv
-               :language: text
+      .. include:: content/devops/testing_strategy_formulation.rst
 
-   .. tab:: Example generated output
+   .. tab:: Generated Python code
 
-      .. tabs::
-
-         .. tab:: Model formulation
-
-            .. include:: content/devops/testing_strategy_formulation.rst
-
-         .. tab:: Python model
-
-            .. literalinclude:: content/devops/testing_strategy.py
-               :language: python
+      .. literalinclude:: content/devops/testing_strategy.py
+         :language: python
 

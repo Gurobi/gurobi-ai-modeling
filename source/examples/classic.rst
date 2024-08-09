@@ -29,19 +29,19 @@ The reference Python code showing Gurobi best practices can be found in our docu
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/classic_portfolio.txt
+      .. literalinclude:: content/classic/portfolio.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`classic_portfolio.csv: <content/classic_portfolio.csv>`
+      :download:`portfolio.csv: <content/classic/portfolio.csv>`
 
-      .. literalinclude:: content/classic_portfolio.csv
+      .. literalinclude:: content/classic/portfolio.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/classic_portfolio.py
+      .. literalinclude:: content/classic/portfolio.py
          :language: python
 
 Sudoku
@@ -60,12 +60,12 @@ The reference Python code showing Gurobi best practices can be found in our docu
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/classic_sudoku.txt
+      .. literalinclude:: content/classic/sudoku.txt
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/classic_sudoku.py
+      .. literalinclude:: content/classic/sudoku.py
          :language: python
 
 Diet
@@ -80,12 +80,12 @@ The reference Python code showing Gurobi best practices can be found in our docu
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/classic_diet.txt
+      .. literalinclude:: content/classic/diet.txt
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/classic_diet.py
+      .. literalinclude:: content/classic/diet.py
          :language: python
 
 
@@ -107,10 +107,10 @@ The reference Python code showing Gurobi best practices can be found in our docu
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/classic_facility.txt
+      .. literalinclude:: content/classic/facility.txt
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/classic_facility.py
+      .. literalinclude:: content/classic/facility.py
          :language: python

@@ -14,19 +14,19 @@ Select which ads should be run on your website to maximize revenue, taking into 
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/backend_ad_selection.txt
+      .. literalinclude:: content/backend/ad_selection.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`backend_ad_selection.csv: <content/backend_ad_selection.csv>`
+      :download:`ad_selection.csv: <content/backend/ad_selection.csv>`
 
-      .. literalinclude:: content/backend_ad_selection.csv
+      .. literalinclude:: content/backend/ad_selection.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/backend_ad_selection.py
+      .. literalinclude:: content/backend/ad_selection.py
          :language: python
 
 A/B Testing
@@ -43,19 +43,19 @@ upholding statistical significance.
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/backend_ab_testing.txt
+      .. literalinclude:: content/backend/ab_testing.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`backend_ab_testing.csv: <content/backend_ab_testing.csv>`
+      :download:`ab_testing.csv: <content/backend/ab_testing.csv>`
 
-      .. literalinclude:: content/backend_ab_testing.csv
+      .. literalinclude:: content/backend/ab_testing.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/backend_ab_testing.py
+      .. literalinclude:: content/backend/ab_testing.py
          :language: python
 
 Backend API Routing
@@ -71,24 +71,24 @@ Route the network from end-users to first and second-degree internal servers, mi
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/backend_network_routing.txt
+      .. literalinclude:: content/backend/network_routing.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`backend_network_routing_backend.csv: <content/backend_network_routing_backend.csv>`
+      :download:`network_routing_backend.csv: <content/backend/network_routing_backend.csv>`
 
-      .. literalinclude:: content/backend_network_routing_backend.csv
+      .. literalinclude:: content/backend/network_routing_backend.csv
          :language: text
 
-      :download:`backend_network_routing_internal.csv: <content/backend_network_routing_internal.csv>`
+      :download:`network_routing_internal.csv: <content/backend/network_routing_internal.csv>`
 
-      .. literalinclude:: content/backend_network_routing_internal.csv
+      .. literalinclude:: content/backend/network_routing_internal.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/backend_network_routing.py
+      .. literalinclude:: content/backend/network_routing.py
          :language: python
 
 E-Commerce Pricing
@@ -104,17 +104,17 @@ Determine the optimal sales price for the items on an E-commerce platform.
 
    .. tab:: Prompt
 
-      .. literalinclude:: content/backend_ecommerce.txt
+      .. literalinclude:: content/backend/ecommerce.txt
          :language: text
 
    .. tab:: Data
 
-      :download:`backend_ecommerce.csv: <content/backend_ecommerce.csv>`
+      :download:`ecommerce.csv: <content/backend/ecommerce.csv>`
 
-      .. literalinclude:: content/backend_ecommerce.csv
+      .. literalinclude:: content/backend/ecommerce.csv
          :language: text
 
    .. tab:: Example generated model
 
-      .. literalinclude:: content/backend_ecommerce.py
+      .. literalinclude:: content/backend/ecommerce.py
          :language: python
