@@ -18,13 +18,13 @@ We aim to minimize the maximum deviation from the average load:
 
 .. math::
 
-   \text{Minimize} \quad \text{max_deviation}
+   \text{Minimize} \quad \text{max\_deviation}
 
 Where
 
 .. math::
 
-   \text{max_deviation} \geq \left( \sum_{i} \sum_{k=0}^{C_i-1} D_i \cdot x\_{i,t-k} + L_t - \frac{1}{T} \sum_{t=0}^{T} \left(L_t + \sum_{i} D_i \cdot C_i\right) \right)
+   \text{max\_deviation} \geq \left( \sum_{i} \sum_{k=0}^{C_i-1} D_i \cdot x_{i,t-k} + L_t - \frac{1}{T} \sum_{t=0}^{T} \left(L_t + \sum_{i} D_i \cdot C_i\right) \right)
 
 .. raw:: html
 
@@ -44,7 +44,7 @@ Where
 
    .. math::
 
-      \sum_{t=\text{Start Window Start}_i}^{\text{Start Window End}_i} x\_{i,t} = 1
+      \sum_{t=\text{Start Window Start}_i}^{\text{Start Window End}_i} x_{i,t} = 1
 
 3. **Load Capacity Constraint**:
 
@@ -52,4 +52,4 @@ Where
 
    .. math::
 
-      \sum_{i} \sum_{k=0}^{C_i-1} D_i \cdot x\_{i,t-k} + L_t \leq 100 \quad \forall t
+      \sum_{i} \sum_{k=0}^{C_i-1} D_i \cdot x_{i,t-k} + L_t \leq 100 \quad \forall t
