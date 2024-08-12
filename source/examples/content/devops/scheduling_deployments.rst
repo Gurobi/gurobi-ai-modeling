@@ -1,6 +1,6 @@
 .. raw:: html
 
-    <h2>Mathematical Formulation</h2>
+    <h2>🔢 Problem Definition</h2>
 
 Let :math:`T` be the total number of time periods in the day.
 

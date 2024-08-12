@@ -1,6 +1,6 @@
-A DevOps Engineer is responsible for scheduling workloads on a limited number of onsite machines. Each machine has specific capacities in terms of virtual CPUs (vCPU), RAM, and GPU FLOPS. Each workload requires a certain amount of these resources to run. The goal is to optimally allocate the workloads to the machines such that all workloads are scheduled without exceeding the capacities of any machine.
+A DevOps Engineer is responsible for scheduling workloads on a limited number of onsite machines. Each machine has specific capacities in terms of virtual CPUs (vCPU), RAM, and GPU FLOPS. Each workload requires a certain amount of these resources to run.
 
-Objective: For machines that have 1 or more workloads assigned, minimize the remainder of available resources (the sum of vCPU, RAM and GPU)
+Objective: Maximize the total resources of machines without any workloads assigned to them.
 
 Constraints:
 - vCPU constraint: The total vCPU requirement of the workloads assigned to a machine must not exceed the vCPU capacity of that machine.

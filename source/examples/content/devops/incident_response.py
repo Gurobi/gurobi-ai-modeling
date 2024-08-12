@@ -1,104 +1,74 @@
 import json
 import gurobipy as gp
 from gurobipy import GRB
-import numpy as np
-import networkx as nx
-import matplotlib.pyplot as plt
+import math
 
-# Load the data from the provided JSON file
-file_path = '/mnt/data/incident_response.json'
-with open(file_path, 'r') as file:
+# Load data from the JSON file
+with open('incident_response.json', 'r') as file:
     data = json.load(file)
 
-# Extract data from JSON structure
-systems = [system['System'] for system in data]
-priority = {system['System']: system['Priority'] for system in data}
-recovery_time = {system['System']: system['Recovery Time (minutes)'] for system in data}
-dependencies = {system['System']: system['Dependencies'] for system in data}
+# Extract relevant information
+systems = [item["System"] for item in data]
+priorities = {item["System"]: item["Priority"] for item in data}
+dependencies = {item["System"]: item["Dependencies"] for item in data}
+recovery_times = {item["System"]: item["Recovery Time (minutes)"] for item in data}
 
-# Creating the Gurobi model
-model = gp.Model("Incident_Response_Optimization")
+# Set up the model
+model = gp.Model("Incident_Response")
 
-# Creating decision variables
-x = model.addVars(systems, vtype=GRB.BINARY, name="x")
-t = model.addVars(systems, vtype=GRB.CONTINUOUS, name="t")
+# Decision variables
+start_times = model.addVars(systems, vtype=GRB.CONTINUOUS, name="start_time")
+finish_times = model.addVars(systems, vtype=GRB.CONTINUOUS, name="finish_time")
+value_at_finish = model.addVars(systems, vtype=GRB.CONTINUOUS, name="value_at_finish")
 
-# Decay rate
-alpha = 0.0398
+# Constraints to ensure dependencies are met
+for system in systems:
+    for dep in dependencies[system]:
+        model.addConstr(start_times[system] >= finish_times[dep])
 
-# Define the number of breakpoints for the piecewise linear approximation
-num_breakpoints = 20
-max_time = max(recovery_time.values()) * len(systems)
+# Constraints to ensure finish times are correctly calculated
+for system in systems:
+    model.addConstr(finish_times[system] == start_times[system] + recovery_times[system])
 
-# Generate the breakpoints and corresponding function values
-breakpoints = np.linspace(0, max_time, num_breakpoints)
-values = np.exp(-alpha * breakpoints)
+# Defining the piecewise linear approximation for the exponential function
+t_values = list(range(0, 121, 10))  # Time intervals (in minutes)
+v_values = [math.exp(-0.0398 * t) for t in t_values]  # Corresponding exponential values
 
-# Add additional variables for the piecewise linear approximation
-z = model.addVars(systems, num_breakpoints, vtype=GRB.CONTINUOUS, name="z")
+for system in systems:
+    if priorities[system] > 0:
+        model.addGenConstrPWL(finish_times[system], value_at_finish[system], t_values, v_values, "PWL_" + system)
+    else:
+        model.addConstr(value_at_finish[system] == 0)
 
-# Update the objective function with the piecewise linear approximation
-model.setObjective(gp.quicksum(priority[s] * gp.quicksum(values[k] * z[s, k] for k in range(num_breakpoints)) for s in systems), GRB.MAXIMIZE)
-
-# Add constraints to ensure proper piecewise linear approximation
-for s in systems:
-    model.addConstr(t[s] == gp.quicksum(breakpoints[k] * z[s, k] for k in range(num_breakpoints)), name=f"time_approx_{s}")
-    model.addConstr(gp.quicksum(z[s, k] for k in range(num_breakpoints)) == x[s], name=f"sum_z_{s}")
-
-# Re-add constraints
-# Dependency constraints
-for s in systems:
-    for d in dependencies[s]:
-        model.addConstr(x[s] <= x[d], name=f"dependency_{s}_{d}")
-
-# Recovery time constraints
-for s in systems:
-    for d in dependencies[s]:
-        model.addConstr(t[s] >= t[d] + recovery_time[d] * x[d], name=f"recovery_time_{s}_{d}")
-
-# Non-negativity constraints
-for s in systems:
-    model.addConstr(t[s] >= 0, name=f"nonnegativity_{s}")
+# Objective function
+model.setObjective(
+    gp.quicksum(
+        priorities[system] * value_at_finish[system]
+        for system in systems
+    ),
+    GRB.MAXIMIZE
+)
 
 # Optimize the model
 model.optimize()
 
-# Store results in a dictionary
-results = {}
-for s in systems:
-    results[s] = {
-        "Recovered": x[s].X,
-        "Recovery Time": t[s].X
-    }
+# Collect the results
+results = {
+    "System": [],
+    "Start Time (minutes)": [],
+    "Finish Time (minutes)": [],
+    "Priority": [],
+    "Value at Finish Time": []
+}
 
-# Create a directed graph
-G = nx.DiGraph()
+for system in systems:
+    start_time = start_times[system].X
+    finish_time = finish_times[system].X
+    priority = priorities[system]
+    value_at_finish_val = value_at_finish[system].X
 
-# Add nodes with recovery time as an attribute
-for system, result in results.items():
-    G.add_node(system, recovery_time=result['Recovery Time'])
-
-# Add edges based on dependencies
-for system, deps in dependencies.items():
-    for dep in deps:
-        G.add_edge(dep, system)
-
-# Arrange nodes based on recovery time
-pos = {system: (results[system]['Recovery Time'], index) for index, system in enumerate(systems)}
-
-# Generate a color map based on initial priority value
-priority_values = [priority[system] for system in G.nodes]
-colors_priority = [plt.cm.RdYlGn(p / max(priority_values)) for p in priority_values]
-
-# Draw the graph with smaller node size and initial priority value as color
-plt.figure(figsize=(20, 10))
-nx.draw(G, pos, with_labels=True, node_color=colors_priority, node_size=1000, font_size=10, font_weight='bold', edge_color='gray', arrowsize=20, cmap=plt.cm.RdYlGn)
-
-# Create a colorbar
-sm = plt.cm.ScalarMappable(cmap=plt.cm.RdYlGn, norm=plt.Normalize(vmin=min(priority_values), vmax=max(priority_values)))
-sm.set_array([])
-plt.colorbar(sm, label='Initial Priority Value', ax=plt.gca())  # Explicitly specify the axis
-
-plt.xlabel('Recovery Time (minutes)')
-plt.title('System Recovery DAG with Initial Priority Values')
-plt.show()
+    results["System"].append(system)
+    results["Start Time (minutes)"].append(start_time)
+    results["Finish Time (minutes)"].append(finish_time)
+    results["Priority"].append(priority)
+    results["Value at Finish Time"].append(value_at_finish_val)

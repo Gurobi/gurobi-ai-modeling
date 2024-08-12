@@ -70,13 +70,14 @@ minimize the number of machines impacted.
       .. literalinclude:: content/devops/assigning_workloads_workloads.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/devops/assigning_workloads.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/devops/assigning_workloads.py
          :language: python
-
-
-
 
 Incident Response Planning
 -------------------------------------
@@ -110,7 +111,11 @@ should be brought online as quickly as possible, with more important services ge
       .. literalinclude:: content/devops/incident_response.json
          :language: json
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/devops/incident_response.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/devops/incident_response.py
          :language: python
