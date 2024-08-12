@@ -57,7 +57,11 @@ upholding statistical significance.
       .. literalinclude:: content/backend/ab_testing.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/backend/ab_testing.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/backend/ab_testing.py
          :language: python
