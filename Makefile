@@ -24,6 +24,23 @@ develop:
 	python -m pip install pre-commit
 	pre-commit install
 
+# This target is similar to how the PDF is built on RTD. `make latexpdf` is not the same and fails.
+# Since latexmk currently always emits exit code 12, I've whitelisted that. Subsequently we check for the creation of
+# the PDF file.
+pdf:
+	python -m sphinx -T -b latex -d _build/doctrees -D language=en source build/pdf
+
+	cd build/pdf && \
+	latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=gurobi-optimization-gurobi-ai-modeling -interaction=nonstopmode || \
+	{ exitcode=$$?; if [ "$$exitcode" -ne 12 ]; then exit $$exitcode; fi; }
+
+	@if [ ! -f build/pdf/gurobi-optimization-gurobi-ai-modeling.pdf ]; then \
+	    echo "Error: PDF was not created!"; \
+	    exit 1; \
+	else \
+	    echo "PDF successfully created: build/pdf/gurobi-optimization-gurobi-ai-modeling.pdf"; \
+	fi
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
