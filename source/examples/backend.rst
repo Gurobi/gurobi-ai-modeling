@@ -24,7 +24,11 @@ Select which ads should be run on your website to maximize revenue, taking into 
       .. literalinclude:: content/backend/ad_selection.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/backend/ad_selection.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/backend/ad_selection.py
          :language: python
