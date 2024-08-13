@@ -1,19 +1,12 @@
-I want to minimize the cost of food while upholding my dietary needs:
+I want to optimize my diet.
 
-I want to eat between 1800 and 2200 calories per day
-At least 91 gram of protein
-At most 65 gram of fat
-At most 1779 mg of sodium
+Objective: I want to minimize the cost of food while upholding my dietary needs
 
-The following food I want to choose between is as follows,
-it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
+Constraints:
+- I want to eat between 1800 and 2200 calories per day
+- At least 91 gram of protein
+- At most 65 gram of fat
+- At most 1779 mg of sodium
 
-hamburger,2.49,410,24,26,730
-chicken,2.89,420,32,10,1190
-hot dog,1.50,560,20,32,1800
-fries,1.89,380,4,19,270
-macaroni,2.09,320,12,10,930
-pizza,1.99,320,15,12,820
-salad,2.49,320,31,12,1230
-milk,0.89,100,8,2.5,125
-ice cream,1.59,330,8,10,180
+Data:
+The food I want to choose between can be found in diet.csv with the following columns: food, price, calories, protein, fat, sodium

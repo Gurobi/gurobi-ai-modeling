@@ -41,10 +41,15 @@ should be considered.
 
       .. code-block:: text
 
-         I want to minimize the cost of food while upholding my dietary needs.
+         I want to optimize my diet.
 
-         The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
-         salad,2.49,320,31,12,1230
+         Objective: I want to minimize the cost of food while upholding my dietary needs.
+
+         Constraints:
+         - I want to eat between 1800 and 2200 calories per day
+         - At least 91 gram of protein
+         - At most 65 gram of fat
+         - At most 1779 mg of sodium
 
          ...
 
@@ -53,11 +58,16 @@ should be considered.
 
       .. code-block:: text
 
-         I want to minimize the cost of food while upholding my dietary needs.
-         Portions are non-divisible.
+         I want to optimize my diet.
 
-         The following food I want to choose between is as follows, it is a comma-delimited table with the following columns: food, price, calories, protein, fat, sodium:
-         salad,2.49,320,31,12,1230
+         Objective: I want to minimize the cost of food while upholding my dietary needs.
+
+         Constraints:
+         - I want to eat between 1800 and 2200 calories per day
+         - At least 91 gram of protein
+         - At most 65 gram of fat
+         - At most 1779 mg of sodium
+         - Portions are non-divisible
 
          ...
 

@@ -1,37 +1,57 @@
+import pandas as pd
 from gurobipy import Model, GRB
 
-# Food data
-foods = ["hamburger", "chicken", "hot dog", "fries", "macaroni", "pizza", "salad", "milk", "ice cream"]
-prices = [2.49, 2.89, 1.50, 1.89, 2.09, 1.99, 2.49, 0.89, 1.59]
-calories = [410, 420, 560, 380, 320, 320, 320, 100, 330]
-proteins = [24, 32, 20, 4, 12, 15, 31, 8, 8]
-fats = [26, 10, 32, 19, 10, 12, 12, 2.5, 10]
-sodiums = [730, 1190, 1800, 270, 930, 820, 1230, 125, 180]
+# Load the diet data
+diet_data = pd.read_csv('/mnt/data/diet.csv')
 
-# Create a new model
-model = Model("diet")
+# Extract data
+foods = diet_data['food'].tolist()
+prices = diet_data['price'].tolist()
+calories = diet_data['calories'].tolist()
+proteins = diet_data['protein'].tolist()
+fats = diet_data['fat'].tolist()
+sodiums = diet_data['sodium'].tolist()
 
-# Create decision variables for the number of servings of each food
-x = model.addVars(len(foods), vtype=GRB.INTEGER, name="x")
+# Number of food items
+n = len(foods)
 
-# Set objective: minimize the total cost
-model.setObjective(sum(prices[i] * x[i] for i in range(len(foods))), GRB.MINIMIZE)
+# Create a model
+model = Model("Diet Optimization")
 
-# Add constraints
-model.addConstr(sum(calories[i] * x[i] for i in range(len(foods))) >= 1800, "cal_min")
-model.addConstr(sum(calories[i] * x[i] for i in range(len(foods))) <= 2200, "cal_max")
-model.addConstr(sum(proteins[i] * x[i] for i in range(len(foods))) >= 91, "protein_min")
-model.addConstr(sum(fats[i] * x[i] for i in range(len(foods))) <= 65, "fat_max")
-model.addConstr(sum(sodiums[i] * x[i] for i in range(len(foods))) <= 1779, "sodium_max")
+# Decision variables: number of portions of each food item
+x = model.addVars(n, vtype=GRB.INTEGER, name="x")
+
+# Objective: Minimize total cost
+model.setObjective(sum(prices[i] * x[i] for i in range(n)), GRB.MINIMIZE)
+
+# Constraints:
+# 1. Caloric intake between 1800 and 2200 calories
+model.addConstr(sum(calories[i] * x[i] for i in range(n)) >= 1800, "MinCalories")
+model.addConstr(sum(calories[i] * x[i] for i in range(n)) <= 2200, "MaxCalories")
+
+# 2. Protein intake at least 91 grams
+model.addConstr(sum(proteins[i] * x[i] for i in range(n)) >= 91, "MinProtein")
+
+# 3. Fat intake at most 65 grams
+model.addConstr(sum(fats[i] * x[i] for i in range(n)) <= 65, "MaxFat")
+
+# 4. Sodium intake at most 1779 mg
+model.addConstr(sum(sodiums[i] * x[i] for i in range(n)) <= 1779, "MaxSodium")
 
 # Optimize the model
 model.optimize()
 
-# Display results
-results = {}
-if model.status == GRB.OPTIMAL:
-    results["status"] = "Optimal solution found"
-    results["variables"] = {v.varName: v.x for v in model.getVars() if v.x > 0}
-    results["total_cost"] = model.objVal
-else:
-    results["status"] = "No optimal solution found"
+# Extract results
+solution = {
+    "Food": [],
+    "Portions": [],
+    "Total Cost": model.objVal
+}
+
+for i in range(n):
+    if x[i].X > 0.001:  # Only show foods that are included in the solution
+        solution["Food"].append(foods[i])
+        solution["Portions"].append(x[i].X)
+
+solution_df = pd.DataFrame(solution)
+solution_df['Total Cost'] = model.objVal

@@ -39,7 +39,11 @@ The reference Python code showing Gurobi best practices can be found in our docu
       .. literalinclude:: content/classic/portfolio.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/classic/portfolio.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/classic/portfolio.py
          :language: python
@@ -63,7 +67,11 @@ The reference Python code showing Gurobi best practices can be found in our docu
       .. literalinclude:: content/classic/sudoku.txt
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/classic/sudoku.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/classic/sudoku.py
          :language: python
@@ -83,7 +91,18 @@ The reference Python code showing Gurobi best practices can be found in our docu
       .. literalinclude:: content/classic/diet.txt
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Data
+
+      :download:`diet.csv: <content/classic/diet.csv>`
+
+      .. literalinclude:: content/classic/diet.csv
+         :language: text
+
+   .. tab:: Generated Model formulation
+
+      .. include:: content/classic/diet.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/classic/diet.py
          :language: python
@@ -110,7 +129,18 @@ The reference Python code showing Gurobi best practices can be found in our docu
       .. literalinclude:: content/classic/facility.txt
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Data
+
+      :download:`facility.csv: <content/classic/facility.csv>`
+
+      .. literalinclude:: content/classic/facility.csv
+         :language: text
+
+   .. tab:: Generated Model formulation
+
+      .. include:: content/classic/facility.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/classic/facility.py
          :language: python
