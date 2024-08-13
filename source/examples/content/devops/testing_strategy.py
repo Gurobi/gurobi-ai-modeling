@@ -45,6 +45,5 @@ if model.status == GRB.OPTIMAL:
     solution = model.getAttr('x', x)
     result = pd.DataFrame([(key[0], key[1], key[2], scores[key]) for key in solution if solution[key] > 0],
                           columns=['OS', 'Machine', 'Testing Environment', 'Score'])
-    import ace_tools as tools; tools.display_dataframe_to_user(name="Optimization Results", dataframe=result)
 else:
     print("No optimal solution found.")
