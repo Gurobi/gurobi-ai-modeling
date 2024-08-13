@@ -9,7 +9,7 @@
 .. toctree::
    :maxdepth: 1
 
+   examples/classic
    examples/devops
    examples/backend
    examples/data
-   examples/classic
