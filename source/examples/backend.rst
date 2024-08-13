@@ -94,7 +94,11 @@ Route the network from end-users to first and second-degree internal servers, mi
       .. literalinclude:: content/backend/network_routing_internal.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/backend/network_routing.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/backend/network_routing.py
          :language: python
@@ -122,7 +126,11 @@ Determine the optimal sales price for the items on an E-commerce platform.
       .. literalinclude:: content/backend/ecommerce.csv
          :language: text
 
-   .. tab:: Example generated model
+   .. tab:: Generated Model formulation
+
+      .. include:: content/backend/ecommerce.rst
+
+   .. tab:: Generated Python code
 
       .. literalinclude:: content/backend/ecommerce.py
          :language: python

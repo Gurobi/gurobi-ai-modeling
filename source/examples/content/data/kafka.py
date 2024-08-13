@@ -1,95 +1,81 @@
-import gurobipy as gp
-from gurobipy import GRB
+from gurobipy import Model, GRB, quicksum
+import pandas as pd
 
-# Define data
-brokers = ['B1', 'B2', 'B3', 'B4']
-topics = ['T1', 'T2', 'T3', 'T4']
-max_partitions = {'B1': 50, 'B2': 60, 'B3': 55, 'B4': 65}
-min_partitions = {'T1': 10, 'T2': 15, 'T3': 8, 'T4': 12}
-max_partitions_topic = {'T1': 20, 'T2': 25, 'T3': 18, 'T4': 22}
+# Load the data from the uploaded CSV files
+brokers_df = pd.read_csv('path_to/kafka_brokers.csv')
+topics_df = pd.read_csv('path_to/kafka_topics.csv')
+transfer_rates_df = pd.read_csv('path_to/kafka_rates.csv')
 
-transfer_rates = {
-    ('B1', 'B2'): 5, ('B1', 'B3'): 3, ('B1', 'B4'): 4,
-    ('B2', 'B1'): 5, ('B2', 'B3'): 4, ('B2', 'B4'): 7,
-    ('B3', 'B1'): 3, ('B3', 'B2'): 4, ('B3', 'B4'): 2,
-    ('B4', 'B1'): 4, ('B4', 'B2'): 7, ('B4', 'B3'): 2
-}
+# Extract data from dataframes for model input
+brokers = brokers_df['Broker_ID'].tolist()
+topics = topics_df['Topic_ID'].tolist()
 
-# Create a new model
-m = gp.Model('KafkaPartitioning')
+max_partitions_broker = dict(zip(brokers_df['Broker_ID'], brokers_df['Max_Partitions']))
+min_partitions_topic = dict(zip(topics_df['Topic_ID'], topics_df['Min_Partitions']))
+max_partitions_topic = dict(zip(topics_df['Topic_ID'], topics_df['Max_Partitions']))
 
-# Decision variables
-x = m.addVars(topics, brokers, vtype=GRB.INTEGER, name="x")
+transfer_rates = {}
+for i, row in transfer_rates_df.iterrows():
+    transfer_rates[(row['From_Broker'], row['To_Broker'])] = row['Transfer_Rate']
 
-# Auxiliary variables for products
-prod = m.addVars(topics, brokers, brokers, vtype=GRB.CONTINUOUS, name="prod")
+# Adjust the transfer_rates dictionary to handle self-transfers (which should be zero)
+for b in brokers:
+    transfer_rates[(b, b)] = 0  # No transfer cost within the same broker
 
-# Objective function: Minimize data transfer
-m.setObjective(gp.quicksum(transfer_rates[i,j] * prod[t,i,j]
-                            for t in topics for i in brokers for j in brokers if i != j), GRB.MINIMIZE)
+# Create model
+model = Model('Kafka_Partition_Optimization')
 
-# Constraints
-# Partition capacity constraint
-m.addConstrs((gp.quicksum(x[t,b] for t in topics) <= max_partitions[b] for b in brokers), "PartitionCapacity")
+# Decision variables: x[t,b] = number of partitions of topic t assigned to broker b
+x = model.addVars(topics, brokers, vtype=GRB.INTEGER, name="x")
 
-# Topic partition constraints
-m.addConstrs((gp.quicksum(x[t,b] for b in brokers) >= min_partitions[t] for t in topics), "MinPartitions")
-m.addConstrs((gp.quicksum(x[t,b] for b in brokers) <= max_partitions_topic[t] for t in topics), "MaxPartitions")
+# Objective: Minimize data transfer between brokers
+model.setObjective(
+    quicksum(transfer_rates[(b1, b2)] * x[t, b1] * x[t, b2] for t in topics for b1 in brokers for b2 in brokers),
+    GRB.MINIMIZE
+)
 
-# Auxiliary variable constraints for products
-for t in topics:
-    for i in brokers:
-        for j in brokers:
-            if i != j:
-                m.addConstr(prod[t, i, j] == x[t, i] * x[t, j], name=f'prod_{t}_{i}_{j}')
+# Constraint 1: Partition Capacity Constraint
+model.addConstrs(
+    (quicksum(x[t, b] for t in topics) <= max_partitions_broker[b] for b in brokers),
+    name="PartitionCapacity"
+)
 
-# Broker load balance constraint
-avg_partitions = gp.quicksum(x[t,b] for t in topics for b in brokers) / len(brokers)
-m.addConstrs((gp.quicksum(x[t,b] for t in topics) <= 1.2 * avg_partitions for b in brokers), "LoadBalanceUpper")
-m.addConstrs((gp.quicksum(x[t,b] for t in topics) >= 0.8 * avg_partitions for b in brokers), "LoadBalanceLower")
+# Constraint 2: Topic Partition Constraint
+model.addConstrs(
+    (quicksum(x[t, b] for b in brokers) >= min_partitions_topic[t] for t in topics),
+    name="MinTopicPartitions"
+)
+model.addConstrs(
+    (quicksum(x[t, b] for b in brokers) <= max_partitions_topic[t] for t in topics),
+    name="MaxTopicPartitions"
+)
 
-# Partition distribution constraint
-m.addConstrs((x[t,b] <= 0.4 * gp.quicksum(x[t,b_] for b_ in brokers) for t in topics for b in brokers), "PartitionDistribution")
+# Constraint 3: Broker Load Balance Constraint
+total_partitions = quicksum(x[t, b] for t in topics for b in brokers)
+average_partitions_per_broker = total_partitions / len(brokers)
+model.addConstrs(
+    (quicksum(x[t, b] for t in topics) <= 1.2 * average_partitions_per_broker for b in brokers),
+    name="LoadBalanceUpper"
+)
+model.addConstrs(
+    (quicksum(x[t, b] for t in topics) >= 0.8 * average_partitions_per_broker for b in brokers),
+    name="LoadBalanceLower"
+)
 
-# Optimize the model
-m.optimize()
+# Constraint 4: Partition Distribution Constraint
+model.addConstrs(
+    (x[t, b] <= 0.4 * quicksum(x[t, b_] for b_ in brokers) for t in topics for b in brokers),
+    name="PartitionDistribution"
+)
+
+# Optimize model
+model.optimize()
+
+# Extract the solution
+solution = {t: {b: x[t, b].X for b in brokers} for t in topics}
 
 # Display the solution
-solution = []
 for t in topics:
+    print(f"Topic {t}:")
     for b in brokers:
-        if x[t, b].x > 0:
-            solution.append((t, b, x[t, b].x))
-
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-
-# Extract data for plotting
-partition_counts = {b: {t: 0 for t in topics} for b in brokers}
-
-for t, b, count in solution:
-    partition_counts[b][t] = count
-
-# Create a stacked bar plot
-fig, ax = plt.subplots()
-
-bar_width = 0.5
-bar_positions = np.arange(len(brokers))
-
-colors = sns.color_palette("Set2", len(topics))
-
-bottoms = np.zeros(len(brokers))
-for i, t in enumerate(topics):
-    heights = [partition_counts[b][t] for b in brokers]
-    ax.bar(bar_positions, heights, bar_width, bottom=bottoms, label=f'Topic {t}', color=colors[i])
-    bottoms += heights
-
-ax.set_xlabel('Brokers')
-ax.set_ylabel('Number of Partitions')
-ax.set_title('Partition Assignment by Broker and Topic')
-ax.set_xticks(bar_positions)
-ax.set_xticklabels(brokers)
-ax.legend()
-
-plt.savefig("kafka.png")
+        print(f"  Broker {b}: {solution[t][b]} partitions")

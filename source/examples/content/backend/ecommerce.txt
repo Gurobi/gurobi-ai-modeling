@@ -10,6 +10,6 @@ Constraints:
 
 Equations:
 - Demand elasticity: Q = Q0 * (1 - E * ((P-P0)/P0)) with Q being the demand, Q0 base demand, P0 base price, P new price and E the price elasticity
-- Shipping costs: SC = Base Shipping Cost+(2×Size (kg))+(1.5×Weight (kg))
+- Shipping costs: SC = Base Shipping Cost + ((2×Size (kg))+(1.5×Weight (kg)) * units sold)
 
 The data is enclosed. The headers are: Product ID,Product Name,Stock Quantity,Base Demand,Base Price,Size (kg),Weight (kg),Base Shipping Cost,Price Elasticity

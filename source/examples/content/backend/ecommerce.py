@@ -1,70 +1,68 @@
-from gurobipy import Model, GRB, quicksum
 import pandas as pd
-import plotly.express as px
+from gurobipy import Model, GRB, quicksum
 
-# Read the data
-data = pd.read_csv('/home/braam/git/ai-modeling/examples/generated/backend/4.csv')
-data.head()
+# Load the data
+file_path = '/mnt/data/ecommerce.csv'
+data = pd.read_csv(file_path)
 
-# Create the model
-model = Model("E-commerce Pricing")
+# Initialize the model
+model = Model("E-commerce Pricing Optimization")
 
-# Decision variables
-P = {}
-Q = {}
-Revenue = {}
+# Create decision variables for the prices
+prices = {}
+demand = {}
+for i, row in data.iterrows():
+    product_id = row['Product ID']
+    base_price = row['Base Price']
+    stock = row['Stock Quantity']
+    base_demand = row['Base Demand']
+    elasticity = row['Price Elasticity']
 
-for i in range(len(data)):
-    P[i] = model.addVar(lb=0.8 * data.loc[i, 'Base Price'], vtype=GRB.CONTINUOUS, name=f"P_{i}")
-    Q[i] = model.addVar(vtype=GRB.CONTINUOUS, name=f"Q_{i}")
-    Revenue[i] = P[i] * Q[i] - (data.loc[i, 'Base Shipping Cost'] + 2 * data.loc[i, 'Size (kg)'] + 1.5 * data.loc[i, 'Weight (kg)'])
+    # Price variable
+    prices[product_id] = model.addVar(vtype=GRB.CONTINUOUS, name=f"Price_{product_id}", lb=0.8 * base_price)
 
-# Constraints
-for i in range(len(data)):
-    model.addConstr(Q[i] <= data.loc[i, 'Stock Quantity'], name=f"Stock_{i}")
-    model.addConstr(Q[i] == data.loc[i, 'Base Demand'] * (1 - data.loc[i, 'Price Elasticity'] * (P[i] - data.loc[i, 'Base Price']) / data.loc[i, 'Base Price']), name=f"Demand_{i}")
-    model.addConstr(P[i] >= 0.8 * data.loc[i, 'Base Price'], name=f"MinPrice_{i}")
+    # Demand variable based on the elasticity formula
+    demand[product_id] = model.addVar(vtype=GRB.CONTINUOUS, name=f"Demand_{product_id}")
+
+# Add the demand elasticity constraints and non-negative demand
+for i, row in data.iterrows():
+    product_id = row['Product ID']
+    base_price = row['Base Price']
+    base_demand = row['Base Demand']
+    elasticity = row['Price Elasticity']
+
+    model.addConstr(
+        demand[product_id] == base_demand * (1 - elasticity * ((prices[product_id] - base_price) / base_price)))
+    model.addConstr(demand[product_id] >= 0)  # Non-negative demand constraint
+
+# Add stock constraints
+for i, row in data.iterrows():
+    product_id = row['Product ID']
+    stock = row['Stock Quantity']
+
+    model.addConstr(demand[product_id] <= stock)
 
 # Objective function
-model.setObjective(quicksum(Revenue[i] for i in range(len(data))), GRB.MAXIMIZE)
+revenue = quicksum(prices[prod_id] * demand[prod_id] -
+                   (row['Base Shipping Cost'] + (2 * row['Size (kg)'] + 1.5 * row['Weight (kg)']) * demand[prod_id])
+                   for prod_id, row in data.set_index('Product ID').iterrows())
+
+model.setObjective(revenue, GRB.MAXIMIZE)
 
 # Optimize the model
 model.optimize()
 
-# Extract the results
-prices = [P[i].X for i in range(len(data))]
-quantities = [Q[i].X for i in range(len(data))]
-total_revenue = model.ObjVal
+# Collecting results
+results = {
+    "Product ID": [],
+    "Optimal Price": [],
+    "Expected Demand": []
+}
 
-# Display results
-results = pd.DataFrame({
-    'Product ID': data['Product ID'],
-    'Product Name': data['Product Name'],
-    'Optimal Price': prices,
-    'Quantity Sold': quantities
-})
+for prod_id in prices:
+    results["Product ID"].append(prod_id)
+    results["Optimal Price"].append(prices[prod_id].X)
+    results["Expected Demand"].append(demand[prod_id].X)
 
-results['Total Revenue'] = results['Optimal Price'] * results['Quantity Sold']
-results['Shipping Cost'] = data['Base Shipping Cost'] + 2 * data['Size (kg)'] + 1.5 * data['Weight (kg)']
-results['Net Revenue'] = results['Total Revenue'] - results['Shipping Cost']
-
-# Create a 3D scatter plot
-fig = px.scatter_3d(results,
-                    x='Optimal Price',
-                    y='Quantity Sold',
-                    z='Net Revenue',
-                    color='Product Name',
-                    size='Net Revenue',
-                    size_max=60,
-                    hover_name='Product Name',
-                    title='Optimal Price, Quantity Sold, and Net Revenue')
-
-# Adjust the camera settings
-camera = dict(
-    eye=dict(x=1.5, y=1.5, z=1.5)  # Adjust these values to change the perspective
-)
-
-fig.update_layout(scene_camera=camera)
-
-# Save the figure as a PNG file
-fig.write_image("3d_scatter_plot.png")
+# Convert the results to a DataFrame for better readability
+results_df = pd.DataFrame(results)
