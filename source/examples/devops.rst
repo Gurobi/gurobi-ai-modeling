@@ -148,7 +148,7 @@ Smartly decide which machines to run tests on and what kind of testing environme
 
    .. tab:: Generated Model formulation
 
-      .. include:: content/devops/testing_strategy_formulation.rst
+      .. include:: content/devops/testing_strategy.rst
 
    .. tab:: Generated Python code
 
