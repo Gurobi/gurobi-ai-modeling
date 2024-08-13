@@ -106,6 +106,40 @@ The reference Python code showing Gurobi best practices can be found in our docu
          :language: python
 
 
+Workforce
+---------
+
+Assigning workers optimally to fit a work schedule.
+
+The reference Python code showing Gurobi best practices can be found in our documentation
+`here <https://docs.gurobi.com/projects/examples/en/current/examples/python/workforce1.html>`__.
+
+We have also described this use-case in our OptiMods toolbox, which is a convenient data-driven API for running
+particular problem types like this one! See the
+`Workforce Scheduling <https://gurobi-optimods.readthedocs.io/en/stable/mods/workforce.html>`__ or
+`OptiMods <https://gurobi-optimods.readthedocs.io/en/stable/index.html>`__  to learn more.
+
+.. image:: images/classic_workforce.png
+   :alt: Workforce
+   :align: center
+
+.. tabs::
+
+   .. tab:: Prompt
+
+      .. literalinclude:: content/classic/workforce.txt
+         :language: text
+
+   .. tab:: Generated Model formulation
+
+      .. include:: content/classic/workforce.rst
+
+   .. tab:: Generated Python code
+
+      .. literalinclude:: content/classic/workforce.py
+         :language: python
+
+
 .. _portfolio:
 
 Portfolio Optimization
