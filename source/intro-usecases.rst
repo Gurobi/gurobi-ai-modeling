@@ -3,10 +3,12 @@ Use cases
 
 For this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
 
-We think it is important to give some specific examples so users new to optimization know what to look for.
+We think it is important to give some specific examples so users new to optimization might have an idea what to look for.
+Do keep in mind that the examples we came up with are just hypothetical use cases to illustrate a point, they might
+not be applicable in their current format.
 
 .. note::
-   Not only **can** these scenarios be applied in the real-world, they **are** applied in the real world... by us! For
+   Not only **can** optimization be applied in the software engineering domain, they **are** being applied... by us! For
    :ref:`example <testing_strategy>`, in our CI/CD process we utilize optimization to smartly select which machines to run tests on and what kind
    of testing environment to setup. So we are using Gurobi to optimize the development process at Gurobi!
 
@@ -23,15 +25,35 @@ Mixed-Integer Programming (MIP) and Linear Programming (LP) models can help enha
 task scheduling, and overall system performance, leading to more efficient CI/CD pipelines and cost-effective cloud
 resource management. For instance, think about the following questions:
 
--
+- When can I best apply updates or schedule deployments while minimally impacting users?
+- How should I schedule workloads on heterogeneous machines if I want to impact as few machines as possible?
+- For incident response planning, which machines should get priority based on whether they are customer-facing or have dependencies?
+- To optimally test our application, which parameters should I set to maximize our testing coverage?
 
 Backend Engineer
 ^^^^^^^^^^^^^^^^
-A software engineer can leverage mathematical optimization to streamline complex decision-making and enhance system performance in various practical applications. By implementing optimization algorithms, engineers can efficiently solve problems like resource allocation, scheduling, and logistics. For instance, in cloud computing, optimization models can minimize operational costs by dynamically adjusting server loads based on demand. In supply chain management, these techniques can reduce transportation costs and improve delivery times by finding optimal routing paths. Optimization also plays a critical role in machine learning, where it aids in hyperparameter tuning, ensuring model accuracy and efficiency. By integrating mathematical optimization into their development workflow, software engineers can deliver solutions that are both cost-effective and high-performing across diverse domains.
+Backend and Full-Stack Engineers are operating in an environment that can be constrained from as resource perspective
+but also have low-latency or other application-specific requirements.
+
+Optimization techniques like MIP and LP can play a role in improving API performance, application optimization and help
+drive more traffic. Consider the following scenarios:
+
+- I want to maximize ad revenue from my website, while minimizing impact on user experience.
+- How can I best schedule A/B testing to different user segments that yield statistically significant results while minimizing user disruption?
+- In our multi-layered microservice application, how can I route the traffic so as to minimize latency and cost?
+- How do we apply dynamic pricing on our E-commerce platform based on stock and demand to maximize revenue?
 
 Data Engineer
 ^^^^^^^^^^^^^
-A software engineer can leverage mathematical optimization to streamline complex decision-making and enhance system performance in various practical applications. By implementing optimization algorithms, engineers can efficiently solve problems like resource allocation, scheduling, and logistics. For instance, in cloud computing, optimization models can minimize operational costs by dynamically adjusting server loads based on demand. In supply chain management, these techniques can reduce transportation costs and improve delivery times by finding optimal routing paths. Optimization also plays a critical role in machine learning, where it aids in hyperparameter tuning, ensuring model accuracy and efficiency. By integrating mathematical optimization into their development workflow, software engineers can deliver solutions that are both cost-effective and high-performing across diverse domains.
+As a Data Engineer, you're often dealing with large-scale data pipelines, data storage, and ETL processes that can be complex and resource-intensive.
+Optimization in this domain can lead to significant improvements in data processing times, cost-efficiency, and overall system reliability.
+
+Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can be leveraged to streamline data operations, ensuring that data flows smoothly and efficiently through your systems. Consider these optimization opportunities:
+
+- How can I optimize the scheduling of Apache Spark batch jobs to ensure minimal downtime and efficient use of processing resources?
+- What is the best way to allocate storage across various data warehouses to balance cost and retrieval speed?
+- How can I design data partitioning strategies to reduce query latency while minimizing storage costs?
+- For data streaming workloads as with Apache Kafka, how should I allocate topic partitions to minimize latency between brokers?
 
 .. _usecase_other:
 
