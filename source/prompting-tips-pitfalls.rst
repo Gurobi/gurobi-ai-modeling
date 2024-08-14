@@ -216,10 +216,10 @@ adverse effects. For such cases we recommend instructing the LLM to suppress log
 
 Abstract concepts are sometimes difficult
 -----------------------------------------
-
+todo
 
 Other modeling Pitfalls
-------------------
+-----------------------
 The one thing to always keep in mind is that almost never will the LLM express any doubts about interpreting your question. It will make assumptions and when generating an answer will try to sound authoritative.
 This is why you have to make extra sure that you don't fall for any of the pitfalls that lead to bad results, since it might not be obvious where the error lies that tripped up the model.
 
