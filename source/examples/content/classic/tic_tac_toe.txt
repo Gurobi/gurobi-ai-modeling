@@ -1,4 +1,5 @@
-Given a 3-D tic-tac-toe board, where players take turns placing X's and O's, the game typically ends when one player completes a horizontal, vertical diagonal line; that is, when they manage to place their symbols in three cells that form a line or  diagonal in the grid. The twist that is tackled here is that the game continues until every cell contains a symbol, and the goal is to arrange the symbols to minimize the number of completed lines or diagonals.
+Given a 3-D tic-tac-toe board, where players take turns placing X's and O's, the game typically ends when one player completes a horizontal, vertical diagonal line; that is, when they manage to place their symbols in three cells that form a line or diagonal in the grid.
+The twist that is tackled here is that the game continues until every cell contains a symbol, and the goal is to arrange the symbols to minimize the number of completed lines or diagonals.
 
 Objective: Minimize the number of completed lines or diagonals
 
