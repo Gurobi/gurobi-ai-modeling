@@ -117,31 +117,34 @@ data can be sent via any route through the nodes :math:`\{0,1,2,3,4,5\}`:
 
       .. code-block:: text
 
+         Imagine we're managing a telecommunications network that spans 6 key points, from a primary data center (Point 0) to a major user hub (Point 5).
+
          ...
 
-         The objective is to find out the maximum amount of data that can be
-         transferred from Point 0 (Data Center) to Point 5 (User Hub) per second.
+         The objective is to find out the maximum amount of data that can be transferred from Point 0 (Data Center) to Point 5 (User Hub) per second.
 
 
    .. tab:: Good
 
       .. code-block:: text
 
+         Imagine we're managing a telecommunications network that spans 6 key points, from a primary data center (Point 0) to a major user hub (Point 5).
+
          ...
 
-         The objective is to find out the maximum amount of data that can be
-         transferred to Point 5 (User Hub) per second.
+         The objective is to find out the maximum amount of data that can be transferred to Point 5 (User Hub) per second.
 
 For a human, the objective should be clear for either version: maximize the flow into Point 5. A machine might have more
 difficulty with it and consider multiple options:
 
 #. Maximize for Point 5 inflow?
 #. Maximize for Point 0 outflow?
-#. Maximize the flow from 0 to 5 and disregard the indirect flows into 5?
+#. Maximize the direct flows from 0 to 5 and disregard the indirect flows into 5?
 
-Even though the latter examples are clearly wrong and an LLM should be able to account for it, it is exactly these kind
-of small nuggets of confusion that compound together to an output that is overall less precise. Unfortunately, the
-current generation of LLMs will not tell you the degree of confusion under which they are generating a response.
+Even though the latter examples might seem intuitively wrong to the human eye (and an LLM should be able to be able to
+interpret it that way), it is exactly these kind of small sources of confusion that compound together to an output that
+is overall less precise. Unfortunately, the current generation of LLMs will not tell you the degree of confusion under
+which they are generating a response.
 
 A very simple solution for this is proposed in the Good example: **keep things simple**.
 
@@ -206,8 +209,8 @@ not be needed.
 Too much gurobipy output
 ------------------------
 In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
-varying the value of a constant (in a strategy called an "efficient frontier", or "Pareto front"). We show this in the
-:ref:`portfolio <portfolio>` example.
+varying the value of a constant (in a strategy called an `Pareto Front <https://en.wikipedia.org/wiki/Pareto_front>`__
+or "efficient frontier"). We show this in the :ref:`portfolio <portfolio>` example.
 
 This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
 which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to

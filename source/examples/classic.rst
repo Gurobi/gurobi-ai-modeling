@@ -138,35 +138,6 @@ particular problem types like this one! See the
       .. literalinclude:: content/classic/workforce.py
          :language: python
 
-3D Tic-Tac-Toe
---------------
-
-Minimize the number of lines and diagonals using X's and O's in a 3D cube.
-
-This is an adaptation of one of our Jupyter Notebook examples on our website:
-`Logic Programming - 3D Tic-Tac-Toe <https://www.gurobi.com/jupyter_models/logic-programming-3d-tic-tac-toe/>`__. For
-more examples, see the `Jupyter Notebook Modeling Examples <https://www.gurobi.com/jupyter_models/>`__ page.
-
-.. image:: images/classic_tic_tac_toe.png
-   :alt: Sudoku
-   :align: center
-
-.. tabs::
-
-   .. tab:: Prompt
-
-      .. literalinclude:: content/classic/tic_tac_toe.txt
-         :language: text
-
-   .. tab:: Generated Model formulation
-
-      .. include:: content/classic/tic_tac_toe.rst
-
-   .. tab:: Generated Python code
-
-      .. literalinclude:: content/classic/tic_tac_toe.py
-         :language: python
-
 .. _portfolio:
 
 Portfolio Optimization
