@@ -1,0 +1,19 @@
+An investor has a capital of $500,000 and has some investment projects to choose from in the coming 3 years.
+Amounts are invested at the start of the year once the investment duration has passed, the vested amount plus return rate is returned at the end of the year.
+
+The investment project all have a duration and expected return. Some project are constrained on the maximum vested amount and when they can be invested in.
+
+The investor can choose between the following 4 projects:
+1. Can be invested in any year (and multiple times). Duration is 1 year and the total return is 20%
+2. Can be only invested in year 1. Duration is 2 years and the total return during that period is 150%. Maximum vested amount is $120,000.
+3. Can be only invested in year 2. Duration is 1 year and the total return during that period is 160%. Maximum vested amount is $150,000.
+4. Can be only invested in year 3. Duration is 1 year and the total return during that period is 40%. Maximum vested amount is $100,000.
+
+Create intermediate variables Ci that represent the starting capital in year i.
+
+Objective: Maximize C4
+
+Constraints:
+- Initial capital at year 1 is $500,000
+- All available capital Ci at year i can be allocated to the different projects during the year. All capital should be fully invested every year.
+- Ci is calculated by taking the consists of the vested amounts in the projects plus returns of the previous year.
