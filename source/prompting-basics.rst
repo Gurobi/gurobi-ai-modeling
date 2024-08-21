@@ -5,7 +5,7 @@ Basics
 
 Persona
 -------
-Instruct the LLM to act as a persona
+Instruct the LLM to act as a persona [`Nananukul et al., 2023  <https://arxiv.org/abs/2310.06174>`__]
 
 .. _funnel:
 

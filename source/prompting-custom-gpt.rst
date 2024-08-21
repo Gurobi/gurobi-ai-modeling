@@ -51,24 +51,26 @@ See below for a walkthrough through the model building process using the Gurobi 
 Advantages
 """"""""""
 
-Moreover, having ChatGPT build and run the model inside the platform, it is sometimes able to spot and recover from
+Additionally, having ChatGPT build and run the model inside the platform, it is sometimes able to spot and recover from
 mistakes it might initially make.
 
-.. thumbnail:: images/customgpt2.png
-   :align: center
 
-   Custom GPT correcting itself
+.. carousel::
+
+   .. image:: images/customgpt2.png
+      :alt: Custom GPT correcting itself
 
 Prompt Template
 """""""""""""""
 
-In the :ref:`example_prompts` section we will look at some example prompts that you can use with Gurobi Model Builder.
-For the most part, the prompts will follow the following prompt template:
+While it is possible to supply the custom GPT with a wide range of problem-describing prompts, our advice is to write
+your prompt following a template. We have devised the following prompt template that help guide users write a prompt
+that contain the elements necessary for an optimization problem:
 
 .. code-block:: console
 
    Problem description:
-   <describe the problem, making sure you mention all variables and constants>
+   <describe the problem on a high level, making sure you also introduce the context. Normally, 3-5 sentences is sufficient for this.>
 
    Objective: <Maximize/Minimize> <objective>
    Constraints:
@@ -80,14 +82,15 @@ For the most part, the prompts will follow the following prompt template:
    Data:
    <data in csv format, including headers> or <upload your files and name the filename here>
 
-It is not strictly necessary to utilize this template. However, we do recommend taking a structured approach as it likely
-leads to a more reliable output as it increases the likelihood of your prompt to contain all the necessary information
-and less likely to throw off the LLM because of a confusing structuring of the problem description.
+When following this template you are more likely to think about these elements in a structured way. Moreover, in the
+:ref:`example_prompts` section we will look at some example prompts we recommend trying out with Gurobi Model Builder.
+You will find that most of these prompt follow this template. After going through some of the examples and subsequently
+using the same template, it should be more natural to follow our prompting recommended best practices.
 
 Gurobot
 """""""
 
-We have also put out a second Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
+Additionally, Gurobi has put out another Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
 Whereas `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_ is a very specific tool for
 helping new users create models from a problem description, Gurobot is a general-purpose GPT
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when
