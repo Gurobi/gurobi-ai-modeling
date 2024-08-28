@@ -22,4 +22,4 @@ One good way to get started with this process is to conduct a sanity check of th
 
 If any problems are detected at this stage, users could review the prompt and resulting model/code for signs of trouble and try revising the prompt to be more clear or forceful when describing the constraints or other aspects of the problem that may have led to the failure.
 
-[Further steps or specifics related to testing and validation could also be given.]
+[Further steps or specifics related to testing and validation could also be given.     ]]]]
