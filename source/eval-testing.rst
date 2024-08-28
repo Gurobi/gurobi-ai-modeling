@@ -32,3 +32,7 @@ Some specific edge cases you may want to test when evaluating model validity cou
 
 If any problems are detected at this stage, users could review the prompt and resulting model/code for signs of trouble and try revising the prompt to be more clear or forceful when describing the constraints or other aspects of the problem that may have led to the failure.  Or, if you are more comfortable with the mathematical notation consider requests to modify a specific constraint in the formulation.  
 
+<<<<<<< HEAD
+=======
+[Further steps or specifics related to testing and validation could also be given.]
+>>>>>>> 4ec390148837aad94b76a1d81c1148d18c556768
