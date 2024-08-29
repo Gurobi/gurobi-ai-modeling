@@ -2,46 +2,40 @@
 
     <h2>🔢 Problem Definition</h2>
 
-**Objective: Maximize Revenue**
-
 .. raw:: html
 
-    <h3>Sets and Indices</h3>
+    <h3>Sets</h3>
 
-- :math:`P`: Set of pages.
-- :math:`A_p`: Set of ads available for page :math:`p`.
-- :math:`i`: Index for ads.
-- :math:`p`: Index for pages.
+- :math:`P`: Set of pages :math:`p`.
+- :math:`A`: Set of ads :math:`a`.
 
 .. raw:: html
 
     <h3>Parameters</h3>
 
-- :math:`\text{CTR}_i`: Click-Through Rate (CTR) of ad :math:`i`.
-- :math:`\text{Rev}_i`: Revenue per click for ad :math:`i`.
-- :math:`\text{Cost}_i`: Cost per display of ad :math:`i`.
-- :math:`\text{InterestMatch}_i`: 1 if the ad :math:`i` matches user interests, 0 otherwise.
-- :math:`B`: Budget constraint for total cost, set at $500.
-- :math:`\text{MinCTR}`: Minimum overall CTR requirement (2.5%).
-- :math:`\text{HighCTRThreshold}`: Threshold for high CTR ads (3.0%).
-- :math:`\text{LowCTRThreshold}`: Threshold for low CTR ads (2.0%).
-- :math:`\text{MaxAdsPerPage}`: Maximum number of ads per page (3).
-- :math:`\text{RelevanceThreshold}`: Minimum percentage of relevant ads (70%).
+- :math:`\text{CTR}_{p,a}`: Click-Through Rate of ad :math:`a` on page :math:`p` (in percentage).
+- :math:`\text{Revenue}_{a}`: Revenue generated per click from ad :math:`a` (in dollars).
+- :math:`\text{InterestMatch}_{a}`: Binary parameter indicating if ad :math:`a` matches user interests (1 if Yes, 0 if No).
+- :math:`\text{Cost}_{a}`: Cost per ad :math:`a` (in dollars).
+- :math:`\text{MaxAdsPerPage} = 3`: Maximum number of ads per page.
+- :math:`\text{MinCTR} = 2.5`: Minimum average CTR across all selected ads.
+- :math:`\text{BudgetLimit} = 500`: Maximum budget for the cost of selected ads.
 
 .. raw:: html
 
     <h3>Decision Variables</h3>
 
-- :math:`x_{i,p}`: Binary variable, 1 if ad :math:`i` is selected for page :math:`p`, 0 otherwise.
+- :math:`x_{p,a}`: Binary decision variable, 1 if ad :math:`a` is selected for page :math:`p`, 0 otherwise.
 
 .. raw:: html
 
     <h3>Objective</h3>
 
-Maximize the total revenue:
+Maximize the total revenue across all pages:
 
 .. math::
-   \text{Maximize } \sum_{p \in P} \sum_{i \in A_p} x_{i,p} \cdot \text{CTR}_i \cdot \text{Rev}_i
+
+    \text{Maximize} \quad Z = \sum_{p \in P} \sum_{a \in A} \text{Revenue}_{a} \times \text{CTR}_{p,a} \times x_{p,a}
 
 .. raw:: html
 
@@ -49,35 +43,31 @@ Maximize the total revenue:
 
 1. **Overall CTR Constraint**:
 
-   .. math::
-      \frac{\sum_{p \in P} \sum_{i \in A_p} x_{i,p} \cdot \text{CTR}_i}{\sum_{p \in P} \sum_{i \in A_p} x_{i,p}} \geq \text{MinCTR}
+.. math::
+
+    \frac{\sum_{p \in P} \sum_{a \in A} \text{CTR}_{p,a} \times x_{p,a}}{\sum_{p \in P} \sum_{a \in A} x_{p,a}} \geq 2.5
 
 2. **Page CTR Constraint**:
    For each page :math:`p`:
 
-   .. math::
-      \text{If } \sum_{i \in A_p, \text{CTR}_i < \text{LowCTRThreshold}} x_{i,p} \geq 1, \text{ then } \sum_{i \in A_p, \text{CTR}_i \geq \text{HighCTRThreshold}} x_{i,p} \geq 1
+.. math::
 
-3. **Page Ad Constraint**:
-   Each ad can only be shown on pages where it is mapped:
+    \text{If } x_{p,a} = 1 \text{ and } \text{CTR}_{p,a} < 2.0\%, \text{ then there exists } x_{p,a'} = 1 \text{ with } \text{CTR}_{p,a'} > 3.0\%
 
-   .. math::
-      x_{i,p} \leq 1 \quad \forall p, \forall i \in A_p
+3. **User Experience Constraint**:
 
-4. **User Experience Constraint**:
-   A maximum of 3 ads per page:
+.. math::
 
-   .. math::
-      \sum_{i \in A_p} x_{i,p} \leq \text{MaxAdsPerPage} \quad \forall p
+    \sum_{a \in A} x_{p,a} \leq 3 \quad \forall p \in P
 
-5. **Relevance Constraint**:
-   At least 70% of the ads must match user interests:
+4. **Relevance Constraint**:
 
-   .. math::
-      \frac{\sum_{p \in P} \sum_{i \in A_p} x_{i,p} \cdot \text{InterestMatch}_i}{\sum_{p \in P} \sum_{i \in A_p} x_{i,p}} \geq \text{RelevanceThreshold}
+.. math::
 
-6. **Budget Constraint**:
-   The total cost of ads displayed must not exceed $500 per day:
+    \sum_{p \in P} \sum_{a \in A} \text{InterestMatch}_{a} \times x_{p,a} \geq 0.7 \times \sum_{p \in P} \sum_{a \in A} x_{p,a}
 
-   .. math::
-      \sum_{p \in P} \sum_{i \in A_p} x_{i,p} \cdot \text{Cost}_i \leq B
+5. **Budget Constraint**:
+
+.. math::
+
+    \sum_{p \in P} \sum_{a \in A} \text{Cost}_{a} \times x_{p,a} \leq 500

@@ -1,84 +1,69 @@
-from gurobipy import Model, GRB, quicksum
 import pandas as pd
+from gurobipy import Model, GRB, quicksum
 
-# Load the data
+# Load the data from the provided CSV file
 file_path = 'path_to_your_file/ad_selection.csv'
 ad_data = pd.read_csv(file_path)
 
-# Parameters
-pages = ad_data['Page ID'].unique()
-ads = ad_data['Ad ID'].unique()
+# Clean the data by removing rows with missing values
+cleaned_ad_data = ad_data.dropna()
 
-# Define constants from the problem description
-MinCTR = 2.5
-LowCTRThreshold = 2.0
-HighCTRThreshold = 3.0
-MaxAdsPerPage = 3
-RelevanceThreshold = 0.7
-Budget = 500
+# Extract relevant data from the cleaned DataFrame
+pages = cleaned_ad_data['Page ID'].unique()
+ads = cleaned_ad_data['Ad ID'].unique()
+ctr = cleaned_ad_data.set_index(['Page ID', 'Ad ID'])['CTR (%)'].to_dict()
+revenue = cleaned_ad_data.set_index(['Page ID', 'Ad ID'])['Revenue per click ($)'].to_dict()
+interest_match = cleaned_ad_data.set_index(['Page ID', 'Ad ID'])['User Interest Match (Yes/No)'].apply(lambda x: 1 if x == 'Yes' else 0).to_dict()
+cost = cleaned_ad_data.set_index(['Page ID', 'Ad ID'])['Cost per ad ($)'].to_dict()
 
-# Create a new model
-m = Model("Ad_Selection")
+# Create a new Gurobi model
+model = Model("Ad_Selection")
 
-# Create variables
-x = m.addVars(ads, pages, vtype=GRB.BINARY, name="x")
-total_ads_selected = m.addVar(vtype=GRB.CONTINUOUS, name="total_ads_selected")
+# Decision variables
+x = model.addVars(pages, ads, vtype=GRB.BINARY, name="x")
 
-# Set objective: Maximize revenue
-m.setObjective(
-    quicksum(x[i, p] * ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'CTR (%)'].values[0] * ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'Revenue per click ($)'].values[0]
-            for i in ads for p in pages if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty),
-    GRB.MAXIMIZE
+# Objective: Maximize revenue
+model.setObjective(quicksum(revenue[p, a] * ctr[p, a] * x[p, a] for p in pages for a in ads), GRB.MAXIMIZE)
+
+# Constraint 1: Overall CTR Constraint (Reformulated to avoid division by expression)
+model.addConstr(
+    quicksum(ctr[p, a] * x[p, a] for p in pages for a in ads) >= 2.5 * quicksum(x[p, a] for p in pages for a in ads),
+    "Overall_CTR"
 )
 
-# Overall CTR Constraint using the total ads selected
-total_ctr = quicksum(x[i, p] * ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'CTR (%)'].values[0] for i in ads for p in pages if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty)
-m.addConstr(total_ctr >= MinCTR * total_ads_selected, "Overall_CTR")
-
-# Page CTR Constraint
+# Constraint 2: Page CTR Constraint
 for p in pages:
-    low_ctr_ads = quicksum(x[i, p] for i in ads if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty and ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'CTR (%)'].values[0] < LowCTRThreshold)
-    high_ctr_ads = quicksum(x[i, p] for i in ads if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty and ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'CTR (%)'].values[0] >= HighCTRThreshold)
-    m.addConstr(low_ctr_ads <= high_ctr_ads, f"Page_CTR_{p}")
+    model.addConstrs((x[p, a] == 1) >> (quicksum(x[p, a2] for a2 in ads if ctr[p, a2] > 3.0) >= 1)
+                     for a in ads if ctr[p, a] < 2.0)
 
-# Page Ad Constraint
-for p in pages:
-    for i in ads:
-        if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty:
-            m.addConstr(x[i, p] <= 1, f"Page_Ad_{i}_{p}")
+# Constraint 3: User Experience Constraint (Max 3 ads per page)
+model.addConstrs((quicksum(x[p, a] for a in ads) <= 3 for p in pages), "MaxAdsPerPage")
 
-# User Experience Constraint
-for p in pages:
-    m.addConstr(
-        quicksum(x[i, p] for i in ads if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty) <= MaxAdsPerPage,
-        f"MaxAds_{p}"
-    )
+# Constraint 4: Relevance Constraint (At least 70% ads should match user interest)
+model.addConstr(
+    quicksum(interest_match[p, a] * x[p, a] for p in pages for a in ads) >= 0.7 * quicksum(x[p, a] for p in pages for a in ads),
+    "Relevance"
+)
 
-# Relevance Constraint using total ads selected
-total_relevant_ads = quicksum(x[i, p] * (ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'User Interest Match (Yes/No)'].values[0] == 'Yes') for i in ads for p in pages if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty)
-m.addConstr(total_relevant_ads >= RelevanceThreshold * total_ads_selected, "Relevance")
-
-# Budget Constraint
-m.addConstr(
-    quicksum(x[i, p] * ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p), 'Cost per ad ($)'].values[0] for i in ads for p in pages if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty) <= Budget,
+# Constraint 5: Budget Constraint
+model.addConstr(
+    quicksum(cost[p, a] * x[p, a] for p in pages for a in ads) <= 500,
     "Budget"
 )
 
-# Ensure total_ads_selected equals the number of selected ads
-m.addConstr(
-    total_ads_selected == quicksum(x[i, p] for i in ads for p in pages if not ad_data.loc[(ad_data['Ad ID'] == i) & (ad_data['Page ID'] == p)].empty),
-    "Total_Ads_Selected"
-)
-
 # Optimize the model
-m.optimize()
+model.optimize()
 
-# Extract the selected ads
-selected_ads = [(i, p) for i in ads for p in pages if x[i, p].X > 0.5]
+# Extract the results
+solution = {(p, a): x[p, a].x for p in pages for a in ads if x[p, a].x > 0.5}
 
-# Create a DataFrame to show the selected ads
-selected_df = pd.DataFrame(selected_ads, columns=['Ad ID', 'Page ID'])
-selected_df = pd.merge(selected_df, ad_data, on=['Ad ID', 'Page ID'])
+# Calculate total revenue and average CTR
+total_revenue = sum(revenue[p, a] * ctr[p, a] for (p, a) in solution.keys())
+average_ctr = sum(ctr[p, a] for (p, a) in solution.keys()) / len(solution)
 
-print("Selected Ads:")
-print(selected_df)
+# Output the results
+print(f"Total Revenue: ${total_revenue:.2f}")
+print(f"Average CTR: {average_ctr:.2f}%")
+print("Selected ads per page:")
+for (p, a) in solution.keys():
+    print(f"Page {p}, Ad {a}")
