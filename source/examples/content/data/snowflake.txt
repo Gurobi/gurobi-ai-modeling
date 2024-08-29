@@ -1,0 +1,15 @@
+As a Data Engineer at a software company, you are tasked with optimizing the performance of a critical application running on Snowflake. The database handles a large volume of read and write operations, and the current table structures and clustering keys are not optimized, leading to slow query performance and higher costs associated with compute time and storage.
+
+Your goal is to design the most efficient clustering strategy and optimize materialized views to enhance query performance while minimizing the impact on storage and compute costs.
+
+You have a set of queries that are frequently run against the database. Each query has a different frequency and selectivity (the percentage of rows filtered by the query). Optimizing clustering keys and materialized views on the columns used in these queries can significantly improve their performance but will also increase storage usage and maintenance costs.
+
+Objective: Maximize the total query performance improvement. This is calculated taking the sum of chosen Performance_Improvements and dividing that by the total number of queries.
+
+Constraints:
+- Compute Maintenance Cost Constraint: The total additional compute cost introduced by the clustering keys and materialized views maintenance should not exceed 20 units.
+- Storage Cost Constraint: The total storage used by all optimizations should not exceed 45 GB.
+- Query Performance Constraint: The total query performance improvement must be at least 20%.
+
+Data:
+The data for this is in the attached csv file with the following columns: Query_ID,Frequency,Selectivity (%),Compute_Maintenance_Cost,Storage_Cost (GB),Performance_Improvement (%)
