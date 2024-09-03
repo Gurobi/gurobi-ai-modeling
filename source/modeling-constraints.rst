@@ -1,4 +1,0 @@
-Constraints
-============
-
-Talk about constraints

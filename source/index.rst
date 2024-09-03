@@ -22,6 +22,7 @@ Contents
 
    intro-about
    intro-vs-ml
+   intro-modeling-vs-prompting
    intro-usecases
 
 .. toctree::
@@ -33,14 +34,6 @@ Contents
    prompting-examples
    prompting-tips-pitfalls
    prompting-case-studies
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Modeling basics
-
-   modeling-variables
-   modeling-constraints
-   modeling-objective-function
 
 .. toctree::
    :maxdepth: 2
