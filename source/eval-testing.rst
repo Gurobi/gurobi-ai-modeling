@@ -26,7 +26,7 @@ One good way to get started with this process is to conduct a sanity check of th
 
 Some specific edge cases you may want to test when evaluating model validity could be:
 
-- Test a solution of all '0' values for the decision variables.  Should this be feasible or ingeasible?  Does the objective make sense?
+- Test a solution of all '0' values for the decision variables.  Should this be feasible or infeasible?  Does the objective make sense?
 - Test a solution where all decision variables are set to their min or max bound.  Does the objective function trend in the expected direction?  If the model is infeasible, does that make sense?
 - Test a known feasible point.  Do the objective and other constraint values match what you currently observe for your application?  
 
