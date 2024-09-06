@@ -16,12 +16,17 @@ The benefits of devoting time to crafting a problem statement for your applicati
 - Identifying any competing objectives
 - Documentation around your application 
 
-A well posed problem statement will include all of the kep components of an optimization model (described below) in a readable format and clearly describe the decision to be made. It should also include:
+A well-posed problem statement should include all of the key components of an optimization model (described below), including information about:
 
-- Description of relationships beween veriables, where needed
-- ?
-- ?
-- ?
+- Which decisions are being made? 
+- What constraints or restrictions are there regarding which values of these decisions are allowed or forbidden?
+- How can we measure which set of decisions is better, when we have multiple different feasible choices for the decisions? Are we trying to minimize or maximize something?
+
+Although a problem statement need not explicitly contain mathematical notation, inequalities or functions, having a precise and complete description of the above information will make it easier for a human (or AI agent) to construct a mathematical model that accurately represents the problem.
+
+In most cases data should be separated from the model, allowing the problem to be defined in a general or abstract way (e.g., "Determine how much of each product should be produced at each facility.").
+Then, after a mathematical model is constructed, specific sets of data (e.g., a spreadsheet or text file containing a list of facilities, a list of products, cost and demand data) can be loaded as input to construct and solve individual instance of the decision problem. 
+Separation of the abstract problem description and problem problem data allows problems to be more simply stated, and reused with different data sets.
 
 [[show problem statement example?  or link to the use cases?]]
 
@@ -36,9 +41,9 @@ Understanding the key components of an optimization model is critical when revie
 
 The main components of an optimization model are:
 
-- **Objective:** The goal of your application.  For example, 'minimize cost' or 'maximize reliability'.  
-- **Decision Variables:** The set of variables representing the choice that must be made.  For example, 'production rate' or 'machine on/off status'.  Note that a variables' allowed set of values can be continuous(i.e., any number in a specified range), integer (i.e., 1, 2, 3, etc.), or binary (i.e., 0 or 1). 
-- **Constraints:** The tradeoffs and limitations that must be accounted for, and criteria that must be satisfied. For example, 'no more than 3 workers scheduled any day' or 'at least 100 units in inventory at all times'.  
+- **Decision Variables:** The set of variables representing the choice that must be made.  For example, 'production rate' or 'machine on/off status'. Note that a variables' allowed set of values can be continuous (i.e., any number in a specified range), integer (i.e., 1, 2, 3, etc.), or binary (i.e., 0 or 1). 
+- **Constraints:** Constraints define relationships between the values of the variables that must be satisfied for set of decision to be considered feasible. They can represent tradeoffs and limitations that must be accounted for, and criteria that must be satisfied. For example, 'no more than 3 workers scheduled any day' or 'at least 100 units in inventory at all times'.  
+- **Objective:** The goal of your application. For example, 'minimize cost' or 'maximize reliability'. 
 - **Parameters and Data:** The input data required to not just run the model, but to make the model represent exactly the situation at hand.  For example, 'price of '
 
 
