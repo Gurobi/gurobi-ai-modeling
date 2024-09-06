@@ -1,10 +1,8 @@
 Custom GPTs
 ============
 
-Since the steps necessary for translating a problem description into an optimization model is well defined in :ref:`funnel` and
-not necessarily changing we can utilize a Custom GPT that has these steps baked. Moreover, some common issues with the
-current LLM can herein be addressed.
-
+Since the steps necessary for translating a problem description into an optimization model is well defined in
+:ref:`funnel`, we can leverage the Custom GPT functionality of ChatGPT to have these steps baked-in.
 
 We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_.
 This Custom GPT incorporates some of the reasoning steps and helps build, execute and interpret the results of the model
@@ -51,9 +49,11 @@ See below for a walkthrough through the model building process using the Gurobi 
 Advantages
 """"""""""
 
-Additionally, having ChatGPT build and run the model inside the platform, it is sometimes able to spot and recover from
-mistakes it might initially make.
+Leveraging the functionalities of a Custom GPT, we have also attached a `gurobipy` Python wheel, so ChatGPT
+can model and optimize server-side (currently, the code execution environment of ChatGPT does not have access
+to the internet so it cannot download wheels from PyPI).
 
+With this, ChatGPT is sometimes able to spot and recover from mistakes it might make in a first version of the code.
 
 .. carousel::
 
@@ -63,7 +63,7 @@ mistakes it might initially make.
 Prompt Template
 """""""""""""""
 
-While it is possible to supply the custom GPT with a wide range of problem-describing prompts, our advice is to write
+While it is possible to supply the Custom GPT with a wide range of problem-describing prompts, our advice is to write
 your prompt following a template. We have devised the following prompt template that help guide users write a prompt
 that contain the elements necessary for an optimization problem:
 
@@ -82,15 +82,16 @@ that contain the elements necessary for an optimization problem:
    Data:
    <data in csv format, including headers> or <upload your files and name the filename here>
 
-When following this template you are more likely to think about these elements in a structured way. Moreover, in the
-:ref:`example_prompts` section we will look at some example prompts we recommend trying out with Gurobi Model Builder.
-You will find that most of these prompt follow this template. After going through some of the examples and subsequently
-using the same template, it should be more natural to follow our prompting recommended best practices.
+As an added bonus, when one follows this template, they are more likely to think about these elements in a structured
+way. Moreover, in the :ref:`example_prompts` section we will look at some example prompts we recommend trying out with
+Gurobi Model Builder. You will find that most of these prompt follow this template. After going through some of the
+examples and subsequently using the same template, it should be more natural to follow our prompting recommended best
+practices.
 
 Gurobot
 """""""
 
-Additionally, Gurobi has put out another Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
+Aside from Gurobi Model Builder, Gurobi has put out another Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
 Whereas `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_ is a very specific tool for
 helping new users create models from a problem description, Gurobot is a general-purpose GPT
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when

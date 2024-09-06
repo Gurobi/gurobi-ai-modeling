@@ -1,14 +1,19 @@
 Example prompts
 ===============
 
-In the following pages we demonstrate some example applications from a small number of personas. The example prompts
-have been proven to work and can thus be used as a template for defining your own problems.
+In the following pages we demonstrate a number of example applications tailored to a range of technical specialties.
+Each example shows the prompt and any data files if applicable. This prompt was fed to the `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
+Then, the "Generated Model formulation" and "Generated Python code" tabs show the output of the relevant sections that
+the Gurobi Model Builder generated based on this prompt. We encourage trying out some of these example prompts to get
+a feel for how the LLM generates a model (and experience how every time a slightly different model is generated with
+hopefully the same resulting objective value).
 
 Note that the "Example generated model" outputs do not necessarily reflect Gurobi's best modeling practices. It is
 merely an example of what the LLM generated for us. This example should get you on your way to solving your first
-optimizing problem. As you get more comfortable with the ``gurobipy`` API, in time, you will learn how to construct
-better models.
+optimizing problem. As you get more comfortable with `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
+and later familiarize yourself with the ``gurobipy`` API, in time, you will learn how to construct better models.
 
 Also note that not all the example prompts are created equal, meaning that some are easier for the LLM to turn into a
 valid model than others. You might find that some of the examples give a correct model every time, while another
-might take a few tries.
+might take a few tries. This should also reinforce the idea that investigating and testing the generated model is
+a critical step. We discuss how to do this in the :ref:`testing` chapter.

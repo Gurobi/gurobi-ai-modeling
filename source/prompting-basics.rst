@@ -4,19 +4,20 @@ Basics
 Modelling in mathematical optimization is a discipline that requires multiple skills working in tandem:
 
 1. **Domain knowledge** to translate a business problem into objectives and constraints
-2. **Mathematics** to translate these into mathematical equations
+2. **Mathematics** to translate these objectives and constraints into mathematical equations
 3. **Modelling API usage** to translate the mathematical equations into code that represent them and retrieve the results
 
-Most people working in the field of Operations Research that do this kind of work have had extensive training on order
-to achieve these skills, and it's often not considered a skill you can pick up over the weekend. This sadly leaves
-optimization out of the toolbox of many people that could benefit from it.
+Most people working in the field of Operations Research that do this kind of work have had extensive academic and
+professional training on order to achieve these skills, and these are generally not considered skills you can pick up
+over the weekend. This sadly leaves optimization out of the toolbox of many people that could benefit from it.
 
-However, if you take a second look at the three skills listed above, all of them involve some kind of translation step.
-With the advent of LLMs, we might be able to leverage tools like ChatGPT to assist us with some of the parts that
-make optimization challenging for most of us mortals.
+However, if you take a second look at the three skills listed above, all of them involve some kind of manner of
+translation. With the advent of LLMs, we might be able to leverage tools like ChatGPT to assist us with some of the
+parts that make optimization challenging for most of us mere mortals.
 
 In the coming chapters we aim to explain through which steps LLMs can help with mathematical modelling and propose
-a practical approach to bring it into the hands of users that have no prior knowledge of optimization.
+a practical approach to bring it into the hands of users that have no prior knowledge of optimization. Let us first
+start with some basic LLM concepts.
 
 Persona
 -------
@@ -44,8 +45,8 @@ exactly constitutes a "good" persona definition is subject to change.
 Multi-step reasoning
 --------------------
 Generally speaking, supplying the same prompt to an LLM multiple times, will yield you a different output every time
-(there are hyperparameters like 'temperature' that influence this, but this is unleveraged by most users). This means
-that trying to do mathematical modelling through such tools yields very inconsistent results.
+(there are hyperparameters like 'temperature' that influence this, but this is not leveraged by most users). Such
+inconsistent output poses a challenge we would need to address:
 
 For instance, in your first conversation you might get an output that is well-structured, shows that the LLM understood
 you question, generated a valid model and even helped you interpret the results. You are happy, and later you want to
@@ -53,8 +54,8 @@ try again with a slightly different prompt. However, this time, the LLM only gen
 you how it interpreted your prompt. Moreover, even though it generated a model that is able to solve, it did not give
 you the code to extract and interpret the solution for you, leaving you to figure that out for yourself.
 
-A solution for this would be to tell the LLM *how* to respond. The following example shows a prompt snippet where we
-instruct the LLM how to structure its respond for a more reliable output:
+A solution for this would be to, in addition to your initial prompt, also tell the LLM *how* to respond. The following
+example shows a prompt snippet where we instruct the LLM how to structure its respond for a more reliable output:
 
 .. code-block:: console
 
@@ -68,13 +69,14 @@ instruct the LLM how to structure its respond for a more reliable output:
    ## 👩‍🏫 Results
    {Display solution, objective values and decision variables. Note any unaddressed aspects.}
 
-If you think back to the first paragraph of this chapter, you might see a similarity between both structures. This
-is not a coincidence, and at this point we want to introduce a concept in prompt engineering: *Multi-step Reasoning*
-or *Chain-of-Thought*. This is the concept of breaking down complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
+If you think back to the first paragraph of this chapter explaining the skills necessary for modelling, you might have
+noticed some similarities. This is not a coincidence, and at this point we want to introduce a concept in prompt
+engineering: *Multi-step Reasoning* or *Chain-of-Thought*. This is the concept of breaking down complex tasks into
+smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
 
 An LLM generates its response word-by-word, taking both the prompt and the generated response up until that
-point into consideration. This means that we can help the LLM by making it generate text that it can itself then
-later use to eventually create a response that is more complex that it would have otherwise been able to.
+point into consideration. This means that we can nudge the LLM into the right direction by making it generate text that
+itself can then later use to eventually create a response that is more complex that it would have otherwise been able to.
 
 To break it down, we aim to achieve the following steps:
 
@@ -127,41 +129,65 @@ To break it down, we aim to achieve the following steps:
          :text-align: center
          :width: 50%
 
-         Solving and result interpretation
+         Result interpretation
 
 Let's look at each of the steps in more detail:
 
 Interpreting the question
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 The LLM will obviously read your prompt in full. However, you might want to supply containing data or information
-with your prompt as well. LLMs like ChatGPT will automatically read and interpret some data types (like .csv), but
-not all. Often these data files contain information that is important for formulating the mathematical model. For
-instance, some columns might be binary while others are floats, which could influence how the model should be
-constructed. By intructing the LLM to read in any attached files, you increase the chance of it being able to interpret your
-problem correctly and getting a valid model at the end.
+with your prompt as well. Some LLMs like ChatGPT will automatically read and interpret some attached data files if they
+are in a specific file format (like .csv), but often does not apply to all file formats. Often these data files contain
+information that is important for formulating the mathematical model. For instance, some columns might be binary while
+others are floats, which could influence how the model should be constructed. By intructing the LLM to read in any
+attached files, you increase the chance of it being able to interpret your problem correctly and getting a valid model
+at the end.
 
 Alternatively, there might be other concepts that you want the LLM to think about when interpreting your question. For
-instance, your problem description might include the usage of AWS EC2 instances. In this case the LLM could be
-instructed to fetch the latest instance data to make sure it has the most up-to-date information about which
+instance, your problem description might include the usage of AWS EC2 instances. Working with such concepts, the LLM
+could be instructed to fetch the latest instance data to make sure it has the most up-to-date information about which
 instances are available and their characteristics.
 
 Generating a mathematical representation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The function of this step is two-fold. The first being that it gives the user assurance that the LLM has understood
+The function of this step is two-fold:
+
+1. The first being that it gives the user assurance that the LLM has understood
 the problem correctly. It will restructure your question into a collection of objectives and constraints, which allows
 the user to investigate whether the problem was understood, whether the right assumptions were made and, last but not
 least, whether any assumptions the user might have made are not represented in the model. Especially the last one is
-a pitfall to keep in mind: we might think that some concepts don't need to be mentioned, but how an LLM choses
-to interpret your words can often be unexpected.
+a pitfall to keep in mind: we might think that some concepts are obvious and don't need to be specifically defined,
+but an LLM can often surprise us with how it chooses to interpret your words.
 
-The second function of this step is to fulfill the aforementioned concept of *Multi-step Reasoning*. To be most
+2. The second function of this step is to fulfill the aforementioned concept of *Multi-step Reasoning*. To be most
 effective we currently recommend to make the LLM generate the model in mathematical notation. Even if the user
 might not be able to understand it, we feel that it leads to a better model generation later on.
 
 Generating a model
 ^^^^^^^^^^^^^^^^^^
-Talk about modeling
+In this step we can do a few things:
 
-Solving and result interpretation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Talk about solving and interpretation
+1. Instruct the LLM to not only generate the code, but also rut it server-side. Doing this has tremendous benefit as
+the LLM can immediatly get feedback from its own work:
+
+- if the code has errors it can attempt to fix it, or
+
+- if the model is infeasible it can do a sanity check to make sure the model was setup correctly.
+
+2. You can also steer the LLM slightly on how to utilize the modelling API:
+
+- in the aforementioned template example we instructed the LLM to setup variables representing non-divisable items
+  (like a car) as an integer variable type rather than a float type.
+
+- if the LLM is prone to using an outdated API of the modelling package (because it was trained on old information)
+  you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
+  and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
+  even if it means not following current best practices.
+
+Result interpretation
+^^^^^^^^^^^^^^^^^^^^^
+If you have never used optimization, you might find that the challenge does not end with successfully solving a model
+to optimality. Extracting the values you are interested in for your business problem and interpreting them also requires
+some amount of training. Luckily, this is a task that the LLM should also be able to handle. This is also why running
+the model server-side is so important. It knows how to query which data points and helps you paint a picture on what
+it all means.
