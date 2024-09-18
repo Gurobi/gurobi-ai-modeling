@@ -3,6 +3,8 @@ Classic OR Examples
 
 .. include:: /_static/feedback.rst
 
+.. _classic_prompts:
+
 The examples on this page are considered classic OR examples. Historically, we have published the code for these
 examples on the `Examples <https://docs.gurobi.com/projects/examples/en/current/exampleview.html>`__ page in our
 documentation.
