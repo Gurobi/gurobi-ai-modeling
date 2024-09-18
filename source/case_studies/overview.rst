@@ -8,5 +8,11 @@ Case studies
 In many cases, LLMs have impressed us with their technological prowess. In arguably more cases, they have surprised us
 with their interesting mishaps. It is difficult to pinpoint exactly why an LLM gets something wrong. Moreover,
 an LLM getting something wrong can often catch us by surprise. In this chapter we will share a few case studies where we
-were caught off-guard by its inability to generate a correct model. Note that we do not mention any particular LLM, but
-very often we see that unexpected behavior is not confined to only one of the different cutting-edge LLM offerings.
+were caught off-guard by its inability to generate a correct model.
+
+.. note::
+
+   As it happens, OpenAI recently released the ``o1-preview`` model. In our limited testing we found that ChatGPT is able
+   to solve practically all use cases discussed in the coming sections. We will leave the current pages in place not only
+   because ``o1-preview`` does not yet support Code Interpreter or Custom GPTs, but because we think it still gives a
+   valuable insight into how LLMs sometimes upend our expectations.

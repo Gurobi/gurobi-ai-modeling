@@ -51,9 +51,8 @@ See below for a walkthrough through the model building process using the Gurobi 
 Advantages
 """"""""""
 
-Leveraging the functionalities of a Custom GPT, we have also attached a `gurobipy` Python wheel, so ChatGPT
-can model and optimize server-side (currently, the code execution environment of ChatGPT does not have access
-to the internet so it cannot download wheels from PyPI).
+Leveraging the functionalities of a Custom GPT, we have also attached[#]_  a ``gurobipy`` Python wheel, so ChatGPT
+can model and optimize server-side. [#]_.
 
 With this, ChatGPT is sometimes able to spot and recover from mistakes it might make in a first version of the code.
 
@@ -61,6 +60,8 @@ With this, ChatGPT is sometimes able to spot and recover from mistakes it might 
 
    .. image:: images/customgpt2.png
       :alt: Custom GPT correcting itself
+
+.. [#] Currently, the code execution environment of ChatGPT does not have access to the internet so it cannot download wheels from PyPI.
 
 Prompt Template
 """""""""""""""
@@ -98,3 +99,4 @@ Whereas `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-bu
 helping new users create models from a problem description, Gurobot is a general-purpose GPT
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when
 asking questions about, for instance, how to best add a specific constraint to your existing model.
+
