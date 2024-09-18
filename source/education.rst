@@ -1,6 +1,8 @@
 Learn Mathematical Optimization
 ===================================================
 
+.. include:: /_static/feedback.rst
+
 Hands-on Optimization Modeling
 ------------------------------
 - `Jupyter Notebook Modeling Examples <https://www.gurobi.com/resource/jupyter-notebook-modeling-examples/>`_

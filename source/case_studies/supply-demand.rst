@@ -1,6 +1,8 @@
 I blindly assume that supply and demand are equal
 =================================================
 
+.. include:: /_static/feedback.rst
+
 Some problems are dealing with supply/demand in one form or another. From the information the LLM has been trained on,
 it might be prone to assume that supply and demand should be equal. Since this is often not the case, this can be a
 too strict of an assumption and could cause the model to become infeasible.

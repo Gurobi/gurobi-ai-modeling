@@ -1,6 +1,8 @@
 Use cases
 =========
 
+.. include:: /_static/feedback.rst
+
 For this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
 
 We think it is important to give some specific examples so users new to optimization might have an idea what to look for.

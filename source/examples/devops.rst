@@ -1,6 +1,7 @@
 DevOps Engineer
 ===============
 
+.. include:: /_static/feedback.rst
 
 Scheduling deployments
 ----------------------

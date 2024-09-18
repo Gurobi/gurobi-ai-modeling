@@ -1,6 +1,8 @@
 Tips and pitfalls
 ==================
 
+.. include:: /_static/feedback.rst
+
 During the course of this project and formulating the :ref:`example_prompts` section, we have come across common tips
 and pitfalls relating to prompting and handling LLMs in general. In the current section we will share our findings that
 relate to modeling optimization problems using LLMs and help set you up for prompting success.

@@ -9,7 +9,7 @@ This repository contains documentation that features the following:
 - Share examples of prompts and expected outcomes.
 - Tools that can help when creating models.
 
-.. note::
+.. warning::
 
    This project is under active development.
 

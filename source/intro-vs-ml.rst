@@ -1,6 +1,8 @@
 Mathematical Optimization vs Machine Learning
 ===================================================================
 
+.. include:: /_static/feedback.rst
+
 Mathematical Optimization and Machine Learning are two powerful tools in the data scientist's arsenal, but they differ significantly in approach, purpose, and methodology. Understanding these differences is key to applying each technique effectively in real-world problems.
 
 Mathematical Optimization: Prescriptive Decision-Making

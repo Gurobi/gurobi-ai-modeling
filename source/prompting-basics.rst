@@ -1,6 +1,8 @@
 Basics
 ======
 
+.. include:: /_static/feedback.rst
+
 Modelling in mathematical optimization is a discipline that requires multiple skills working in tandem:
 
 1. **Domain knowledge** to translate a business problem into objectives and constraints

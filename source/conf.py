@@ -42,7 +42,7 @@ images_config = {
 
 html_theme_options = {
     "version_warning": "false",
-    "feedback_banner": "false",
+    "feedback_banner": "true",
     "construction_warning": "false",
 }
 

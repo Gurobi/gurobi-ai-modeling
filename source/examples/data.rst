@@ -1,6 +1,8 @@
 Data Engineer
 =================
 
+.. include:: /_static/feedback.rst
+
 Apache Kafka Partition assignments
 ----------------------------------
 

@@ -1,6 +1,8 @@
 Model Writing vs. Prompting
 ===================================================================
 
+.. include:: /_static/feedback.rst
+
 An optimization problem must be translated to a mathematical formulation or code in order to solve for the optimal solution. 
 The mathematical language used to translate a problem description into an optimization model is well defined - this is the realm of operations research and mathematical programming.  
 Below, we review the key elements of this process. 

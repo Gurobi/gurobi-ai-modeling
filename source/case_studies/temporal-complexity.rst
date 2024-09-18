@@ -1,6 +1,8 @@
 I don't know how to store inventory for later use
 =================================================
 
+.. include:: /_static/feedback.rst
+
 .. image:: images/investment.png
    :alt: Investment
    :align: center
