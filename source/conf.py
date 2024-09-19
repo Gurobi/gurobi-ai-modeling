@@ -16,16 +16,17 @@ version = "0.1.0"
 # -- General configuration
 
 extensions = [
-    "sphinx.ext.duration",
-    "sphinx.ext.doctest",
     "sphinx.ext.autodoc",
+    "sphinx.ext.doctest",
+    "sphinx.ext.duration",
+    "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
-    "sphinx_tabs.tabs",
-    "sphinx_design",
-    "sphinx_copybutton",
-    "sphinxcontrib.images",
     "sphinx_carousel.carousel",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_tabs.tabs",
+    "sphinxcontrib.images",
 ]
 
 intersphinx_mapping = {
@@ -53,6 +54,7 @@ epub_show_urls = 'footnote'
 
 html_static_path = ['_static']
 
+graphviz_output_format = 'svg'
 
 def setup(app):
     app.add_css_file('custom.css')

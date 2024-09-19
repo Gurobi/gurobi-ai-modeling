@@ -1,3 +1,5 @@
+.. _tips_and_pitfalls:
+
 Tips and pitfalls
 ==================
 

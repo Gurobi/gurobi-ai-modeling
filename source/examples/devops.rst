@@ -80,8 +80,10 @@ minimize the number of machines impacted.
       .. literalinclude:: content/devops/assigning_workloads.py
          :language: python
 
+.. _incident_response_planning:
+
 Incident Response Planning
--------------------------------------
+--------------------------
 
 .. image:: images/devops_incident_response.png
    :alt: Disaster Recovery Planning
