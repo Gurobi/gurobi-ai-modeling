@@ -69,7 +69,7 @@ Or to bring it into the domain of Software Engineers:
 Unexpected prompts can lead to unexpected behavior
 --------------------------------------------------
 Remember that an LLM is just statistically reciting tokens it has seen before? If your prompt is doing something that
-the LLM deems "unexpected", it might cause it either:
+the LLM deems `unexpected`, it might cause it either:
 
 1. Blindly follow your instructions, or
 2. Exert behavior that looks like it assumes you made a mistake and just selectively ignores part of your prompt.
@@ -249,7 +249,7 @@ Too much gurobipy output
 ------------------------
 In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
 varying the value of a constant (in a strategy called an `Pareto Front <https://en.wikipedia.org/wiki/Pareto_front>`__
-or "efficient frontier"). We show this in the :ref:`portfolio <portfolio>` example.
+or `efficient frontier`). We show this in the :ref:`portfolio <portfolio>` example.
 
 This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
 which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to

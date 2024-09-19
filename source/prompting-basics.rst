@@ -40,7 +40,7 @@ or
 
 Of course, prompt engineering is not a one-size-fits-all solution and different LLMs respond differently to the same
 prompt, and behavior for the same LLM is likely to change over time as the model is updated by its vendor, so what
-exactly constitutes a "good" persona definition is subject to change.
+exactly constitutes a `good` persona definition is subject to change.
 
 .. _funnel:
 

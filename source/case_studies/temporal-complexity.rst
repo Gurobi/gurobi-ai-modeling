@@ -32,7 +32,7 @@ is causing confusion.
 Through some iterations we have managed to improve the prompt efficiency by:
 
 1. explicitly stating how to model wealth accumulation (via intermediate variables), and
-2. using terminology that is more consistent (solely mentioning wealth "at the start of the month" while removing the notion "at the end of the month").
+2. using terminology that is more consistent (solely mentioning wealth `at the start of the month` while removing the notion `at the end of the month`).
 
 This increased the ratio of correct models to around 75%.
 
