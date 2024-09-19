@@ -1,3 +1,5 @@
+.. _education:
+
 Learn Mathematical Optimization
 ===================================================
 
