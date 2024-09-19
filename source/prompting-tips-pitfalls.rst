@@ -11,7 +11,13 @@ relate to modeling optimization problems using LLMs and help set you up for prom
 
 Write problems as unambiguous as possible
 -----------------------------------------
-Talk about unambiguous problem statement
+We often make the same mistake when interacting with other humans: assuming that we hold the same definition of the
+words we use. Such a semantic conflict can cause confusion when you send somebody on an errand and the person comes back
+with something else than you had expected. As humans, we often have procedures for this by asking clarifying questions:
+`what exactly do you mean by <x>?`. Unfortunately, the current generation of LLMs does not seem to express the degree
+of confusion under which they are generating a response, leading it to just make assumptions about what you mean.
+
+Currently the only way of dealing with this is by making sure your prompt is as unambiguous as possible.
 
 .. tabs::
 
@@ -19,15 +25,45 @@ Talk about unambiguous problem statement
 
       .. code-block:: text
 
-         Maximize the coverage of different test environments (EnvA, EnvB, EnvC).
-         Prioritize machines that have not been tested on recently (considering the latest test_timestamp).
-         Prioritize machines on which the test did not pass last time
+         Minimize energy consumption.
 
    .. tab:: Good
 
       .. code-block:: text
 
-         Pears are green.
+         Minimize the total energy consumption of all production facilities, defined as the sum of electricity, fuel, and water usage.
+
+Or to bring it into the domain of Software Engineers:
+
+.. tabs::
+
+   .. tab:: Bad
+
+      .. code-block:: text
+
+         I want to deploy 5 Applications on AWS using either EC2 and/or Fargate, but minimizing costs.
+         Each application has specific CPU and RAM requirements, and you need to decide whether to deploy them on AWS EC2 instances or Fargate.
+
+         Objective: Minimize total deployment cost
+
+   .. tab:: Good
+
+      .. code-block:: text
+
+         I want to deploy 5 Applications on AWS using either EC2 and/or Fargate, but minimizing costs.
+
+         Objective: Minimize total monthly deployment costs.
+
+         Constraints:
+         - There should be 1 of every application.
+         For EC2 instances:
+           - One EC2 instance can run multiple Apps
+           - The combined vCPU and RAM usage cannot exceed a single EC2 instance's capability
+           - You can instantiate multiple EC2 instances of the same type
+         For Fargate instances:
+           - One Fargate instance can only run one App
+           - The vCPU and RAM usage cannot exceed the Fargate instance capability
+           - You can instantiate multiple Fargate instances of the same type
 
 
 Unexpected prompts can lead to unexpected behavior
@@ -147,14 +183,13 @@ difficulty with it and consider multiple options:
 
 Even though the latter examples might seem intuitively wrong to the human eye (and an LLM should be able to be able to
 interpret it that way), it is exactly these kind of small sources of confusion that compound together to an output that
-is overall less precise. Unfortunately, the current generation of LLMs will not tell you the degree of confusion under
-which they are generating a response.
+is overall less precise.
 
-A very simple solution for this is proposed in the Good example: **keep things simple**.
+A very simple solution for this is proposed in the Good example: `keep things simple`.
 
 Supply all necessary (dummy) data
 ---------------------------------
-As alluded to in the previous paragraph, the current generation of LLMs will not tell the the degree of uncertainty it
+As alluded to in the previous paragraphs, the current generation of LLMs will not tell the the degree of uncertainty it
 is generating the response under. Because of this, if you forget to supply any data, be it a single column or the whole
 data set, it will not prompt you or express confusion.
 
@@ -220,10 +255,6 @@ This can lead to a large amount of logging output from Gurobi. Especially if you
 which can run the code within Code Analysis blocks, this will consume a large number of tokens and could lead to
 adverse effects. For such cases we recommend instructing the LLM to suppress logging output (which should add
 ``model.setParam("OutputFlag", 0)`` to the resulting code).
-
-Abstract concepts are sometimes difficult
------------------------------------------
-todo
 
 Other modeling Pitfalls
 -----------------------
