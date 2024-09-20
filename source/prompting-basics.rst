@@ -3,11 +3,11 @@ Basics
 
 .. include:: /_static/feedback.rst
 
-Modelling in mathematical optimization is a discipline that requires multiple skills working in tandem:
+Modeling in mathematical optimization is a discipline that requires multiple skills working in tandem:
 
 1. **Domain knowledge** to translate a business problem into objectives and constraints
 2. **Mathematics** to translate these objectives and constraints into mathematical equations
-3. **Modelling API usage** to translate the mathematical equations into code that represent them and retrieve the results
+3. **Modeling API usage** to translate the mathematical equations into code that represent them and retrieve the results
 
 Most people working in the field of Operations Research that do this kind of work have had extensive academic and
 professional training on order to achieve these skills, and these are generally not considered skills you can pick up
@@ -17,7 +17,7 @@ However, if you take a second look at the three skills listed above, all of them
 translation. With the advent of LLMs, we might be able to leverage tools like ChatGPT to assist us with some of the
 parts that make optimization challenging for most of us mere mortals.
 
-In the coming chapters we aim to explain through which steps LLMs can help with mathematical modelling and propose
+In the coming chapters we aim to explain through which steps LLMs can help with mathematical modeling and propose
 a practical approach to bring it into the hands of users that have no prior knowledge of optimization. Let us first
 start with some basic LLM concepts.
 
@@ -73,7 +73,7 @@ example shows a prompt snippet where we instruct the LLM how to structure its re
 
 However, there is another reason to take this approach.
 If you think back to the first paragraph of this chapter explaining the skills working in tandem necessary for
-modelling, you might have noticed some similarities. This is not a coincidence, and at this point we want to introduce
+modeling, you might have noticed some similarities. This is not a coincidence, and at this point we want to introduce
 a concept in prompt engineering: *Multi-step Reasoning* or *Chain-of-Thought*. This is the concept of breaking down
 complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
 
@@ -178,11 +178,11 @@ In this step we can do a few things:
    - if the code has errors it can attempt to fix it, or
    - if the model is infeasible it can do a sanity check to make sure the model was setup correctly.
 
-2. You can also steer the LLM slightly on how to utilize the modelling API:
+2. You can also steer the LLM slightly on how to utilize the modeling API:
 
    - in the aforementioned template example we instructed the LLM to setup variables representing non-divisable items
      (like a car) as an integer variable type rather than a float type.
-   - if the LLM is prone to using an outdated API of the modelling package (because it was trained on old information)
+   - if the LLM is prone to using an outdated API of the modeling package (because it was trained on old information)
      you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
      and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
      even if it means not following current best practices.

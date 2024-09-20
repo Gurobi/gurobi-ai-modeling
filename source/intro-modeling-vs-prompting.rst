@@ -1,10 +1,10 @@
-Modelling in Optimization
+Modeling in Optimization
 ===================================================================
 
 .. include:: /_static/feedback.rst
 
-As was mentioned in the previous chapter, Mathematical Optimization relies on modelling, but, as also quickly mentioned,
-this is often more involved than modelling with Machine Learning.
+As was mentioned in the previous chapter, Mathematical Optimization relies on modeling, but, as also quickly mentioned,
+this is often more involved than modeling with Machine Learning.
 
 To create an optimization model, one first needs to describe the optimization problem and convert this into mathematical
 formulation or code before it can be solved. The mathematical language used to translate a problem description into an
