@@ -24,7 +24,7 @@ Contents
    intro-vs-ml
    intro-modeling-vs-prompting
    intro-usecases
-   intro-access-instructions
+   intro-getting-started
 
 .. toctree::
    :maxdepth: 2
