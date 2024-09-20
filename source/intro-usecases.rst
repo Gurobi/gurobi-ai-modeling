@@ -3,11 +3,16 @@ Use cases
 
 .. include:: /_static/feedback.rst
 
-For this section we have tried to come up with use cases for some of the specialties in the Software Engineering domain.
+Optimization problems are virtually everywhere if you look hard enough, and many such problems can be solved
+as long as you can model it. In the introduction we mentioned that this documentation mainly focuses on Software
+Engineers. The reason for this is a practical one: if you have tried to explain or have somebody explain optimization to
+you, you might know that it can be an abstract topic. By focussing on a single professional domain we can be very
+concrete about the examples and materials, taking this topic out of the abstract world and apply to practical, every day
+problems.
 
-We think it is important to give some specific examples so users new to optimization might have an idea what to look for.
-Do keep in mind that the examples we came up with are just hypothetical use cases to illustrate a point, they might
-not be applicable in their current format.
+Do keep in mind that the examples we came up with are use cases to illustrate a point, they might not be applicable in
+their current format: they exist so users new to optimization might have a better idea what to look for and how to
+apply it to a problem that applies to them.
 
 .. note::
    Not only **can** optimization be applied in the software engineering domain, they **are** being applied... by us! For

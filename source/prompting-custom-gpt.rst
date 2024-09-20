@@ -4,10 +4,10 @@ Custom GPTs
 .. include:: /_static/feedback.rst
 
 Since the steps necessary for translating a problem description into an optimization model is well defined in
-:ref:`funnel`, we can leverage the Custom GPT functionality of ChatGPT to have these steps baked-in.
+:ref:`funnel`, we can leverage a feature that OpenAI's ChatGPT provides to have these steps baked-in: the Custom GPT.
 
-We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_.
-This Custom GPT incorporates some of the reasoning steps and helps build, execute and interpret the results of the model
+We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
+which incorporates many of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
 
 See below for a walkthrough through the model building process using the Gurobi Model Builder GPT:
@@ -51,20 +51,20 @@ See below for a walkthrough through the model building process using the Gurobi 
 Advantages
 """"""""""
 
-Leveraging the functionalities of a Custom GPT, we have also attached[#]_  a ``gurobipy`` Python wheel, so ChatGPT
-can model and optimize server-side. [#]_.
+Leveraging the functionalities of a Custom GPT, we have also attached a ``gurobipy`` Python wheel, so ChatGPT
+can model and optimize server-side [#]_.
 
-With this, ChatGPT is sometimes able to spot and recover from mistakes it might make in a first version of the code.
+With this, ChatGPT is sometimes able to spot mistakes it might make in a first draft of the code and fix them autonomously.
 
 .. carousel::
 
    .. image:: images/customgpt2.png
       :alt: Custom GPT correcting itself
 
-.. [#] Currently, the code execution environment of ChatGPT does not have access to the internet so it cannot download wheels from PyPI.
+.. [#] Currently, the code execution environment of ChatGPT does not have access to the internet. This means it cannot download packages from PyPI. We can, however, upload wheels to the Custom GPT to give it access to ``gurobipy``.
 
 Prompt Template
-"""""""""""""""
+---------------
 
 While it is possible to supply the Custom GPT with a wide range of problem-describing prompts, our advice is to write
 your prompt following a template. We have devised the following prompt template that help guide users write a prompt

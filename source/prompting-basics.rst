@@ -47,7 +47,7 @@ exactly constitutes a `good` persona definition is subject to change.
 Multi-step reasoning
 --------------------
 Generally speaking, supplying the same prompt to an LLM multiple times, will yield you a different output every time
-(there are hyperparameters like 'temperature' that influence this, but this is not leveraged by most users). Such
+(there are hyperparameters like `temperature` that influence this, but this is not leveraged by most casual users). Such
 inconsistent output poses a challenge we would need to address:
 
 For instance, in your first conversation you might get an output that is well-structured, shows that the LLM understood
@@ -71,14 +71,17 @@ example shows a prompt snippet where we instruct the LLM how to structure its re
    ## 👩‍🏫 Results
    {Display solution, objective values and decision variables. Note any unaddressed aspects.}
 
-If you think back to the first paragraph of this chapter explaining the skills necessary for modelling, you might have
-noticed some similarities. This is not a coincidence, and at this point we want to introduce a concept in prompt
-engineering: *Multi-step Reasoning* or *Chain-of-Thought*. This is the concept of breaking down complex tasks into
-smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
+However, there is another reason to take this approach.
+If you think back to the first paragraph of this chapter explaining the skills working in tandem necessary for
+modelling, you might have noticed some similarities. This is not a coincidence, and at this point we want to introduce
+a concept in prompt engineering: *Multi-step Reasoning* or *Chain-of-Thought*. This is the concept of breaking down
+complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
 
 An LLM generates its response word-by-word, taking both the prompt and the generated response up until that
 point into consideration. This means that we can nudge the LLM into the right direction by making it generate text that
-itself can then later use to eventually create a response that is more complex that it would have otherwise been able to.
+itself can then later use to eventually create a response that is more complex that it would have otherwise been able to
+(it is assumed that the recently released ``o1`` model by OpenAI uses this approach).
+
 
 To break it down, we aim to achieve the following steps:
 
@@ -155,36 +158,34 @@ Generating a mathematical representation
 The function of this step is two-fold:
 
 1. The first being that it gives the user assurance that the LLM has understood
-the problem correctly. It will restructure your question into a collection of objectives and constraints, which allows
-the user to investigate whether the problem was understood, whether the right assumptions were made and, last but not
-least, whether any assumptions the user might have made are not represented in the model. Especially the last one is
-a pitfall to keep in mind: we might think that some concepts are obvious and don't need to be specifically defined,
-but an LLM can often surprise us with how it chooses to interpret your words.
+   the problem correctly. It will restructure your question into a collection of objectives and constraints, which allows
+   the user to investigate whether the problem was understood, whether the right assumptions were made and, last but not
+   least, whether any assumptions the user might have made are not represented in the model. Especially the last one is
+   a pitfall to keep in mind: we might think that some concepts are obvious and don't need to be specifically defined,
+   but an LLM can often surprise us with how it chooses to interpret your words.
 
 2. The second function of this step is to fulfill the aforementioned concept of *Multi-step Reasoning*. To be most
-effective we currently recommend to make the LLM generate the model in mathematical notation. Even if the user
-might not be able to understand it, we feel that it leads to a better model generation later on.
+   effective we currently recommend to make the LLM generate the model in mathematical notation. Even if the user
+   might not be able to understand it, we feel that it leads to a better model generation later on.
 
 Generating a model
 ^^^^^^^^^^^^^^^^^^
 In this step we can do a few things:
 
 1. Instruct the LLM to not only generate the code, but also rut it server-side. Doing this has tremendous benefit as
-the LLM can immediatly get feedback from its own work:
+   the LLM can immediatly get feedback from its own work:
 
-- if the code has errors it can attempt to fix it, or
-
-- if the model is infeasible it can do a sanity check to make sure the model was setup correctly.
+   - if the code has errors it can attempt to fix it, or
+   - if the model is infeasible it can do a sanity check to make sure the model was setup correctly.
 
 2. You can also steer the LLM slightly on how to utilize the modelling API:
 
-- in the aforementioned template example we instructed the LLM to setup variables representing non-divisable items
-  (like a car) as an integer variable type rather than a float type.
-
-- if the LLM is prone to using an outdated API of the modelling package (because it was trained on old information)
-  you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
-  and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
-  even if it means not following current best practices.
+   - in the aforementioned template example we instructed the LLM to setup variables representing non-divisable items
+     (like a car) as an integer variable type rather than a float type.
+   - if the LLM is prone to using an outdated API of the modelling package (because it was trained on old information)
+     you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
+     and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
+     even if it means not following current best practices.
 
 Result interpretation
 ^^^^^^^^^^^^^^^^^^^^^

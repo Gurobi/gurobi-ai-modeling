@@ -11,10 +11,10 @@ relate to modeling optimization problems using LLMs and help set you up for prom
 
 Write problems as unambiguous as possible
 -----------------------------------------
-We often make the same mistake when interacting with other humans: assuming that we hold the same definition of the
+As human beings, we often make a similar mistake in our casual and business interactions: assuming the other party holds the same definition of the
 words we use. Such a semantic conflict can cause confusion when you send somebody on an errand and the person comes back
-with something else than you had expected. As humans, we often have procedures for this by asking clarifying questions:
-`what exactly do you mean by <x>?`. Unfortunately, the current generation of LLMs does not seem to express the degree
+with something else than you had expected. Humans often have procedures for this by asking clarifying questions:
+`what exactly do you mean by ...?`. Unfortunately, the current generation of LLMs does not seem to express the degree
 of confusion under which they are generating a response, leading it to just make assumptions about what you mean.
 
 Currently the only way of dealing with this is by making sure your prompt is as unambiguous as possible.
@@ -68,23 +68,24 @@ Or to bring it into the domain of Software Engineers:
 
 Unexpected prompts can lead to unexpected behavior
 --------------------------------------------------
-Remember that an LLM is just statistically reciting tokens it has seen before? If your prompt is doing something that
-the LLM deems `unexpected`, it might cause it either:
+You might remember that an LLM is just statistically reciting tokens it has seen before. If your prompt is doing
+something that the LLM deems `unexpected`, it might cause it either:
 
-1. Blindly follow your instructions, or
-2. Exert behavior that looks like it assumes you made a mistake and just selectively ignores part of your prompt.
+1. blindly follow your instructions, or
+2. exert behavior that looks like it assumes you made a mistake and just selectively augments part of your prompt.
 
 To illustrate this, in one of our Examples, there used to be an equation for calculating total shipping cost on an
 E-commerce platform:
 
 .. code-block:: console
 
-   - Shipping costs: SC = Base Shipping Cost+(2×Size (kg))+(1.5×Weight (kg))
+   - Total Shipping costs: SC = Base Shipping Cost+(2×Size (kg))+(1.5×Weight (kg))
 
-It states the total shipping costs depends on a base cost and weight of the item category.
-However, we found that the LLM ended up being confused by this and exerting the aforementioned non-deterministic
-behavior. The reason for this is likely that it is expecting the shipping cost to also take into the account the number
-of items being shipped.
+It states the total shipping costs depends on a base cost and weight of the item category. We actually forgot to mention
+that the number of shipped products should also be included. We found that the LLM ended up being confused by this and
+exerting non-deterministic behavior, sometimes adding the number of products, sometimes leaving it as is, and sometimes
+coming up with something else entirely. From its behavior, it seemed that it was somehow `expecting` the number of
+items shipped to be part of the equation.
 
 This is where your knowledge of the problem comes in. If the shipping cost indeed should depend on the number of items
 shipped, it should be reflected in the equation:
@@ -103,7 +104,7 @@ fact explicitly:
 Should variables be considered divisible or not?
 ------------------------------------------------
 In many cases, the LLM will be able to deduce whether the variables involved in the problem should be divisible
-or not. For instance, cars are very likely to be non-divisible, while kilograms are likely considered divisible.
+or not. For instance, cars are very likely to be non-divisible (nobody wants ``0.54`` of a car), while kilograms are likely considered divisible.
 
 However, if this is not unambiguously clear from the item itself, it will be helpful to mention how it
 should be considered.
@@ -177,15 +178,15 @@ data can be sent via any route through the nodes :math:`\{0,1,2,3,4,5\}`:
 For a human, the objective should be clear for either version: maximize the flow into Point 5. A machine might have more
 difficulty with it and consider multiple options:
 
-#. Maximize for Point 5 inflow?
-#. Maximize for Point 0 outflow?
-#. Maximize the direct flows from 0 to 5 and disregard the indirect flows into 5?
+1. Maximize for Point 5 inflow?
+2. Maximize for Point 0 outflow?
+3. Maximize the direct flows from 0 to 5 and disregard the indirect flows into 5?
 
-Even though the latter examples might seem intuitively wrong to the human eye (and an LLM should be able to be able to
-interpret it that way), it is exactly these kind of small sources of confusion that compound together to an output that
-is overall less precise.
+Even though option 2 and 3 might seem intuitively wrong to the human eye (and an LLM should be able to be able to
+interpret it that way), it is exactly these kind of small sources of confusion that compound together with other
+ambiguities in the prompt that lead to an output that is overall less precise.
 
-A very simple solution for this is proposed in the Good example: `keep things simple`.
+A very simple solution for this is proposed in the Good example: `keep things as simple as possible`.
 
 Supply all necessary (dummy) data
 ---------------------------------
@@ -196,8 +197,8 @@ data set, it will not prompt you or express confusion.
 It might either adapt its interpretation of the problem and leave out some important aspect that requires that data, or
 it might generate some dummy data on its own accord without asking you.
 
-Obviously, one should act restrained around supplying really world data to proprietary LLMs. We therefore suggest
-creating a dummy dataset to send to the LLM when dealing with internal or private data.
+Obviously, one should exercise restraint about supplying proprietary or private data to commercial LLMs. We therefore suggest
+creating a dummy or anonymized dataset.
 
 Technical Issues
 ----------------
@@ -205,7 +206,8 @@ Working with LLM is currently fraught with inconsistent technical behavior. For 
 has a number of very cool integrations that we can make use of, however, sometimes they experience intermittent issues
 which cause them to stop working for a period of time.
 
-Often the best remedy is to try again, or in some cases, just come back later. Here are two regular issues that we found:
+Often the best remedy is to try again, or in some cases, just come back later. Here are some of the issues that we
+occasionally encountered:
 
 The LLM cannot install the wheel or cannot read attached data files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
