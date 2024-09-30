@@ -7,7 +7,7 @@ build:
   apt_packages:
     - graphviz
   commands:
-    - sphinx-build -b linkcheck source/ _build/linkcheck
+    - python -m sphinx -T -b linkcheck source/ _build/linkcheck
 
 python:
   install:
