@@ -6,8 +6,9 @@ build:
     python: "3.10"
   apt_packages:
     - graphviz
-  commands:
-    - python -m sphinx -T -b linkcheck source/ _build/linkcheck
+  jobs:
+    post_build:
+      - python -m sphinx -T -b linkcheck source/ _build/linkcheck
 
 python:
   install:
