@@ -40,7 +40,7 @@ We aim to contribute the following to the community of prospective modellers:
 
 What to take away from this
 ---------------------------
-There are certainly limits to the current generation of LLMs when it comes to their ability to interpret
+There are certainly limits to the current generation of large language model (LLMs) when it comes to their ability to interpret
 problem descriptions and generating well defined mathematical models. However, we hope that exercises in this
 repository give you an idea of how optimization can be applied to your professional domain and daily problems you might
 encounter.

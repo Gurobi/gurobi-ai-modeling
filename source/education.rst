@@ -9,7 +9,7 @@ Hands-on Optimization Modeling
 ------------------------------
 - `Jupyter Notebook Modeling Examples <https://www.gurobi.com/resource/jupyter-notebook-modeling-examples/>`_
     A collection of Jupyter notebooks with examples of how to build optimization models using Python and Gurobi, providing a hands-on approach to learning.
-- `Gurobi OptiMods <https://www.gurobi.com/resource/gurobi-optimods/>`_
+- `Gurobi OptiMods <https://www.gurobi.com/features/gurobi-optimods/>`_
     A set of open-source Python modules that demonstrate common optimization tasks with Gurobi, complete with documentation and examples that are especially useful for data scientists.
 
 Blogs and Podcasts
@@ -23,7 +23,7 @@ Blogs and Podcasts
 
 Online Courses and Guided Training
 ----------------------------------
-- `Introduction to Optimization Through the Lens of Data Science <https://www.gurobi.com/resource/introduction-to-optimization-through-the-lens-of-data-science/>`_
+- `Introduction to Optimization Through the Lens of Data Science <https://www.gurobi.com/resources/intro-to-optimization-through-the-lens-of-data-science/>`_
     In four in-depth modules this course provides a thorough introduction to optimization and shows how it connects with data science, offering practical examples and use cases to help practitioners integrate optimization into their workflows.
 -  Optimization for Data Scientists
     - `Opti 101 <https://www.youtube.com/playlist?list=PLHiHZENG6W8B_65-Unq-G59PtQtEc1Xj4>`_: Introductory videos and hands-on learning material that dives into why math optimization is important and how to get started.
@@ -31,5 +31,5 @@ Online Courses and Guided Training
 
 Gamify Optimization!
 --------------------
-- `Burrito Optimization Game <https://www.gurobi.com/resource/burrito-optimization-game/>`_
+- `Burrito Optimization Game <https://www.gurobi.com/burrito-optimization-game/>`_
     An educational game designed to introduce the power of mathematical optimization in a fun and engaging way. Invite your friends and coworkers to a friendly competition!

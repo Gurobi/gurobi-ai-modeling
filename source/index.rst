@@ -28,7 +28,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Prompting
+   :caption: LLM Prompting
 
    prompting-basics
    prompting-custom-gpt

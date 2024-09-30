@@ -9,7 +9,7 @@ I have difficulty thinking in 3D space
 
 Our `Jupyter Notebook Modeling Examples <https://www.gurobi.com/jupyter_models/>`__
 page contains an example called: `Logic Programming - 3D Tic-Tac-Toe <https://www.gurobi.com/jupyter_models/logic-programming-3d-tic-tac-toe/>`__.
-This example comes from a well know textbook, Model Building in Mathematical Programming by H. Paul Williams.
+This example comes from a well known textbook, Model Building in Mathematical Programming by H. Paul Williams.
 
 The problem is to find an arrangement of X's and O's in a 3-dimensional tic-tac-toe grid such that the number of completed lines (of either X's or O's) is minimized.
 Even though the problem is quite easy for a human to understand, we found it difficult for our Custom GPT, despite the fact that its training data contains solutions to this exact model. We found the results to be inconsistent, sometimes yielding the correct answer, but more often, yielding a wrong answer.

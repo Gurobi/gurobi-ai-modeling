@@ -85,9 +85,9 @@ that contain the elements necessary for an optimization problem:
    Data:
    <data in csv format, including headers> or <upload your files and name the filename here>
 
-As an added bonus, when one follows this template, they are more likely to think about these elements in a structured
+As an added bonus, when one follows this template, users are more likely to think about these elements in a structured
 way. Moreover, in the :ref:`example_prompts` section we will look at some example prompts we recommend trying out with
-Gurobi Model Builder. You will find that most of these prompt follow this template. After going through some of the
+Gurobi Model Builder. You will find that most of these prompts follow this template. After going through some of the
 examples and subsequently using the same template, it should be more natural to follow our prompting recommended best
 practices.
 
@@ -100,3 +100,7 @@ helping new users create models from a problem description, Gurobot is a general
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when
 asking questions about, for instance, how to best add a specific constraint to your existing model.
 
+.. note::
+    Nevertheless, as with all LLMs, keep in mind that answers from Gurobot can be wrong or misleading. If in doubt, you
+    may want to consult our human experts via our `users forum <https://support.gurobi.com/hc/en-us/community/topics>`_
+    or `customer support <https://support.gurobi.com/hc/en-us>`_.

@@ -18,9 +18,15 @@ different problems. Understanding these differences is key to applying each tech
 Machine Learning is excellent at predictive modeling
 ----------------------------------------------------
 Machine learning is very commonly used as a **predictive** tool. It involves training models on historical data to make
-predictions or classify new data points. High-level libraries like ``scikit-learn`` and ``pytorch`` offer many
+predictions or classify new data points. High-level libraries like |scikit-learn|_ and |pytorch|_ offer many
 declarative constructs that help you setup a model training pipeline quickly. However, lower-level instructions to
 explicitly define the algorithms' steps are also available.
+
+.. |scikit-learn| replace:: ``scikit-learn``
+.. _scikit-learn: https://scikit-learn.org/stable/
+
+.. |pytorch| replace:: ``pytorch``
+.. _pytorch: https://pytorch.org/docs/stable/
 
 - **Imperative Nature**: You define the model structure, the training process, and how data flows through the model.
   There is also a lot of emphasis on the quality and quantity of the input data.
@@ -31,14 +37,20 @@ Mathematical Optimization is a prescriptive approach for decision-making
 ------------------------------------------------------------------------
 Mathematical optimization, on the other hand, is inherently **prescriptive**. Its goal is to find the best possible, and
 mathematically proven, decision given an objective and constraints which you define to represent your real-life problem.
-Libraries like ``gurobipy`` and ``pyomo`` can be used to define the models. However, defining the model structure is
+Libraries like |gurobipy|_ and |pyomo|_ can be used to define the models. However, defining the model structure is
 often more involved than with Machine Learning.
+
+.. |gurobipy| replace:: ``gurobipy``
+.. _gurobipy: https://docs.gurobi.com/projects/optimizer/en/current/reference/python.html
+
+.. |pyomo| replace:: ``pyomo``
+.. _pyomo: https://pyomo.readthedocs.io/en/stable/
 
 - **Declarative Nature**: You state the goal (e.g., maximize profit, minimize cost) and constraints (e.g., budget
   limits, resource capacities), and define the kinds of choices you have available to influence these (e.g. the pool of
-  available ads to run on social media). It is then the job of the optimization solver to determine the optimal solution.
+  available ads to run on social media). It is then the job of the optimization solver to determine an optimal solution.
 - **Use Cases**: Mathematical optimization is particularly suited for making decisions in complex environments. Areas in
-  which optimization is commonly used include logistics, finance, supply chain management, and scheduling.
+  which optimization is commonly used include logistics, finance, supply chain management, scheduling and `many more <https://www.gurobi.com/industry/>`_.
 
 To sum up, there are big differences
 ------------------------------------

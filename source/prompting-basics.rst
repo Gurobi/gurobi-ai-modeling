@@ -10,7 +10,7 @@ Modeling in mathematical optimization is a discipline that requires multiple ski
 3. **Modeling API usage** to translate the mathematical equations into code that represent them and retrieve the results
 
 Most people working in the field of Operations Research that do this kind of work have had extensive academic and
-professional training on order to achieve these skills, and these are generally not considered skills you can pick up
+professional training in order to achieve these skills, and these are generally not considered skills you can pick up
 over the weekend. This sadly leaves optimization out of the toolbox of many people that could benefit from it.
 
 However, if you take a second look at the three skills listed above, all of them involve some kind of manner of
@@ -57,7 +57,7 @@ you how it interpreted your prompt. Moreover, even though it generated a model t
 you the code to extract and interpret the solution for you, leaving you to figure that out for yourself.
 
 A solution for this would be to, in addition to your initial prompt, also tell the LLM *how* to respond. The following
-example shows a prompt snippet where we instruct the LLM how to structure its respond for a more reliable output:
+example shows a prompt snippet where we instruct the LLM how to structure its response for a more reliable output:
 
 .. code-block:: console
 
@@ -134,7 +134,7 @@ To break it down, we aim to achieve the following steps:
          :text-align: center
          :width: 50%
 
-         Result interpretation
+         Interpreting the results
 
 Let's look at each of the steps in more detail:
 
@@ -142,9 +142,9 @@ Interpreting the question
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 The LLM will obviously read your prompt in full. However, you might want to supply containing data or information
 with your prompt as well. Some LLMs like ChatGPT will automatically read and interpret some attached data files if they
-are in a specific file format (like .csv), but often does not apply to all file formats. Often these data files contain
+are in a specific file format (like .csv), but often this does not apply to all file formats. Often these data files contain
 information that is important for formulating the mathematical model. For instance, some columns might be binary while
-others are floats, which could influence how the model should be constructed. By intructing the LLM to read in any
+others are floating point numbers, which could influence how the model should be constructed. By instructing the LLM to read in any
 attached files, you increase the chance of it being able to interpret your problem correctly and getting a valid model
 at the end.
 
@@ -172,23 +172,23 @@ Generating a model
 ^^^^^^^^^^^^^^^^^^
 In this step we can do a few things:
 
-1. Instruct the LLM to not only generate the code, but also rut it server-side. Doing this has tremendous benefit as
+1. Instruct the LLM to not only generate the code, but also run it server-side. Doing this has tremendous benefit as
    the LLM can immediatly get feedback from its own work:
 
    - if the code has errors it can attempt to fix it, or
-   - if the model is infeasible it can do a sanity check to make sure the model was setup correctly.
+   - if the model is infeasible it can do a sanity check to make sure the model was set up correctly.
 
 2. You can also steer the LLM slightly on how to utilize the modeling API:
 
-   - in the aforementioned template example we instructed the LLM to setup variables representing non-divisable items
-     (like a car) as an integer variable type rather than a float type.
-   - if the LLM is prone to using an outdated API of the modeling package (because it was trained on old information)
+   - In the aforementioned template example we instructed the LLM to set up variables representing non-divisable items
+     (like a car) as an integer variable type rather than a floating point type.
+   - If the LLM is prone to using an outdated API of the modeling package (because it was trained on old information)
      you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
      and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
      even if it means not following current best practices.
 
-Result interpretation
-^^^^^^^^^^^^^^^^^^^^^
+Interpreting the results
+^^^^^^^^^^^^^^^^^^^^^^^^
 If you have never used optimization, you might find that the challenge does not end with successfully solving a model
 to optimality. Extracting the values you are interested in for your business problem and interpreting them also requires
 some amount of training. Luckily, this is a task that the LLM should also be able to handle. This is also why running

@@ -33,9 +33,9 @@ The LLM might propose the following constraint:
 
         \sum_{j=1}^{7} x_{ij} - \sum_{j=1}^{7} x_{ji} = s_i - d_i \quad \forall i \in \{1, \ldots, 7\}
 
-Even if you cannot read the equation, the description describes what it does: it assumes that supply and demand are
-perfectly balanced. This means that if there is more supply than demand, the model will be infeasible. The above can be
-fixed by making the following change:
+Even if you do not understand the equation and its mathematical notation, the description describes what it does: it
+assumes that supply and demand are perfectly balanced. This means that if there is more supply than demand, the model
+will be infeasible. The above can be fixed by making the following change:
 
 .. tabs::
 

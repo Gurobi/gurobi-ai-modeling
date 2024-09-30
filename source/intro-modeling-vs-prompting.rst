@@ -28,7 +28,7 @@ A well-posed problem statement should include all of the key components of an op
 Although a problem statement need not explicitly contain mathematical notation, inequalities or functions, having a precise and complete description of the above information will make it easier for a human (or AI agent) to construct a mathematical model that accurately represents the decision problem.
 
 In most cases, data should be separated from the model, allowing the problem to be defined in a general or abstract way (e.g., `Determine how much of each product should be produced at each facility.`).
-Then, after a mathematical model is constructed, specific sets of data (e.g., a spreadsheet or text file containing a list of facilities, a list of products, cost and demand data) can be loaded as input to construct and solve individual instance of the decision problem.
+Then, after a mathematical model is constructed, specific sets of data (e.g., a spreadsheet or text file containing a list of facilities, a list of products, cost and demand data) can be loaded as input to construct and solve individual instances of the decision problem.
 
 Separation of the abstract problem description and problem problem data allows problems to be more simply stated, and reused with different data sets.
 
@@ -37,7 +37,7 @@ Components of an Optimization Model
 Understanding the key components of an optimization model is critical when creating or reviewing a model. The main components of an optimization model are:
 
 - **Decision Variables:** The set of variables representing choices that must be made.  For example, 'production rate' or 'machine on/off status'. Note that a variables' allowed set of values can be continuous (eg., ``1.034``, ``938.33``), integer (eg., ``1``, ``34``), or binary (ie. ``0`` or ``1``).
-- **Constraints:** Constraints define relationships between the values of the variables that must be satisfied for set of decision to be considered feasible. They can represent tradeoffs and limitations that must be accounted for, and criteria that must be satisfied. For example: `no more than 3 workers scheduled on any day` or `at least 100 units in inventory at all times`.
+- **Constraints:** Constraints define relationships between the values of the variables that must be satisfied for a set of decisions to be considered feasible. They can represent tradeoffs and limitations that must be accounted for, and criteria that must be satisfied. For example: `no more than 3 workers scheduled on any day` or `at least 100 units in inventory at all times`.
 - **Objective:** The goal of your application. For example: `minimize cost` or `maximize reliability`.
 - **Parameters and Data:** The input data required to not just run the model, but to make the model represent exactly the situation at hand.  For example: a table with the price of different foodstuffs for every month of the year.
 
@@ -60,7 +60,10 @@ Review, Validate and Iterate
 Whether the model was constructed by a human expert or LLM, we will still need to review the results.
 One component of this is to review the description and implementation of the model to make sure that it includes all key components: do the variables defined in the model account for all decisions that must be made? Are all constraints in the problem description encoded in the model? Do the output solutions make sense?
 
-Once it has been validated that the model and output accurately solve the initial problem, a next step is to investigate whether or not the *intended* problem was accurately described in the initial problem statement.
+Once it has been validated that the model and output accurately represent and solve the initial problem, a next step is to investigate whether or not the *intended* problem was accurately described in the initial problem statement.
 At this step we may find that the original problem statement was missing an important constraint or consideration and must be amended, this process can be iterated until the desired results are achieved.
 
 Mistakes could appear at any step of the process and additional suggestions for troubleshooting models can be found in the :ref:`Testing` section.
+
+.. note::
+    In practice, the knowledge about the full business process is usually not located with a single person or group, but scattered among larger parts of the organization. Hence, it is common that more and more aspects of the business application enter the problem statement when the model solution gets reviewed by additional stakeholders.

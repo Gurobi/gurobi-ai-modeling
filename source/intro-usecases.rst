@@ -39,10 +39,10 @@ resource management. For instance, think about the following questions:
 
 Backend Engineer
 ^^^^^^^^^^^^^^^^
-Backend and Full-Stack Engineers are operating in an environment that can be constrained from as resource perspective
-but also have low-latency or other application-specific requirements.
+Backend and Full-Stack Engineers are operating in an environment that can be constrained from a resource perspective
+but also has low-latency or other application-specific requirements.
 
-Optimization techniques like MIP and LP can play a role in improving API performance, application optimization and help
+Optimization techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can play a role in improving API performance, application optimization and help
 drive more traffic. Consider the following scenarios:
 
 - I want to maximize ad revenue from my website, while minimizing impact on user experience.
@@ -52,7 +52,7 @@ drive more traffic. Consider the following scenarios:
 
 Data Engineer
 ^^^^^^^^^^^^^
-As a Data Engineer, you're often dealing with large-scale data pipelines, data storage, and ETL processes that can be complex and resource-intensive.
+As a Data Engineer, you're often dealing with large-scale data pipelines, data storage, and ETL (Extract, Transform, Load) processes that can be complex and resource-intensive.
 Optimization in this domain can lead to significant improvements in data processing times, cost-efficiency, and overall system reliability.
 
 Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can be leveraged to streamline data operations, ensuring that data flows smoothly and efficiently through your systems. Consider these optimization opportunities:

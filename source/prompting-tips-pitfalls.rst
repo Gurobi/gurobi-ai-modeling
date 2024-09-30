@@ -41,7 +41,7 @@ Or to bring it into the domain of Software Engineers:
 
       .. code-block:: text
 
-         I want to deploy 5 Applications on AWS using either EC2 and/or Fargate, but minimizing costs.
+         I want to deploy 5 applications on AWS using either EC2 and/or Fargate, but minimizing costs.
          Each application has specific CPU and RAM requirements, and you need to decide whether to deploy them on AWS EC2 instances or Fargate.
 
          Objective: Minimize total deployment cost
@@ -50,7 +50,7 @@ Or to bring it into the domain of Software Engineers:
 
       .. code-block:: text
 
-         I want to deploy 5 Applications on AWS using either EC2 and/or Fargate, but minimizing costs.
+         I want to deploy 5 applications on AWS using either EC2 and/or Fargate, but minimizing costs.
 
          Objective: Minimize total monthly deployment costs.
 
@@ -74,7 +74,7 @@ something that the LLM deems `unexpected`, it might cause it either:
 1. blindly follow your instructions, or
 2. exert behavior that looks like it assumes you made a mistake and just selectively augments part of your prompt.
 
-To illustrate this, in one of our Examples, there used to be an equation for calculating total shipping cost on an
+To illustrate this, in one of our Examples, there used to be an equation for calculating total shipping costs on an
 E-commerce platform:
 
 .. code-block:: console
@@ -190,7 +190,7 @@ A very simple solution for this is proposed in the Good example: `keep things as
 
 Supply all necessary (dummy) data
 ---------------------------------
-As alluded to in the previous paragraphs, the current generation of LLMs will not tell the the degree of uncertainty it
+As alluded to in the previous paragraphs, the current generation of LLMs will not tell the degree of uncertainty it
 is generating the response under. Because of this, if you forget to supply any data, be it a single column or the whole
 data set, it will not prompt you or express confusion.
 
@@ -202,7 +202,7 @@ creating a dummy or anonymized dataset.
 
 Technical Issues
 ----------------
-Working with LLM is currently fraught with inconsistent technical behavior. For instance, ChatGPT
+Working with LLMs is currently fraught with inconsistent technical behavior. For instance, ChatGPT
 has a number of very cool integrations that we can make use of, however, sometimes they experience intermittent issues
 which cause them to stop working for a period of time.
 
@@ -219,7 +219,7 @@ an intermittent system issue. The LLM could also tell you that it is not able fi
    I cannot find the .whl feel you are trying to install
 
 
-In many cases can be solved by starting a new chat window, or, as stated previously, wait for the system issue to be
+In many cases this can be solved by starting a new chat window, or, as stated previously, wait for the system issue to be
 resolved.
 
 LLM is generating code but not executing it
@@ -230,11 +230,13 @@ that can execute it. However, it can happen that code is generated without it be
 This can mean two things:
 
 1. The LLM thinks it can get away with just generating code and not executing it, assuming you will execute the code on your own machine. In many cases, the solution to this is to nudge the LLM to: ``execute the code``.
-2. The LLM is experiencing technical difficulties and cannot access its code execution environment. In this case telling it to ``execute the code`` might result in a response like ``It seems that I am currently unable to execute the code directly``. It can also happen that it is not able to do this introspection and it will ignore your request and blindly regenerating the code again with, again, skipping the execution. It could even emit an error message like:
+2. The LLM can also be experiencing technical difficulties and cannot access its code execution environment. In this case telling it to ``execute the code`` might result in a response like:
 
-.. code-block:: console
+   .. code-block:: console
 
-   It seems that I am currently unable to execute the code directly
+      It seems that I am currently unable to execute the code directly
+
+   Even worse, it can also happen that it is not able to do this introspection and it will ignore your request and blindly regenerates the code again with, again, skipping the execution.
 
 Both behaviors listed in 2. are often solved by either starting a new conversation and trying again, or waiting for a
 while until the issues are resolved.
@@ -244,13 +246,13 @@ Advanced Gurobipy API's
 Most of the data utilized for training the current generating of LLMs contain data using earlier versions of ``gurobipy``
 API's. This is generally not a problem since the ``gurobipy`` API is quite stable (this is by design). However, it does
 mean that the LLM is less prone to using the newest advanced API's which allow for building models with more complex
-constraints like: quadratic or otherwise non-linear constraints. For simple models however, these advanced API's should
+constraints like quadratic or nonlinear constraints. For simple models however, these advanced API's should
 not be needed.
 
 Too much gurobipy output
 ------------------------
 In some cases you might need to solve a large number of models. For instance, when solving a model multiple times while
-varying the value of a constant (in a strategy called an `Pareto Front <https://en.wikipedia.org/wiki/Pareto_front>`__
+varying the value of a constant (eg. in a strategy called a `Pareto Front <https://en.wikipedia.org/wiki/Pareto_front>`__
 or `efficient frontier`). We show this in the :ref:`portfolio <portfolio>` example.
 
 This can lead to a large amount of logging output from Gurobi. Especially if you work with a platform like ChatGPT,
@@ -284,8 +286,8 @@ represent tokens that it will need to be taken into account into the full contex
 Our recommendation is that if you have more than 10 lines of data, it should be stored into a data file that is uploaded
 with the prompt.
 
-Too much preprocessing on the data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Data preprocessing
+^^^^^^^^^^^^^^^^^^
 In many cases you can supply raw data to the LLM and instruct it how to preprocess it and extract meaning from it.
 However, any of these steps add complexity to the overall problem, it is therefore advised to do the preprocessing
-of the data and extracting of features so the LLM focus on the optimization problem in isolation.
+of the data and extracting of features so that the LLM focus on the optimization problem in isolation.
