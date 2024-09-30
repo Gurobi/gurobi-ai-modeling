@@ -7,7 +7,7 @@ Learn Mathematical Optimization
 
 Hands-on Optimization Modeling
 ------------------------------
-- `Jupyter Notebook Modeling Examples <https://www.gurobi.com/resource/jupyter-notebook-modeling-examples/>`_
+- `Jupyter Notebook Modeling Examples <https://www.gurobi.com/jupyter_models/>`_
     A collection of Jupyter notebooks with examples of how to build optimization models using Python and Gurobi, providing a hands-on approach to learning.
 - `Gurobi OptiMods <https://www.gurobi.com/features/gurobi-optimods/>`_
     A set of open-source Python modules that demonstrate common optimization tasks with Gurobi, complete with documentation and examples that are especially useful for data scientists.

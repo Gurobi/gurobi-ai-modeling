@@ -9,9 +9,9 @@ author = "Gurobi Optimization"
 html_title = "AI Modeling - Gurobi Optimization"
 html_theme = "gurobi_sphinxtheme"
 html_favicon = "https://www.gurobi.com/favicon.ico"
-html_static_path = ['_static']
-templates_path = ['_templates']
-html_last_updated_fmt = '%b %d, %Y'
+html_static_path = ["_static"]
+templates_path = ["_templates"]
+html_last_updated_fmt = "%b %d, %Y"
 html_show_sourcelink = True
 
 release = "0.1"
@@ -35,15 +35,15 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+    "python": ("https://docs.python.org/3/", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master/", None),
 }
 
 images_config = {
-    'default_image_width': '40%',
-    'show_caption': True,
-    'figure_classes': ['align-center'],
-    'lightbox': 'lightbox2',  # or 'fancybox' or other supported lightbox libraries
+    "default_image_width": "40%",
+    "show_caption": True,
+    "figure_classes": ["align-center"],
+    "lightbox": "lightbox2",  # or "fancybox" or other supported lightbox libraries
 }
 
 html_theme_options = {
@@ -52,12 +52,19 @@ html_theme_options = {
     "construction_warning": "false",
 }
 
-intersphinx_disabled_domains = ['std']
+intersphinx_disabled_domains = ["std"]
 
 # -- Options for EPUB output
-epub_show_urls = 'footnote'
+epub_show_urls = "footnote"
 
-graphviz_output_format = 'svg'
+graphviz_output_format = "svg"
 
 def setup(app):
-    app.add_css_file('custom.css')
+    app.add_css_file("custom.css")
+
+# Ignore certain links that are known to fail
+linkcheck_ignore = [
+    r"https://support.gurobi.com/hc/en-us",
+    r"https://support.gurobi.com/hc/en-us/community/topics",
+    r"https://github.com/Gurobi/gurobi-modelanalyzer\?tab=readme-ov-file#using-the-solution-checker",
+]
