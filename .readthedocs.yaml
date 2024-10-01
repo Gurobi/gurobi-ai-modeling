@@ -7,6 +7,8 @@ build:
   apt_packages:
     - graphviz
   jobs:
+    post_checkout:
+      - git fetch --unshallow || true
     post_build:
       - python -m sphinx -T -b linkcheck source/ _build/linkcheck
 
