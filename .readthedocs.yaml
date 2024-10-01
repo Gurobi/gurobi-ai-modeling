@@ -9,6 +9,8 @@ build:
   jobs:
     post_checkout:
       - git fetch --unshallow || true
+    post_install:
+      - python -m pip install furo --upgrade
     post_build:
       - python -m sphinx -T -b linkcheck source/ _build/linkcheck
 
