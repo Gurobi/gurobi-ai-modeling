@@ -11,8 +11,6 @@ html_theme = "gurobi_sphinxtheme"
 html_favicon = "https://www.gurobi.com/favicon.ico"
 html_static_path = ["_static"]
 templates_path = ["_templates"]
-html_last_updated_fmt = "%b %d, %Y"
-html_show_sourcelink = True
 
 release = "0.1"
 version = "0.1.0"
