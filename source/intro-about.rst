@@ -1,8 +1,6 @@
 About this repository
 ======================
 
-.. include:: /_static/feedback.rst
-
 Welcome to ``gurobi-ai-modeling``. This repository aims to guide users to get familiar with using generative AI for
 mathematical modeling. We feel that generative AI poses a unique opportunity for users in domains that encounter
 optimization problems in their daily work, but do not have knowledge how optimization can be applied in the practical

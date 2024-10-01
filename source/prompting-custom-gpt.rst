@@ -1,8 +1,6 @@
 Custom GPTs
 ============
 
-.. include:: /_static/feedback.rst
-
 Since the steps necessary for translating a problem description into an optimization model is well defined in
 :ref:`funnel`, we can leverage a feature that OpenAI's ChatGPT provides to have these steps baked-in: the Custom GPT.
 

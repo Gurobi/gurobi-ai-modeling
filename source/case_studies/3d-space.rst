@@ -1,8 +1,6 @@
 I have difficulty thinking in 3D space
 ======================================
 
-.. include:: /_static/feedback.rst
-
 .. image:: images/tic_tac_toe.png
    :alt: Tic Tac Toe
    :align: center

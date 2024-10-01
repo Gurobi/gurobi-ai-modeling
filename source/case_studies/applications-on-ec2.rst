@@ -1,8 +1,6 @@
 I don't understand how hosting applications works
 =================================================
 
-.. include:: /_static/feedback.rst
-
 We saw an example about EC2 in the :ref:`tips_and_pitfalls` section already. It might be quite difficult for an LLM to reason
 about how a problem involving hosting in the cloud works and more handholding is currently required.
 

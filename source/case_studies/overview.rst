@@ -1,8 +1,6 @@
 Case studies
 ============
 
-.. include:: /_static/feedback.rst
-
 .. _case_studies:
 
 In many cases, LLMs have impressed us with their technological prowess. In arguably more cases, they have surprised us

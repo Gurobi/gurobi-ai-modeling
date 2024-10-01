@@ -3,8 +3,6 @@
 Getting Started
 ===============
 
-.. include:: /_static/feedback.rst
-
 In the following chapters we will dive into the details on how to get started with modeling using LLMs. If you prefer
 to first get your hands dirty and skip ahead, here are two things you might be interested in:
 

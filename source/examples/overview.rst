@@ -1,8 +1,6 @@
 Example prompts
 ===============
 
-.. include:: /_static/feedback.rst
-
 In the following pages we demonstrate a number of example applications tailored to a range of technical specialties.
 Each example shows the prompt and any data files if applicable. This prompt was fed to the `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_.
 Subsequently, the `Generated Model formulation` and `Generated Python code` tabs show the output of the relevant sections that

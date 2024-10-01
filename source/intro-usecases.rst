@@ -1,8 +1,6 @@
 Use cases
 =========
 
-.. include:: /_static/feedback.rst
-
 Optimization problems are virtually everywhere if you look hard enough, and many such problems can be solved
 as long as you can model it. In the introduction we mentioned that this documentation mainly focuses on Software
 Engineers. The reason for this is a practical one: if you have tried to explain or have somebody explain optimization to

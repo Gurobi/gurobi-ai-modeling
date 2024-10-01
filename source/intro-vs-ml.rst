@@ -1,8 +1,6 @@
 Mathematical Optimization vs Machine Learning
 ===================================================================
 
-.. include:: /_static/feedback.rst
-
 One way of understanding Mathematical Optimization is by comparing it to a related, but ultimately very different
 concept: Machine Learning.
 

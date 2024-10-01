@@ -1,8 +1,6 @@
 Modeling in Optimization
 ===================================================================
 
-.. include:: /_static/feedback.rst
-
 As was mentioned in the previous chapter, Mathematical Optimization relies on modeling, but, as also quickly mentioned,
 this is often more involved than modeling with Machine Learning.
 

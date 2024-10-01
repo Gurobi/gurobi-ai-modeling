@@ -1,8 +1,6 @@
 Classic OR Examples
 ===================
 
-.. include:: /_static/feedback.rst
-
 .. _classic_prompts:
 
 The examples on this page are considered classic OR examples. Historically, we have published the code for these

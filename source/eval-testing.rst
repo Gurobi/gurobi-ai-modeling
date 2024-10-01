@@ -3,8 +3,6 @@
 Testing
 =======
 
-.. include:: /_static/feedback.rst
-
 Even with models that are formulated and coded by hand, testing and validation of the results is an important step. In practice, there is often an iterative cycle of:
 
 .. graphviz::
