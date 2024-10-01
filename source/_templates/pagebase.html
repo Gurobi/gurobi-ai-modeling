@@ -1,3 +1,6 @@
 {% extends "!pagebase.html" %}
-{{ super() }}
+
+{% block footer %}
+  {{ super() }}
+  Last updated on: {{ last_updated }}
 {% endblock %}
