@@ -19,10 +19,10 @@ In the coming chapters we aim to explain through which steps LLMs can help with 
 a practical approach to bring it into the hands of users that have no prior knowledge of optimization. Let us first
 start with some basic LLM concepts.
 
-Persona
--------
+Prompt engineering
+------------------
 In the world of prompt engineering, it is generally understood that having the LLM assume a persona can help in guiding
-the LLM into giving a relevant response with the depth and complexity that fits the specified persona. [`Nananukul et al., 2023  <https://arxiv.org/abs/2310.06174>`__]
+the LLM into giving a relevant response with the depth and complexity that fits the specified persona [#]_. [`Nananukul et al., 2023  <https://arxiv.org/abs/2310.06174>`__]
 
 In our case, we could prefix our system prompt with one of the following:
 
@@ -40,10 +40,12 @@ Of course, prompt engineering is not a one-size-fits-all solution and different 
 prompt, and behavior for the same LLM is likely to change over time as the model is updated by its vendor, so what
 exactly constitutes a `good` persona definition is subject to change.
 
+.. [#] We also recommend reading `this  <https://arxiv.org/abs/2406.06608>`__ excellent meta-analysis paper on prompting techniques!
+
 .. _funnel:
 
-Multi-step reasoning
---------------------
+Answer engineering
+------------------
 Generally speaking, supplying the same prompt to an LLM multiple times, will yield you a different output every time
 (there are hyperparameters like `temperature` that influence this, but this is not leveraged by most casual users). Such
 inconsistent output poses a challenge we would need to address:
@@ -72,7 +74,7 @@ example shows a prompt snippet where we instruct the LLM how to structure its re
 However, there is another reason to take this approach.
 If you think back to the first paragraph of this chapter explaining the skills working in tandem necessary for
 modeling, you might have noticed some similarities. This is not a coincidence, and at this point we want to introduce
-a concept in prompt engineering: *Multi-step Reasoning* or *Chain-of-Thought*. This is the concept of breaking down
+a concept in prompt engineering: *Chain-of-Thought (CoT)*. This is the concept of breaking down
 complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
 
 An LLM generates its response word-by-word, taking both the prompt and the generated response up until that
@@ -80,9 +82,7 @@ point into consideration. This means that we can nudge the LLM into the right di
 itself can then later use to eventually create a response that is more complex that it would have otherwise been able to
 (it is assumed that the recently released ``o1`` model by OpenAI uses this approach).
 
-
 To break it down, we aim to achieve the following steps:
-
 
 .. grid:: 1
    :gutter: 2
@@ -162,7 +162,7 @@ The function of this step is two-fold:
    a pitfall to keep in mind: we might think that some concepts are obvious and don't need to be specifically defined,
    but an LLM can often surprise us with how it chooses to interpret your words.
 
-2. The second function of this step is to fulfill the aforementioned concept of *Multi-step Reasoning*. To be most
+2. The second function of this step is to fulfill the aforementioned concept of *Chain-of-Thought*. To be most
    effective we currently recommend to make the LLM generate the model in mathematical notation. Even if the user
    might not be able to understand it, we feel that it leads to a better model generation later on.
 
