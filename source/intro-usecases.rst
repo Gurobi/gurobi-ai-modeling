@@ -1,8 +1,9 @@
 Use cases
 =========
 
-Optimization problems can be seen virtually everywhere if you look for them, and many such problems can be solved
-as long as you can model it. In the introduction we mentioned that this documentation mainly focuses on Software
+Optimization problems can be seen virtually everywhere if you look for
+them, and many of these problems can actually be solved once you model them.
+In the introduction we mentioned that this documentation mainly focuses on Software
 Engineers. The reason for this is a practical one: if you have tried to explain or have somebody explain optimization to
 you, you might know that it can be an abstract topic. By focussing on a single professional domain we can be very
 concrete about the examples and materials, taking this topic out of the abstract world and apply to practical, every day
