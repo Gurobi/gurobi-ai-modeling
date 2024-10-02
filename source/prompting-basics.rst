@@ -163,7 +163,7 @@ The goal of this step is two-fold:
 
 2. The second function of this step is to fulfill the aforementioned concept of *Chain-of-Thought*. To be most
    effective, we recommend to make the LLM generate the model in mathematical notation. Even if the user
-   might not be able to understand it, we feel that it leads to a better model generation later on.
+   might not be able to understand it, our experience is that it leads to a better model generation later on.
 
 Generating a model
 ^^^^^^^^^^^^^^^^^^
