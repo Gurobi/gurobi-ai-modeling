@@ -26,7 +26,7 @@ Specialties
 DevOps Engineer
 ^^^^^^^^^^^^^^^
 As a DevOps Engineer you are likely encountering optimization problems on a frequent basis. Resources, be it cloud or
-on-prem are never infinite as they can be constrained by, for instance, cost or availability.
+on-prem, are never infinite as they can be constrained by, for instance, cost or availability.
 
 Mixed-Integer Programming (MIP) and Linear Programming (LP) models can help enhance resource allocation,
 task scheduling, and overall system performance, leading to more efficient CI/CD pipelines and cost-effective cloud
