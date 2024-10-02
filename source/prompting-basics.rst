@@ -145,7 +145,7 @@ others are floating point numbers, which could influence how the model should be
 attached files, you increase the chance of it being able to interpret your problem correctly and getting a valid model
 at the end.
 
-Alternatively, there might be other concepts that you want the LLM to think about when interpreting your question. For
+Alternatively, there might be other concepts that you want the LLM to consider when interpreting your question. For
 instance, your problem description might include the usage of AWS EC2 instances. Working with such concepts, the LLM
 could be instructed to fetch the latest instance data to make sure it has the most up-to-date information about which
 instances are available and their characteristics.
