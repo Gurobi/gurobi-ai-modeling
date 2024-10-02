@@ -152,10 +152,10 @@ instances are available and their characteristics.
 
 Generating a mathematical representation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The function of this step is two-fold:
+The goal of this step is two-fold:
 
-1. The first being that it gives the user assurance that the LLM has understood
-   the problem correctly. It will restructure your question into a collection of objectives and constraints, which allows
+1. The first is that it gives the user assurance that the LLM has understood
+   the problem correctly. It will restructure your question into a collection of objectives and constraints. This allows
    the user to investigate whether the problem was understood, whether the right assumptions were made and, last but not
    least, whether any assumptions the user might have made are not represented in the model. Especially the last one is
    a pitfall to keep in mind: we might think that some concepts are obvious and don't need to be specifically defined,
