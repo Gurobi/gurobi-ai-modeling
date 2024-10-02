@@ -53,7 +53,7 @@ inconsistent output poses a challenge we would need to address:
 For instance, in your first conversation you might get an output that is well-structured, shows that the LLM understood
 you question, generated a valid model and even helped you interpret the results. You are happy, and later you want to
 try again with a slightly different prompt. However, this time, the LLM only generates the code without explaining to
-you how it interpreted your prompt. Moreover, even though it generated a model that is able to solve, it did not give
+you how it interpreted your prompt. Moreover, even though it generated a model that can be solved, it did not give
 you the code to extract and interpret the solution for you, leaving you to figure that out for yourself.
 
 A solution for this would be to, in addition to your initial prompt, also tell the LLM *how* to respond. The following
