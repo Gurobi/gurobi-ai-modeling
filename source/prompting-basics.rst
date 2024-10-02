@@ -72,7 +72,7 @@ example shows a prompt snippet where we instruct the LLM how to structure its re
    {Display solution, objective values and decision variables. Note any unaddressed aspects.}
 
 However, there is another reason to take this approach.
-If you think back to the first paragraph of this chapter explaining the skills working in tandem necessary for
+If you think back to the first paragraph of this chapter explaining the skills working in unison necessary for
 modeling, you might have noticed some similarities. This is not a coincidence, and at this point we want to introduce
 a concept in prompt engineering: *Chain-of-Thought (CoT)*. This is the concept of breaking down
 complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openreview.net/forum?id=yf1icZHC-l9>`__, `Wang et al., 2024  <https://arxiv.org/abs/2305.04091>`__]
