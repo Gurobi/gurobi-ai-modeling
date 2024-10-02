@@ -1,7 +1,7 @@
 Basics
 ======
 
-Modeling in mathematical optimization is a discipline that requires multiple skills working in tandem:
+Modeling in mathematical optimization is a discipline that requires multiple skills working in unison:
 
 1. **Domain knowledge** to translate a business problem into objectives and constraints
 2. **Mathematics** to translate these objectives and constraints into mathematical equations
