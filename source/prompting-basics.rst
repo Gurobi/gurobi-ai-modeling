@@ -140,7 +140,7 @@ Interpreting the question
 The LLM will obviously read your prompt in full. However, you might want to supply containing data or information
 with your prompt as well. Some LLMs like ChatGPT will automatically read and interpret some attached data files if they
 are in a specific file format (like .csv), but often this does not apply to all file formats. Often these data files contain
-information that is important for formulating the mathematical model. For instance, some columns might be binary while
+information that is important to formulate the mathematical model correctly. For instance, some columns might be binary while
 others are floating point numbers, which could influence how the model should be constructed. By instructing the LLM to read in any
 attached files, you increase the chance of it being able to interpret your problem correctly and getting a valid model
 at the end.
