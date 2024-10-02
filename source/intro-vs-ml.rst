@@ -34,7 +34,7 @@ explicitly define the algorithms' steps are also available.
 Mathematical Optimization is a prescriptive approach for decision-making
 ------------------------------------------------------------------------
 Mathematical optimization, on the other hand, is inherently **prescriptive**. Its goal is to find the best possible, and
-mathematically proven, decision given an objective and constraints which you define to represent your real-life problem.
+mathematically proven, set of decisions given an objective and constraints which you define to represent your real-life problem.
 Libraries like |gurobipy|_ and |pyomo|_ can be used to define the models. However, defining the model structure is
 often more involved than with Machine Learning.
 
