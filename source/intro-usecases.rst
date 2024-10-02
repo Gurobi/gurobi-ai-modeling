@@ -15,7 +15,7 @@ a better idea of what to look for and how to
 apply this technique to a problem that they face.
 
 .. note::
-   Not only **can** optimization be applied in the software engineering domain, they **are** being applied... by us! For
+   Not only **can** optimization be applied in the software engineering domain, it **is** being applied... by us! For
    :ref:`example <testing_strategy>`, in our CI/CD process we utilize optimization to smartly select which machines to run tests on and what kind
    of testing environment to setup. So we are using Gurobi to optimize the development process at Gurobi!
 
