@@ -79,8 +79,7 @@ complex tasks into smaller, logical steps. [`Fu et al., 2023  <https://openrevie
 
 An LLM generates its response word-by-word, taking both the prompt and the generated response up until that
 point into consideration. This means that we can nudge the LLM into the right direction by making it generate text that
-it will later use, eventually creating a response that is more complex that it would have otherwise been able to provide
-(it is assumed that the recently released ``o1`` model by OpenAI uses this approach).
+it will later use, eventually creating a response that is more complex that it would have otherwise been able to provide.
 
 To break it down, we aim to achieve the following steps:
 
