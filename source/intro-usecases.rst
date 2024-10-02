@@ -66,8 +66,8 @@ Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can 
 
 Professions outside of the Software Engineering domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Even though this repository is primarily aimed at Software Engineers, don't let preconceived notions inhibit you,
-optimization can be applied in many ways that people have not yet thought of!
+Even though this repository is primarily aimed at Software Engineers, don't let preconceived notions inhibit you.
+Optimization can be applied in many ways that nobody has yet thought of!
 
 Below are a few professions with applications to illustrate the wide range of potential applications:
 
