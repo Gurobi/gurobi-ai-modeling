@@ -180,7 +180,7 @@ In this step we can do a few things:
    - In the aforementioned template example we instructed the LLM to set up variables representing non-divisable items
      (like a car) as an integer variable type rather than a floating point type.
    - If the LLM is prone to using an outdated API of the modeling package (because it was trained on old information)
-     you might be able to instruct it to utilize a newer API. We do note that we have had inconsistent results with this
+     you might be able to instruct it to utilize a newer API. Note though that we had inconsistent results with this
      and currently recommend letting the LLM model utilize the API it prefers (and is apparently most comfortable with),
      even if it means not following current best practices.
 
