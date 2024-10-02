@@ -10,7 +10,7 @@ concrete about the examples and materials, taking this topic out of the abstract
 problems.
 
 Do keep in mind that the examples we came up with are use cases to illustrate a point, they might not be applicable in
-their current format: they exist so users new to optimization might have a better idea what to look for and how to
+their current format: they exist so users new to optimization will have a better idea what to look for and how to
 apply it to a problem that applies to them.
 
 .. note::
