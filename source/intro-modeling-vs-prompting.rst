@@ -37,7 +37,7 @@ Understanding the key components of an optimization model is critical when creat
 - **Decision Variables:** The set of variables representing choices that must be made.  For example, 'production rate' or 'machine on/off status'. Note that a variable's allowed set of values can be continuous (eg., ``1.034``, ``938.33``), integer (eg., ``1``, ``34``), or binary (ie. ``0`` or ``1``).
 - **Constraints:** Constraints define relationships between the values of the variables that must be satisfied for a set of decisions to be considered feasible. They can represent limitations that must be accounted for, and criteria that must be satisfied. For example: `no more than 3 workers scheduled on any day` or `at least 100 units in inventory at all times`.
 - **Objective:** The goal of your application. For example: `minimize cost` or `maximize reliability`.
-- **Parameters and Data:** The input data required to not just run the model, but to make the model represent exactly the situation at hand.  For example: a table with the price of different foodstuffs for every month of the year.
+- **Parameters and Data:** The input data required to make the model represent exactly the situation at hand.  For example: a table with the price of different foodstuffs for every month of the year.
 
 Further educational resources for learning about optimization, model writing, and how the
 `algorithms <https://www.gurobi.com/resources/mixed-integer-programming-mip-a-primer-on-the-basics/>`_
