@@ -133,7 +133,7 @@ To break it down, we aim to achieve the following steps:
 
          Interpreting the results
 
-Let's look at each of the steps in more detail:
+Let's look at each step in more detail:
 
 Interpreting the question
 ^^^^^^^^^^^^^^^^^^^^^^^^^
