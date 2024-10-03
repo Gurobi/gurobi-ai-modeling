@@ -1,19 +1,21 @@
 Use cases
 =========
 
-Optimization problems are virtually everywhere if you look hard enough, and many such problems can be solved
-as long as you can model it. In the introduction we mentioned that this documentation mainly focuses on Software
+Optimization problems can be seen virtually everywhere if you look for
+them, and many of these problems can actually be solved once you model them.
+In the introduction we mentioned that this documentation mainly focuses on Software
 Engineers. The reason for this is a practical one: if you have tried to explain or have somebody explain optimization to
 you, you might know that it can be an abstract topic. By focussing on a single professional domain we can be very
 concrete about the examples and materials, taking this topic out of the abstract world and apply to practical, every day
 problems.
 
 Do keep in mind that the examples we came up with are use cases to illustrate a point, they might not be applicable in
-their current format: they exist so users new to optimization might have a better idea what to look for and how to
-apply it to a problem that applies to them.
+their current format: they exist so that users new to optimization will have
+a better idea of what to look for and how to
+apply this technique to a problem that they face.
 
 .. note::
-   Not only **can** optimization be applied in the software engineering domain, they **are** being applied... by us! For
+   Not only **can** optimization be applied in the software engineering domain, it **is** being applied... by us! For
    :ref:`example <testing_strategy>`, in our CI/CD process we utilize optimization to smartly select which machines to run tests on and what kind
    of testing environment to setup. So we are using Gurobi to optimize the development process at Gurobi!
 
@@ -24,7 +26,7 @@ Specialties
 DevOps Engineer
 ^^^^^^^^^^^^^^^
 As a DevOps Engineer you are likely encountering optimization problems on a frequent basis. Resources, be it cloud or
-on-prem are never infinite as they can be constrained by, for instance, cost or availability.
+on-prem, are never infinite as they can be constrained by, for instance, cost or availability.
 
 Mixed-Integer Programming (MIP) and Linear Programming (LP) models can help enhance resource allocation,
 task scheduling, and overall system performance, leading to more efficient CI/CD pipelines and cost-effective cloud
@@ -64,16 +66,16 @@ Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can 
 
 Professions outside of the Software Engineering domain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Even though this repository is primarily aimed at Software Engineers, don't let preconceived notions inhibit you,
-optimization can be applied in many ways that people have not yet thought of!
+Even though this repository is primarily aimed at Software Engineers, don't let preconceived notions inhibit you.
+Optimization can be applied in many ways that nobody has yet thought of!
 
 Below are a few professions with applications to illustrate the wide range of potential applications:
 
 - **Fitness Coaches**: Fitness coaches can use optimization to design personalized workout plans. By optimizing exercise routines based on individual goals, fitness levels, and available time, they can help clients achieve their fitness objectives more efficiently.
 - **Real Estate Developers**: Real estate developers can use optimization to determine the best use of land plots. By considering factors like zoning laws, market demand, and construction costs, they can maximize the return on investment for a given property.
-- **Mechanical Engineers**: Mechanical engineers can use optimization for component design. By optimizing the design parameters of mechanical parts (e.g., minimizing weight while maximizing strength), they can improve performance and reduce material costs.
+- **Mechanical Engineers**: Mechanical engineers can use optimization for component design. By optimizing the design parameters of mechanical parts (e.g., minimizing weight while ensuring strength), they can improve performance and reduce material costs.
 - **E-commerce Managers**: E-commerce managers can use optimization for dynamic pricing and inventory management. By optimizing prices based on demand and inventory levels, they can maximize revenue and minimize stockouts or overstock situations.
 - **Farmers**: Farmers can use optimization for crop rotation and planting schedules. By optimizing the sequence and timing of planting different crops, they can improve soil health and maximize yields.
 - **Green Energy Consultants**: Consultants can use optimization for designing renewable energy systems. By optimizing the placement and capacity of solar panels or wind turbines, they can maximize energy production and minimize costs.
 - **Television Network Schedulers**: Network schedulers can use optimization to determine the best time slots for different shows. By optimizing the broadcast schedule based on viewer ratings and advertising revenue, they can maximize audience engagement and profits.
-- **Electrical Engineers**: Electrical engineers can use optimization for circuit design. By optimizing the arrangement and values of components in an electrical circuit, they can achieve desired performance characteristics such as minimizing power consumption or maximizing signal integrity.
+- **Electrical Engineers**: Electrical engineers can use optimization for circuit design. By optimizing the values of components in an electrical circuit, they can achieve desired performance characteristics such as minimizing power consumption or maximizing signal integrity. By optimizing the arrangement of these components, they can design a circuit that's faster to produce.
