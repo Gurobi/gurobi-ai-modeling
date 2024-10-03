@@ -59,6 +59,7 @@ graphviz_output_format = "svg"
 
 def setup(app):
     app.add_css_file("custom.css")
+    app.add_css_file("gurobi.css")
 
 # Ignore certain links that are known to fail
 linkcheck_ignore = [
