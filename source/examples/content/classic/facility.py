@@ -1,51 +1,57 @@
 import pandas as pd
-from gurobipy import Model, GRB, quicksum
+from gurobipy import Model, GRB
 
-# Load the transportation cost data
+# Load the transportation cost data from the CSV file
 file_path = '/mnt/data/facility.csv'
-transportation_costs = pd.read_csv(file_path)
-# Clean and process the transportation cost data
-# Remove dollar signs and commas, then convert to numeric
-transportation_costs_cleaned = transportation_costs.applymap(lambda x: float(str(x).replace('$', '').replace(',', '').strip()))
+facility_data = pd.read_csv(file_path)
 
-# Rename the columns for easier access
-transportation_costs_cleaned.columns = ['Warehouse', 'Plant 1', 'Plant 2', 'Plant 3', 'Plant 4', 'Plant 5']
+# Data
+demands = [15, 18, 14, 20]  # Demand for warehouses 1-4 (in thousands)
+capacities = [20, 22, 17, 19, 18]  # Capacity of plants 1-5 (in thousands)
+fixed_costs = [12000, 15000, 17000, 13000, 16000]  # Fixed costs for plants 1-5
 
-# Remove any unnecessary indexing rows
-transportation_costs_cleaned = transportation_costs_cleaned.set_index('Warehouse')
+# Transportation costs (per 1000 products)
+transportation_costs = facility_data.iloc[:, 1:].values
 
-# Parameters
-demand = [15, 18, 14, 20]  # demand for warehouses 1-4 (in thousands)
-capacity = [20, 22, 17, 19, 18]  # capacity for plants 1-5 (in thousands)
-fixed_costs = [12000, 15000, 17000, 13000, 16000]  # fixed costs for plants 1-5
-transportation_costs_matrix = transportation_costs_cleaned.values
+# Model
+model = Model("Facility Location")
 
-# Indices
-plants = range(5)
-warehouses = range(4)
+# Decision variables: x[wp] is the amount shipped from plant p to warehouse w
+x = model.addVars(len(demands), len(capacities), vtype=GRB.CONTINUOUS, name="x")
 
-# Create a new model
-m = Model("plant_closing")
+# Decision variables: y[p] is 1 if plant p is open, 0 otherwise
+y = model.addVars(len(capacities), vtype=GRB.BINARY, name="y")
 
-# Decision variables
-x = m.addVars(plants, warehouses, vtype=GRB.CONTINUOUS, name="x")  # Amount shipped from plant i to warehouse j
-y = m.addVars(plants, vtype=GRB.BINARY, name="y")  # Whether plant i is open
-
-# Objective function: minimize total cost
-m.setObjective(quicksum(transportation_costs_matrix[i, j] * x[i, j] for i in plants for j in warehouses) +
-               quicksum(fixed_costs[i] * y[i] for i in plants), GRB.MINIMIZE)
+# Objective: Minimize transportation and fixed costs
+model.setObjective(
+    sum(transportation_costs[w, p] * x[w, p] for w in range(len(demands)) for p in range(len(capacities))) +
+    sum(fixed_costs[p] * y[p] for p in range(len(capacities))),
+    GRB.MINIMIZE
+)
 
 # Constraints
-# 1. Demand constraints: total shipments to each warehouse should meet demand
-m.addConstrs((quicksum(x[i, j] for i in plants) == demand[j] for j in warehouses), name="demand")
+# 1. Demand satisfaction constraints
+for w in range(len(demands)):
+    model.addConstr(sum(x[w, p] for p in range(len(capacities))) == demands[w], name=f"Demand_{w}")
 
-# 2. Capacity constraints: total shipments from each plant should not exceed its capacity if the plant is open
-m.addConstrs((quicksum(x[i, j] for j in warehouses) <= capacity[i] * y[i] for i in plants), name="capacity")
+# 2. Capacity constraints
+for p in range(len(capacities)):
+    model.addConstr(sum(x[w, p] for w in range(len(demands))) <= capacities[p] * y[p], name=f"Capacity_{p}")
 
 # Optimize model
-m.optimize()
+model.optimize()
 
-# Extract the results
-solution_x = m.getAttr('x', x)
-solution_y = m.getAttr('x', y)
-objective_value = m.ObjVal
+# Extract solution
+solution_x = model.getAttr('x', x)
+solution_y = model.getAttr('x', y)
+
+# Prepare results for display
+result_df = pd.DataFrame({
+    'Plant': [f'Plant {p+1}' for p in range(len(capacities))],
+    'Open (1/0)': [solution_y[p] for p in range(len(capacities))],
+    'Fixed Cost': fixed_costs,
+    'Capacity': capacities
+})
+
+# Display the result
+print(result_df)
