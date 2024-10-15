@@ -7,7 +7,7 @@ concept: Machine Learning.
 Machine Learning and everything that falls under it (deep learning, large language models) are powerful tools solving
 tons of interesting problems. Given a large dataset and an algorithm, it can make inferences or predictions about the
 future. However, there is a fundamental gap between what these tools can do and what organizations need: it’s not only
-extremely valuable to get a better understanding of what comes next (ie. prediction via machine learning), but also what
+extremely valuable to get a better understanding of what comes next (i.e. prediction via machine learning), but also what
 actions to take given this future. That is where mathematical optimization excels – it is a prescriptive tool.
 
 Machine learning and mathematical optimization differ in approach, purpose, and methodology as they are meant to solve
