@@ -1,13 +1,13 @@
 Welcome to Gurobi AI Modeling!
 ===================================
 
-``gurobi-ai-modeling`` aims to guide users to get familiar with using generative AI for mathematical modeling.
+``gurobi-ai-modeling`` aims to familiarize users with using generative AI for mathematical modeling.
 This repository contains documentation that features the following:
 
 - Help users understand the capabilities and limitations of the state-of-the-art generative AI tools in the context of optimization.
-- Propose best practices and common pitfalls when using generative AI.
+- Propose best practices for using generative AI to build and solve optimization models and describe common pitfalls.
 - Share examples of prompts and expected outcomes.
-- Tools that can help when creating models.
+- Describe tools that can help create and solve models.
 
 Contents
 --------
