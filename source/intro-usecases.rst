@@ -6,8 +6,8 @@ them, and many of these problems can actually be solved once you model them.
 In the introduction we mentioned that this documentation mainly focuses on Software
 Engineers. The reason for this is a practical one: if you have tried to explain or have somebody explain optimization to
 you, you might know that it can be an abstract topic. By focussing on a single professional domain we can be very
-concrete about the examples and materials, taking this topic out of the abstract world and apply to practical, every day
-problems.
+concrete about the examples and materials, taking this topic out of the abstract world and applying it to practical,
+everyday problems.
 
 Do keep in mind that the examples we came up with are use cases to illustrate a point, they might not be applicable in
 their current format: they exist so that users new to optimization will have
@@ -16,8 +16,9 @@ apply this technique to a problem that they face.
 
 .. note::
    Not only **can** optimization be applied in the software engineering domain, it **is** being applied... by us! For
-   :ref:`example <testing_strategy>`, in our CI/CD process we utilize optimization to smartly select which machines to run tests on and what kind
-   of testing environment to setup. So we are using Gurobi to optimize the development process at Gurobi!
+   :ref:`example <testing_strategy>`, in our CI/CD process we utilize optimization to smartly select which machines
+   to run tests on and which kinds of testing environments to set up.
+   So we are using Gurobi to optimize the development process at Gurobi!
 
 
 Specialties
@@ -46,7 +47,7 @@ Optimization techniques like Mixed-Integer Programming (MIP) and Linear Programm
 drive more traffic. Consider the following scenarios:
 
 - I want to maximize ad revenue from my website, while minimizing impact on user experience.
-- How can I best schedule A/B testing to different user segments that yield statistically significant results while minimizing user disruption?
+- How can I best schedule A/B testing to different user segments to yield statistically significant results while minimizing user disruption?
 - In our multi-layered microservice application, how can I route the traffic so as to minimize latency and cost?
 - How do we apply dynamic pricing on our E-commerce platform based on stock and demand to maximize revenue?
 
