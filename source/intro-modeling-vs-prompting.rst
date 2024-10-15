@@ -1,8 +1,7 @@
 Modeling in Optimization
 ===================================================================
 
-As was mentioned in the previous chapter, Mathematical Optimization relies on modeling, but, as also quickly mentioned,
-this is often more involved than modeling with Machine Learning.
+As mentioned in the previous chapter, Mathematical Optimization relies on modeling, and this type of modeling is often more involved than modeling with Machine Learning.
 
 To create an optimization model, one first needs to describe the optimization problem and convert this into mathematical
 formulation or code before it can be solved. The mathematical language used to translate a problem description into an
@@ -11,7 +10,7 @@ Below, we review the key elements of this process.
 
 The Problem Statement
 ---------------------
-Problem statements are the foundation of any optimization application. The benefits of devoting time to crafting a problem statement for your application include:
+Problem statements are the foundation of any optimization application. The benefits of devoting time to crafting a good problem statement for your application include:
 
 - Aligning multiple stakeholders and setting expectations
 - Identifying any competing objectives
@@ -47,7 +46,7 @@ Translation of Problem Statement into Mathematical Formulation: Two Options
 --------------------------------------------------------------------------------
 Historically, solving an optimization model would involve an optimization expert developing a mathematical model from a
 problem statement, implementing that model in code, and running the code to produce solutions. With the advent of LLMs,
-we might now be at the start of a new approach to transform a problem statement into a mathematical optimization model and code.
+we might now have a new viable approach for transforming a problem statement into a mathematical optimization model and code.
 
 However, one should exercise discretion. With the current generation of LLMs some of the human tact and intuition are
 missing from the equation, making crafting an accurate and complete problem statement especially important, as the
@@ -61,7 +60,9 @@ One component of this is to review the description and implementation of the mod
 Once it has been validated that the model and output accurately represent and solve the initial problem, a next step is to investigate whether or not the *intended* problem was accurately described in the initial problem statement.
 At this step we may find that the original problem statement was missing an important constraint or consideration and must be amended, this process can be iterated until the desired results are achieved.
 
-Mistakes could appear at any step of the process and additional suggestions for troubleshooting models can be found in the :ref:`Testing` section.
+In some cases, common-sense structural constraints such as `a machine cannot process multiple jobs at the same time` or `a worker must travel to the job site before starting the job` can be overlooked by a human modeler, or LLM, requiring modification of the model or prompt to ensure their inclusion.
+
+Mistakes could appear at any step of the process and more detailed suggestions for troubleshooting models can be found in the :ref:`Testing` section.
 
 .. note::
     In practice, the knowledge about the full business process is usually not located with a single person or group, but scattered among larger parts of the organization. Hence, it is common that more and more aspects of the business application enter the problem statement when the model solution gets reviewed by additional stakeholders.
