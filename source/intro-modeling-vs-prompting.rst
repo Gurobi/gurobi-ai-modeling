@@ -61,6 +61,7 @@ Once it has been validated that the model and output accurately represent and so
 At this step we may find that the original problem statement was missing an important constraint or consideration and must be amended, this process can be iterated until the desired results are achieved.
 
 In some cases, common-sense structural constraints such as `a machine cannot process multiple jobs at the same time` or `a worker must travel to the job site before starting the job` can be overlooked by a human modeler, or LLM, requiring modification of the model or prompt to ensure their inclusion.
+In cases where a prompt is ambiguous, the LLM is likely to make its best guess regarding some structural constraints, and its guesses may not be aligned with the intentions of the user.
 
 Mistakes could appear at any step of the process and more detailed suggestions for troubleshooting models can be found in the :ref:`Testing` section.
 
