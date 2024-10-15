@@ -1,7 +1,7 @@
 Custom GPTs
 ============
 
-Since the steps necessary for translating a problem description into an optimization model is well defined in
+Since the steps necessary for translating a problem description into an optimization model are well defined in
 :ref:`funnel`, we can leverage a feature that OpenAI's ChatGPT provides to have these steps baked-in: the Custom GPT.
 
 We have published a Custom GPT called: `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
@@ -100,5 +100,5 @@ asking questions about, for instance, how to best add a specific constraint to y
 
 .. note::
     Nevertheless, as with all LLMs, keep in mind that answers from Gurobot can be wrong or misleading. If in doubt, you
-    may want to consult our human experts via our `users forum <https://support.gurobi.com/hc/en-us/community/topics>`_
-    or `customer support <https://support.gurobi.com/hc/en-us>`_.
+    may want to consult our human experts via our `Community Forum <https://support.gurobi.com/hc/en-us/community/topics>`_
+    or the `Gurobi Help Center <https://support.gurobi.com/hc/en-us>`_.
