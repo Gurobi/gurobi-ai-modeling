@@ -22,7 +22,6 @@ Even with models that are formulated and coded by hand, testing and validation o
        D -> A [constraint=false, tailport=e, headport=e];
    }
 
-	
 Invalid results could have many causes, such as:
 
 - inaccuracies in the initial problem description,
@@ -43,6 +42,8 @@ Ensure that the objective value is plausible
 """"""""""""""""""""""""""""""""""""""""""""
 Often the first and most straightforward way of sanity-checking a model is by looking at the objective value and
 reasoning about whether it makes sense or not.
+
+.. _visualize:
 
 Visualize the solution
 """"""""""""""""""""""

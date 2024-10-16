@@ -13,6 +13,10 @@ merely an example of what the LLM generated for us. This example should get you 
 optimizing problem. As you get more comfortable with `Gurobi Model Builder <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
 and later familiarize yourself with the ``gurobipy`` API, in time, you will learn how to construct better models.
 
+Most examples are accompanied by a solution visualization.
+In each case, these were created by providing additional queries to the LLM after the model was generated and solved.
+Some examples of prompts to generate visualizations are included in the :ref:`visualize` section.
+
 Also note that not all the example prompts are created equal, meaning that some are easier for the LLM to turn into a
 valid model than others. You might find that some of the examples give a correct model every time, while another
 might take a few tries. This should also reinforce the idea that investigating and testing the generated model is
