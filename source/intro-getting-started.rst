@@ -53,36 +53,63 @@ Using ChatGPT as a translator for mathematics
 
 We have crafted a `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_ that helps with building and
 solving an optimization model. Let's start by copying both the problem description and dataset we specified earlier and
-paste it into the message box.
+paste it into the message box. Make sure you are logged into ChatGPT prior to clicking the link.
 
 .. tip::
 
    Feel free to go ahead an try it yourself by heading to the `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
    and changing either the constraints or the nutritional data and see how it influences the model and its results!
 
-.. image:: images/getting_started1.png
-  :alt: Supplying the prompt
-  :class: drop-shadow
+.. container:: image-container
 
-All of the following will now happen automatically in series, it first generates a mathematical model.
+    .. image:: images/getting_started1.png
+      :alt: Supplying the prompt
+      :class: drop-shadow
 
-.. image:: images/getting_started2.png
-  :alt: Supplying the prompt
-  :class: drop-shadow
 
-Then the Python code for the model is generated and optimized using Gurobi.
+The LLM now responds with the following template:
 
-.. image:: images/getting_started3.png
-  :alt: Supplying the prompt
-  :class: drop-shadow
+1. Problem Definition
+^^^^^^^^^^^^^^^^^^^^^
 
-Finally, the solution is explained.
+First, the LLM translates the problem into a mathematical representation. We do this both for clarity as well
+as increasing the chance of creating a successful model (more information on this in the :ref:`funnel` section).
 
-.. image:: images/getting_started4.png
-  :alt: Supplying the prompt
-  :class: drop-shadow
+.. container:: image-container
 
-This was a quick walkthrough of the basic functionality of this project.
+    .. image:: images/getting_started2.png
+      :alt: Supplying the prompt
+      :class: drop-shadow
 
-In the following chapters we will dive into the details on how to get started with modeling using LLMs. If you prefer
-to skip ahead and experiment with other example prompts, you can also first head over to the :ref:`example_prompts` section.
+2. Code generation and execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Then, the mathematical representation is used to generate ``gurobipy`` code in Python. The code is subsequently executed
+on the remote server.
+
+.. container:: image-container
+
+    .. image:: images/getting_started3.png
+      :alt: Supplying the prompt
+      :class: drop-shadow
+
+3. Result interpretation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+After the model has been solved, the results are explained.
+
+.. container:: image-container
+
+    .. image:: images/getting_started4.png
+      :alt: Supplying the prompt
+      :class: drop-shadow
+
+At this stage, the user can add messages to the conversation for further steps. For instance:
+
+- change the objective, constraints or data,
+- ask for clarifications, advice or potential issues with the model,
+- request the LLM to generate a graph with the results.
+
+This was only a quick walkthrough of the project. In the following chapters we will dive into the details on how to
+model optimization problems using LLMs. If you prefer to skip ahead and experiment with other example prompts, you can
+also first head over to the :ref:`example_prompts` section.
