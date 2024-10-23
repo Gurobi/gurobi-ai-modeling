@@ -4,7 +4,7 @@ Custom GPTs
 Since the steps necessary for translating a problem description into an optimization model are well defined in
 :ref:`funnel`, we can leverage a feature that OpenAI's ChatGPT provides to have these steps baked-in: the Custom GPT.
 
-We have published a Custom GPT called: `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
+We have published a Custom GPT called: `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-ai-modeling-assistant>`_
 which incorporates many of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
 
@@ -96,7 +96,7 @@ Gurobot
 """""""
 
 Aside from Gurobi AI Modeling Assistant, Gurobi has put out another Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
-Whereas `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_ is a very specific tool for
+Whereas `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-ai-modeling-assistant>`_ is a very specific tool for
 helping new users create models from a problem description, Gurobot is a general-purpose GPT
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when
 asking questions about, for instance, how to best add a specific constraint to your existing model.
