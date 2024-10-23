@@ -52,7 +52,13 @@ Using ChatGPT as a translator for mathematics
 ---------------------------------------------
 
 We have crafted a `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_ that helps with building and
-solving an optimization model. Let's first give it the problem description and dataset we specified earlier.
+solving an optimization model. Let's start by copying both the problem description and dataset we specified earlier and
+putting it into the message box.
+
+.. tip::
+
+   Feel free to go ahead an try it yourself by heading to the `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-gurobi-model-builder>`_
+   and changing either the constraints or the nutritional data and see how it influences the model and its results!
 
 .. image:: images/getting_started1.png
   :alt: Supplying the prompt
@@ -75,7 +81,6 @@ And lastly, the results are presented.
 .. image:: images/getting_started4.png
   :alt: Supplying the prompt
   :class: drop-shadow
-
 
 .. tip::
 
