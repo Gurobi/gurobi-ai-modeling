@@ -17,10 +17,10 @@ Contents
    :caption: Introduction
 
    intro-about
+   intro-getting-started
    intro-vs-ml
    intro-modeling-vs-prompting
    intro-usecases
-   intro-getting-started
 
 .. toctree::
    :maxdepth: 2
