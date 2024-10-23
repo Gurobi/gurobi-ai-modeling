@@ -61,6 +61,8 @@ With this, ChatGPT is sometimes able to spot mistakes it might make in a first d
 
 .. [#] Currently, the code execution environment of ChatGPT does not have access to the internet. This means it cannot download packages from PyPI. We can, however, upload wheels to the Custom GPT to give it access to ``gurobipy``.
 
+.. _prompt_template:
+
 Prompt Template
 ---------------
 
@@ -71,7 +73,8 @@ that contain the elements necessary for an optimization problem:
 .. code-block:: console
 
    Problem description:
-   <describe the problem on a high level, making sure you also introduce the context. Normally, 3-5 sentences is sufficient for this.>
+   As a <role> you are responsible for <job context>.
+   <describe the problem on a high level, making sure you also introduce the context. Normally, 2-5 sentences is sufficient for this.>
 
    Objective: <Maximize/Minimize> <objective>
    Constraints:
