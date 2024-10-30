@@ -1,4 +1,4 @@
-[![Docs](https://readthedocs.com/projects/gurobi-ai-modeling/badge/?version=latest)](https://gurobi-optimization-gurobi-ai-modeling.readthedocs-hosted.com/en/latest/)
+[![Docs](https://readthedocs.org/projects/gurobi-ai-modeling/badge/?version=latest)](https://gurobi-ai-modeling.readthedocs.io/en/latest/?badge=latest)
 
 # gurobi-ai-modeling: an introduction to using generative AI for mathematical modeling
 
@@ -12,7 +12,7 @@ This repository contains documentation that features the following:
 
 ## Documentation
 
-Full documentation for `gurobi-ai-modeling` is hosted on [readthedocs](https://gurobi-optimization-gurobi-ai-modeling.readthedocs-hosted.com/en/latest).
+Full documentation for `gurobi-ai-modeling` is hosted on [readthedocs](gurobi-ai-modeling.readthedocs.io/en/latest).
 
 ## License
 
