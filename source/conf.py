@@ -45,10 +45,10 @@ images_config = {
 }
 
 html_theme_options = {
-    "version_warning": "false",
-    "feedback_banner": "false",
-    "construction_warning": "false",
-    "sidebar_hide_name": "false",
+    "version_warning": False,
+    "feedback_banner": True,
+    "construction_warning": False,
+    "sidebar_hide_name": False,
 }
 
 intersphinx_disabled_domains = ["std"]
