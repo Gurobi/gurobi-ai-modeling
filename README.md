@@ -12,7 +12,7 @@ This repository contains documentation that features the following:
 
 ## Documentation
 
-Full documentation for `gurobi-ai-modeling` is hosted on [readthedocs](gurobi-ai-modeling.readthedocs.io/en/latest).
+Full documentation for `gurobi-ai-modeling` is hosted on [readthedocs](https://gurobi-ai-modeling.readthedocs.io/en/latest/).
 
 ## License
 
