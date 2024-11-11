@@ -1,5 +1,5 @@
-Mathematical Optimization vs Machine Learning
-===================================================================
+Comparing to Machine Learning
+=============================
 
 One way of understanding Mathematical Optimization is by comparing it to a related, but ultimately very different
 concept: Machine Learning.

@@ -1,5 +1,5 @@
-Modeling in Optimization
-===================================================================
+Modeling
+========
 
 As mentioned in the previous chapter, Mathematical Optimization relies on modeling, and this type of modeling is often more involved than modeling with Machine Learning.
 

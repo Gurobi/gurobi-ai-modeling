@@ -33,8 +33,8 @@ Contents
    :maxdepth: 2
    :caption: Learning Optimization
 
-   intro-vs-ml
-   intro-modeling-vs-prompting
+   learning-ml
+   learning-modeling
 
 .. toctree::
    :maxdepth: 2
