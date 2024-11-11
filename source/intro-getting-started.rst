@@ -53,7 +53,7 @@ Using ChatGPT as a translator for mathematics
 
 We have crafted a `Custom GPT <https://chatgpt.com/g/g-g69cy3XAp-gurobi-ai-modeling-assistant>`_ that helps with building and
 solving an optimization model. Let's start by copying both the problem description and dataset we specified earlier and
-paste it into the message box. Make sure you are logged into ChatGPT prior to clicking the link.
+paste it into the message box. [#f1]_
 
 .. tip::
 
@@ -114,3 +114,5 @@ This was only a quick walkthrough of the project. In the following chapters we w
 model optimization problems using LLMs. If you prefer to skip ahead and experiment with other example prompts, you can
 also first head over to the :ref:`example_prompts` section. If you would like to write your own prompt from scratch, you
 can start with our :ref:`prompt_template`.
+
+.. [#f1] If ChatGPT takes you to a different page, make sure you are logged into ChatGPT prior to clicking the link.

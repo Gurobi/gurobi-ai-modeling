@@ -45,10 +45,11 @@ images_config = {
 }
 
 html_theme_options = {
-    "version_warning": False,
-    "feedback_banner": True,
     "construction_warning": False,
-    "sidebar_hide_name": False,
+    "sidebar_hide_name": True,
+    "source_repository": "https://github.com/Gurobi/gurobi-ai-modeling",
+    "source_branch": "main",
+    "source_directory": "source",
 }
 
 intersphinx_disabled_domains = ["std"]
