@@ -18,19 +18,23 @@ Contents
 
    intro-about
    intro-getting-started
-   intro-vs-ml
-   intro-modeling-vs-prompting
    intro-usecases
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: LLM Prompting
 
    prompting-basics
    prompting-custom-gpt
    prompting-examples
    prompting-tips-pitfalls
-   prompting-case-studies
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Learning Optimization
+
+   intro-vs-ml
+   intro-modeling-vs-prompting
 
 .. toctree::
    :maxdepth: 2
@@ -40,6 +44,6 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Educational resources
+   :caption: More Educational resources
 
    education

@@ -4,7 +4,7 @@
 
 .. only:: html
 
-   .. rubric:: Use cases
+   .. rubric:: Category
 
 .. toctree::
    :maxdepth: 1
