@@ -38,6 +38,8 @@ resource management. For instance, think about the following questions:
 - For incident response planning, which machines should get priority based on whether they are customer-facing or have dependencies?
 - To optimally test our application, which parameters should I set to maximize our testing coverage?
 
+See our :ref:`DevOps Engineer prompts <examples_devops>` for concrete examples.
+
 Backend Engineer
 ^^^^^^^^^^^^^^^^
 Backend and Full-Stack Engineers are operating in an environment that can be constrained from a resource perspective
@@ -51,6 +53,8 @@ drive more traffic. Consider the following scenarios:
 - In our multi-layered microservice application, how can I route the traffic so as to minimize latency and cost?
 - How do we apply dynamic pricing on our E-commerce platform based on stock and demand to maximize revenue?
 
+See our :ref:`Backend Engineer prompts <examples_backend>` for concrete examples.
+
 Data Engineer
 ^^^^^^^^^^^^^
 As a Data Engineer, you're often dealing with large-scale data pipelines, data storage, and ETL (Extract, Transform, Load) processes that can be complex and resource-intensive.
@@ -62,6 +66,8 @@ Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can 
 - What is the best way to allocate storage across various data warehouses to balance cost and retrieval speed?
 - How can I design data partitioning strategies to reduce query latency while minimizing storage costs?
 - For data streaming workloads as with Apache Kafka, how should I allocate topic partitions to minimize latency between brokers?
+
+See our :ref:`Data Engineer prompts <examples_data>` for concrete examples.
 
 .. _usecase_other:
 

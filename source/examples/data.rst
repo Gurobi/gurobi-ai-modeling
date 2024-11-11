@@ -1,3 +1,5 @@
+.. _examples_data:
+
 Data Engineer
 =================
 
