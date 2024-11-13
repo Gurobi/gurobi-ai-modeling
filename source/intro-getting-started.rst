@@ -3,7 +3,7 @@
 Getting Started
 ===============
 
-Take a look at the following dietary problem.
+Let's take a look at the following dietary problem:
 
 .. code-block:: text
 
@@ -112,7 +112,7 @@ At this stage, the user can add messages to the conversation for further steps. 
 
 This was only a quick walkthrough of the project. In the following chapters we will dive into the details on how to
 model optimization problems using LLMs. If you prefer to skip ahead and experiment with other example prompts, you can
-also first head over to the :ref:`example_prompts` section. If you would like to write your own prompt from scratch, you
+also first head over to the :doc:`prompting-examples` section. If you would like to write your own prompt from scratch, you
 can start with our :ref:`prompt_template`.
 
 .. [#f1] If ChatGPT takes you to a different page, make sure you are logged into ChatGPT prior to clicking the link.

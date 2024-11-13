@@ -40,7 +40,7 @@ Understanding the key components of an optimization model is critical when creat
 
 Further educational resources for learning about optimization, model writing, and how the
 `algorithms <https://www.gurobi.com/resources/mixed-integer-programming-mip-a-primer-on-the-basics/>`_
-work are listed in the :ref:`Educational Resources <education>` chapter.
+work are listed in the :doc:`Educational Resources <education>` chapter.
 
 Translation of Problem Statement into Mathematical Formulation: Two Options
 --------------------------------------------------------------------------------

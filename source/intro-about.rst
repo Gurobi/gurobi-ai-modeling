@@ -23,7 +23,7 @@ to create an understanding of what type of daily problems are actually optimizat
 solved using a solver like Gurobi, and spark interest leading the user to learn more about optimization.
 
 If you prefer getting hands-on experience before anything else, you might be interested in skipping to the
-:ref:`getting_started` section instead.
+:doc:`intro-getting-started` section instead.
 
 Structure
 ---------

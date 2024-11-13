@@ -1,5 +1,5 @@
-Basics
-======
+A deeper look
+=============
 
 Modeling in mathematical optimization is a discipline that requires multiple skills working in unison:
 

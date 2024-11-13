@@ -49,7 +49,7 @@ Visualize the solution
 """"""""""""""""""""""
 Digging deeper, visualizing the solution is an intuitive way of inspecting the model results, and no expert knowledge
 is required for it! Since we are already in the domain of LLMs, we can just as well go all the way and ask it to generate a
-visualization of the solution. Practically all images in the :ref:`example_prompts` section were created this way.
+visualization of the solution. Practically all images in the :doc:`examples/overview` section were created this way.
 
 For example, after having the LLM generate a solution you could say:
 
@@ -100,4 +100,4 @@ However, in our extensive testing we found that it is way more likely that the L
 the prompt and can not be easily fixed by adding small changes to the existing model.
 
 Instead, we suggest revisiting the prompt and checking whether it violates any of the sections in the
-:ref:`tips_and_pitfalls` chapter and trying out different versions of the prompt.
+:doc:`prompting-tips-pitfalls` chapter and trying out different versions of the prompt.

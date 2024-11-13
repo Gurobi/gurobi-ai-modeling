@@ -38,7 +38,7 @@ resource management. For instance, think about the following questions:
 - For incident response planning, which machines should get priority based on whether they are customer-facing or have dependencies?
 - To optimally test our application, which parameters should I set to maximize our testing coverage?
 
-See our :ref:`DevOps Engineer prompts <examples_devops>` for concrete examples.
+See our :doc:`DevOps Engineer prompts <examples/devops>` for concrete examples.
 
 Backend Engineer
 ^^^^^^^^^^^^^^^^
@@ -53,7 +53,7 @@ drive more traffic. Consider the following scenarios:
 - In our multi-layered microservice application, how can I route the traffic so as to minimize latency and cost?
 - How do we apply dynamic pricing on our E-commerce platform based on stock and demand to maximize revenue?
 
-See our :ref:`Backend Engineer prompts <examples_backend>` for concrete examples.
+See our :doc:`Backend Engineer prompts <examples/backend>` for concrete examples.
 
 Data Engineer
 ^^^^^^^^^^^^^
@@ -67,7 +67,7 @@ Techniques like Mixed-Integer Programming (MIP) and Linear Programming (LP) can 
 - How can I design data partitioning strategies to reduce query latency while minimizing storage costs?
 - For data streaming workloads as with Apache Kafka, how should I allocate topic partitions to minimize latency between brokers?
 
-See our :ref:`Data Engineer prompts <examples_data>` for concrete examples.
+See our :doc:`Data Engineer prompts <examples/data>` for concrete examples.
 
 .. _usecase_other:
 

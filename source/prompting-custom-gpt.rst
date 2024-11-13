@@ -87,7 +87,7 @@ that contain the elements necessary for an optimization problem:
    <data in csv format, including headers> or <upload your files and name the filename here>
 
 As an added bonus, when one follows this template, users are more likely to think about these elements in a structured
-way. Moreover, in the :ref:`example_prompts` section we will look at some example prompts we recommend trying out with
+way. Moreover, in the :doc:`prompting-examples` section we will look at some example prompts we recommend trying out with
 Gurobi AI Modeling Assistant. You will find that most of these prompts follow this template. After going through some of the
 examples and subsequently using the same template, it should be more natural to follow our prompting recommended best
 practices.

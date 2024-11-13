@@ -24,9 +24,10 @@ Contents
    :maxdepth: 3
    :caption: LLM Prompting
 
-   prompting-basics
-   prompting-custom-gpt
+   prompting-how-to
+   prompting-deeper-look
    prompting-examples
+   prompting-custom-gpt
    prompting-tips-pitfalls
 
 .. toctree::

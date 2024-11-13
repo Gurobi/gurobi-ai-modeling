@@ -1,7 +1,7 @@
 I don't understand how hosting applications works
 =================================================
 
-We saw an example about EC2 in the :ref:`tips_and_pitfalls` section already. It might be quite difficult for an LLM to reason
+We saw an example about EC2 in the :doc:`../prompting-tips-pitfalls` section already. It might be quite difficult for an LLM to reason
 about how a problem involving hosting in the cloud works and more handholding is currently required.
 
 Of course, the LLM very likely does know about how cloud hosting works. So it's not unreasonable to think that the LLM

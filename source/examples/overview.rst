@@ -20,4 +20,4 @@ Some examples of prompts to generate visualizations are included in the :ref:`vi
 Also note that not all the example prompts are created equal, meaning that some are easier for the LLM to turn into a
 valid model than others. You might find that some of the examples give a correct model every time, while another
 might take a few tries. This should also reinforce the idea that investigating and testing the generated model is
-a critical step. We discuss how to do this in the :ref:`testing` chapter.
+a critical step. We discuss how to do this in the :doc:`../eval-testing` chapter.
