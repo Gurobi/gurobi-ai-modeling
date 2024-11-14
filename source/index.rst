@@ -25,8 +25,8 @@ Contents
    :caption: LLM Prompting
 
    prompting-how-to
-   prompting-deeper-look
    prompting-examples
+   prompting-deeper-look
    prompting-custom-gpt
    prompting-tips-pitfalls
 

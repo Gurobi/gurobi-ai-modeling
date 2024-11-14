@@ -202,9 +202,8 @@ To get an idea of what this data could look like, our :doc:`prompting-examples` 
 utilizes external data, but you could also use inline data as in :doc:`intro-getting-started`. In the future, we should
 probably write a section about which data types are suitable in this context.
 
-At this point, it is highly recommended to take a look at some of the :doc:`prompting-examples` to get inspiration on
-what an effective an unambiguous prompt looks like.
-
+At this point, it is highly recommended to take a look at some of the Example Prompts in the next section to get
+inspiration on what an effective an unambiguous prompt could look like.
 
 .. [#f1] Whether all daily problems are suitable to be formalized into a
     optimization problem is of course another question...
