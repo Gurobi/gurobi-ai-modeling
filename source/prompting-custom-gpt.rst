@@ -4,6 +4,9 @@ Custom GPTs
 Since the steps necessary for translating a problem description into an optimization model are well defined in
 :ref:`funnel`, we can leverage a feature that OpenAI's ChatGPT provides to have these steps baked-in: the Custom GPT.
 
+Gurobi AI Modeling Assistant
+----------------------------
+
 We have published a Custom GPT called: `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-ai-modeling-assistant>`_
 which incorporates many of the reasoning steps and helps build, execute and interpret the results of the model
 within ChatGPT so users can focus on writing an effective problem description.
@@ -64,7 +67,7 @@ With this, ChatGPT is sometimes able to spot mistakes it might make in a first d
 .. _prompt_template:
 
 Prompt Template
----------------
+"""""""""""""""
 
 While it is possible to supply the Custom GPT with a wide range of problem-describing prompts, our advice is to write
 your prompt following a template. We have devised the following prompt template that help guide users write a prompt
@@ -92,14 +95,25 @@ Gurobi AI Modeling Assistant. You will find that most of these prompts follow th
 examples and subsequently using the same template, it should be more natural to follow our prompting recommended best
 practices.
 
+Gurobi AI Modeling Prompt Engineer
+----------------------------------
+
+We have introduced `Gurobi AI Modeling Prompt Engineer <https://chatgpt.com/g/g-JK2EuyVOt-gurobi-ai-modeling-prompt-engineer>`_
+in the :doc:`prompting-how-to` section. This GPT is for people who feel like they need help with identifying
+optimization problems in their surroundings or help identify and formulate the elements that constitute
+an optimization problem description.
+
 Gurobot
-"""""""
+-------
 
 Aside from Gurobi AI Modeling Assistant, Gurobi has put out another Custom GPT: `Gurobot <https://chatgpt.com/g/g-vPqYcfN7M-gurobot>`_.
 Whereas `Gurobi AI Modeling Assistant <https://chatgpt.com/g/g-g69cy3XAp-gurobi-ai-modeling-assistant>`_ is a very specific tool for
 helping new users create models from a problem description, Gurobot is a general-purpose GPT
 for asking Gurobi-related questions. We found that it performs better than using vanilla ChatGPT when
 asking questions about, for instance, how to best add a specific constraint to your existing model.
+
+We recommend using this GPT for existing Gurobi users (not restricted to ``gurobipy``) that have specific
+modelling and API questions.
 
 .. note::
     Nevertheless, as with all LLMs, keep in mind that answers from Gurobot can be wrong or misleading. If in doubt, you
