@@ -31,10 +31,11 @@ were caught off-guard by its inability to generate a correct model.
 
 .. note::
 
-   As it happens, OpenAI recently released the ``o1-preview`` model. In our limited testing of ``o1-preview``, we found
-   that ChatGPT is able to solve practically all use cases discussed in the coming sections. We will leave the current
-   pages in place not only because ``o1-preview`` does not yet support Code Interpreter or Custom GPTs, but because we
-   think it still gives a valuable insight into how LLMs sometimes upend our expectations.
+   In the time since writing this section, OpenAI recently released the ``o1`` model, and recently ``o3-mini`` models.
+   In our testing of ``o1``, we found that ChatGPT is able to solve practically all use cases discussed
+   in the coming sections (and expect no less of ``o3-mini``). We will leave the current pages in place not only because
+   ``o1`` and ``o3-mini`` do not yet support Code Interpreter or Custom GPTs, but because we think it still gives a
+   valuable insight into how LLMs sometimes upend our expectations.
 
 .. toctree::
    :maxdepth: 2
