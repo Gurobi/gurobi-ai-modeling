@@ -1,6 +1,6 @@
 .. _getting_started:
 
-Getting Started
+Getting started
 ===============
 
 Let's take a look at the following dietary problem:
