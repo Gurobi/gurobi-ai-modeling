@@ -1,4 +1,4 @@
-Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (%)
+Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (percentage)
 A,F,50,99.8
 A,G,60,99.7
 A,H,55,99.9

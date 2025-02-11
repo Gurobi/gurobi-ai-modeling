@@ -15,5 +15,5 @@ Constraints:
 - Routing constraints between layers: Specific backend services can only route to certain gateways as defined in the data.
 
 Data:
-The Backend Services can be found in network_routing_backend.csv and has the following columns: Service,Average Processing Time (ms),Reliability (%),Cost per Request ($)
-The Routing from Backend Services to Internal Gateways can be found in network_routing_internal.csv and has the following columns: Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (%)
+The Backend Services can be found in network_routing_backend.csv and has the following columns: Service,Average Processing Time (ms),Reliability (percentage),Cost per Request ($)
+The Routing from Backend Services to Internal Gateways can be found in network_routing_internal.csv and has the following columns: Backend Service,Internal Gateway,Additional Processing Time (ms),Additional Reliability (percentage)

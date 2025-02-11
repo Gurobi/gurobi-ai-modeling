@@ -13,14 +13,14 @@ services = backend_df['Service'].tolist()
 gateways = internal_df['Internal Gateway'].unique().tolist()
 
 processing_times = dict(zip(backend_df['Service'], backend_df['Average Processing Time (ms)']))
-reliabilities = dict(zip(backend_df['Service'], backend_df['Reliability (%)']))
+reliabilities = dict(zip(backend_df['Service'], backend_df['Reliability (percentage)']))
 costs = dict(zip(backend_df['Service'], backend_df['Cost per Request ($)']))
 
 internal_routing = {}
 for _, row in internal_df.iterrows():
     internal_routing[(row['Backend Service'], row['Internal Gateway'])] = {
         'processing_time': row['Additional Processing Time (ms)'],
-        'reliability': row['Additional Reliability (%)']
+        'reliability': row['Additional Reliability (percentage)']
     }
 
 # Create the Gurobi model
