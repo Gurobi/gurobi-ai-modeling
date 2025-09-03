@@ -27,7 +27,7 @@ Although a problem statement need not explicitly contain mathematical notation, 
 In most cases, data should be separated from the model, allowing the problem to be defined in a general or abstract way (e.g., `Determine how much of each product should be produced at each facility.`).
 Then, after a mathematical model is constructed, specific sets of data (e.g., a spreadsheet or text file containing a list of facilities, a list of products, cost and demand data) can be loaded as input to construct and solve individual instances of the decision problem.
 
-Separation of the abstract problem description and problem problem data allows problems to be more simply stated, and reused with different data sets.
+Separation of the abstract problem description and problem data allows problems to be more simply stated, and reused with different data sets.
 
 Components of an Optimization Model
 -----------------------------------
